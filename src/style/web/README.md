@@ -1,6 +1,6 @@
 # TDesign-web 说明
 
-- 该仓库用于 web 端（含 Vue 和 React ）的 TDesign 组件库的样式文件和 html 文件
+- 该仓库用于 web 端（svelte）的 TDesign 组件库的样式文件和 html 文件
 - 使用 less 来管理和编写样式
 - 基于 PBEM 命名，其中 `P` 代表 `Prefix`，`B` 代表 `Block` ，`E` 代表 `Element` ， `M` 代表 `Modifier`。更详细规范及命名推荐，请查看 [CSS 命名规范](../../css-naming.md)
 - [组件名称命名规则](../../naming.md)

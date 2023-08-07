@@ -5,6 +5,7 @@ import terser from '@rollup/plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import css from 'rollup-plugin-css-only';
+import postcss from "rollup-plugin-postcss";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -46,7 +47,11 @@ export default {
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
+		// css({ output: 'bundle.css' }),
+		postcss({
+		  extract: true, // 将 CSS 提取到单独的文件中
+		  minimize: true, // 压缩 CSS
+		}),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
