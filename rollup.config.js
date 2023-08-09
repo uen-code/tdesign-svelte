@@ -31,12 +31,12 @@ function serve() {
 }
 
 export default {
-	input: 'src/main.js',
+	input: 'src/index.js',
 	output: {
 		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/bundle.js'
+		format: 'umd',
+		name: 'TDesign',
+		file: 'dist/tdesign.js'
 	},
 	plugins: [
 		svelte({

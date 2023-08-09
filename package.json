@@ -1,5 +1,7 @@
 {
-  "name": "svelte-app",
+  "name": "tdesign-svelte",
+  "purename": "tdesign",
+  "title": "tdesign-svelte",
   "version": "1.0.0",
   "private": true,
   "type": "module",
