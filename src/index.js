@@ -1,2 +1,4 @@
 // 基础组件
-export {default as TButton} from './button/button.svelte'
+import TButton from './button/Button.svelte'
+
+export {TButton}

@@ -1,10 +1,10 @@
 <script>
-  import '../style/web/components/button/_index.less'
-  import '../common.less'
   import {createEventDispatcher} from 'svelte';
   import {usePrefixClass, componentSize, componentStatus, getClassString} from '../common'
   import {sizeEnum, themeEnum} from '../config'
   import useRipple from "../hooks/useRipple";
+
+  import './style/index.css'
 
 
   const dispatch = createEventDispatcher()
