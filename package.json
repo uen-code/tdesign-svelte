@@ -1,7 +1,7 @@
 {
   "name": "tdesign-svelte",
   "title": "tdesign-svelte",
-  "version": "0.0.0-dev.1",
+  "version": "0.0.0-dev.2",
   "type": "module",
   "main": "components/index.js",
   "files": [
