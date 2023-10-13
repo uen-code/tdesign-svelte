@@ -10,46 +10,44 @@
   </a>
 </p>
 
-English | [简体中文](./README-zh_CN.md) 
+简体中文 | [English](./README.md) 
 
-TDesign svelte is a UI component library for Vue 3 and desktop application.
+TDesign 适配桌面端的组件库，适合在 svelte 技术栈项目中使用。
 
-# 🎉 Features
+# 🎉 特性
 
-- Desktop application interaction
+- 适配桌面端交互
 
-# 📦 Installation
+# 📦 安装
 
 ```shell
-npm i tdesign-vue-next
+npm i tdesign-svelte
 ```
 
-# 🔨 Usage
+# 🔨 基础使用
 
 ```js
 import { TButton } from "tdesign-svelte";
 ```
 
-# Browser Support
+# 浏览器兼容性
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br> IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Edge >=84                                                                                                                                                                                                        | Firefox >=83                                                                                                                                                                                                      | Chrome >=84                                                                                                                                                                                                   | Safari >=14.1                                                                                                                                                                                                   |
 
-Read our [browser compatibility](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility) for more details.
-# TDesign component libraries
+详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility)
 
-TDesign also provides component libraries for other platforms and frameworks.
+# 其他技术栈实现
 
-- component library for Vue 3.x : [web-vue](https://github.com/Tencent/tdesign-vue-next)
-- component library for Vue 2.x : [tdesign-vue](https://github.com/Tencent/tdesign-vue)
-- component library for React : [tdesign-react](https://github.com/Tencent/tdesign-react)
-- component library for Wechat miniprogram : [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram)
+- 桌面端 Vue3 实现：[web-vue](https://github.com/Tencent/tdesign-vue-next)
+- 桌面端 Vue 实现：[web-vue](https://github.com/Tencent/tdesign-vue)
+- 桌面端 React 实现： [web-react](https://github.com/Tencent/tdesign-react)
+- 移动端小程序实现： [小程序](https://github.com/Tencent/tdesign-miniprogram)
 
-# Feedback
+# 反馈
 
-Create your [Github issues](https://github.com/Tencent/tdesign-vue-next/issues) or scan the QR code below to join our user groups
+有任何问题，建议通过 [Github issues](https://github.com/hzx000822/tdesign-svelte/issues) 反馈。
 
-# License
-
-The MIT License. Please see [the license file](./LICENSE) for more information.
+# 开源协议
+遵循 [MIT 协议](https://github.com/hzx000822/tdesign-svelte/blob/master/LICENSE)。
