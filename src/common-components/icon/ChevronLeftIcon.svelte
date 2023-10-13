@@ -1,7 +1,7 @@
 <script>
   import {usePrefixClass} from "../../common.js";
 
-  import '/style/web/icon/common.css'
+  import './style/index.css'
 
   const iconClass = usePrefixClass('icon')
 

@@ -1,2 +1,1 @@
-import '../../../style/web/common.less'
-import '../../../style/web/components/radio/_index.less'
+import '../../_common/style/web/components/radio/_index.less';
