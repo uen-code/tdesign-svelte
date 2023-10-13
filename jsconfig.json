@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "outDir": "lib",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "checkJs": true
+  },
+  "include": ["./**/*.js", "./**/*.svelte"],
+  "exclude": [
+    "node_modules",
+    "components"
+  ],
+  "compileOnSave": false
+}
