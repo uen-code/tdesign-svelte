@@ -40,7 +40,7 @@ import { TButton } from "tdesign-svelte";
 
 # 其他技术栈实现
 
-- 桌面端 Vue3 实现：[web-vue](https://github.com/Tencent/tdesign-vue-next)
+- 桌面端 Vue3 实现：[web-vue-next](https://github.com/Tencent/tdesign-vue-next)
 - 桌面端 Vue 实现：[web-vue](https://github.com/Tencent/tdesign-vue)
 - 桌面端 React 实现： [web-react](https://github.com/Tencent/tdesign-react)
 - 移动端小程序实现： [小程序](https://github.com/Tencent/tdesign-miniprogram)

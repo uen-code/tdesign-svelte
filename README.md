@@ -41,7 +41,7 @@ Read our [browser compatibility](https://github.com/Tencent/tdesign/wiki/Browser
 
 TDesign also provides component libraries for other platforms and frameworks.
 
-- component library for Vue 3.x : [web-vue](https://github.com/Tencent/tdesign-vue-next)
+- component library for Vue 3.x : [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
 - component library for Vue 2.x : [tdesign-vue](https://github.com/Tencent/tdesign-vue)
 - component library for React : [tdesign-react](https://github.com/Tencent/tdesign-react)
 - component library for Wechat miniprogram : [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram)
