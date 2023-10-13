@@ -27,8 +27,7 @@ After coming into contact with TDesign, I had the idea of learning a component l
 - Used TDesign's public library: [tdesign-common](https://github.com/Tencent/tdesign-common)
 - Adopted the logic of TDesign-vue-next: [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
 
-At present, the component library is only in the personal learning stage and cannot meet the needs of enterprises for the time being.
-
+At present, the component library is only in the personal learning stage and cannot meet the needs of enterprises for the time being. We plan to compile the component library into js in the future to adapt to frameworks such as vue and react.
 # 🎉 Features
 
 - Desktop application interaction
