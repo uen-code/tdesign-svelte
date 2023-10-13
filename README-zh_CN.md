@@ -73,5 +73,5 @@ import { TButton } from "tdesign-svelte";
 
 # 联系我
 
-641477144@qq.com
-programmerhzx@gmail.com
+- QQ: 641477144@qq.com
+- Gmail: programmerhzx@gmail.com

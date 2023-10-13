@@ -35,7 +35,7 @@ At present, the component library is only in the personal learning stage and can
 # 📦 Installation
 
 ```shell
-npm i tdesign-vue-next
+npm i tdesign-svelte
 ```
 
 # 🔨 Usage
@@ -70,5 +70,5 @@ The MIT License. Please see [the license file](./LICENSE) for more information.
 
 # Contact me
 
-641477144@qq.com
-programmerhzx@gmail.com
+- QQ: 641477144@qq.com
+- Gmail: programmerhzx@gmail.com
