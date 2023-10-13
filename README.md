@@ -1,5 +1,11 @@
 <p align="center">
-  <a href="https://github.com/hzx000822/tdesign-svelte/blob/master/LICENSE">
+  <a href="https://github.com/hzx000822/tdesign-svelte" target="_blank">
+    <img alt="TDesign Logo" width="200" src="https://tdesign.gtimg.com/site/TDesign.png">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/hzx000822/tdesign-svelte/blob/master/LICENSE.md">
     <img src="https://img.shields.io/npm/l/tdesign-vue-next.svg?sanitize=true" alt="License">
   </a>
   <a href="https://www.npmjs.com/package/tdesign-svelte">
