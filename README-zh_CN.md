@@ -14,6 +14,15 @@
 
 TDesign 适配桌面端的组件库，适合在 svelte 技术栈项目中使用。
 
+# 讲在前面
+
+接触到TDesign后有了学习组件库的想法,想以直观的写法去完成一个简单的组件库,会尽量去完成TDesign组件的全部功能.
+- 参照了TDesign的设计体系 [figma](https://www.figma.com/community/file/1053279236128724321/tdesign-for-web)
+- 使用了TDesign的公共库 [tdesign-common](https://github.com/Tencent/tdesign-common)
+- 采用了TDesign-vue-next的逻辑 [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
+
+目前组件库仅处于个人学习阶段,暂时无法满足企业需求
+
 # 🎉 特性
 
 - 适配桌面端交互
@@ -38,7 +47,7 @@ import { TButton } from "tdesign-svelte";
 
 详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility)
 
-# 其他技术栈实现
+# TDesign官方技术栈
 
 - 桌面端 Vue3 实现：[web-vue-next](https://github.com/Tencent/tdesign-vue-next)
 - 桌面端 Vue 实现：[web-vue](https://github.com/Tencent/tdesign-vue)
@@ -50,4 +59,9 @@ import { TButton } from "tdesign-svelte";
 有任何问题，建议通过 [Github issues](https://github.com/hzx000822/tdesign-svelte/issues) 反馈。
 
 # 开源协议
-遵循 [MIT 协议](https://github.com/hzx000822/tdesign-svelte/blob/master/LICENSE)。
+遵循 [MIT 协议](https://github.com/hzx000822/tdesign-svelte/blob/master/LICENSE.md)。
+
+# 联系我
+
+641477144@qq.com
+programmerhzx@gmail.com

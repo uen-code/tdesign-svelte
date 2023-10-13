@@ -12,7 +12,16 @@
 
 English | [简体中文](./README-zh_CN.md) 
 
-TDesign svelte is a UI component library for Vue 3 and desktop application.
+TDesign svelte is a UI component library for svelte and desktop application.
+
+# Preface
+
+After coming into contact with TDesign, I had the idea of learning a component library. I wanted to complete a simple component library in an intuitive way, and I would try my best to complete all the functions of TDesign components.
+- Referring to TDesign’s design system: [figma](https://www.figma.com/community/file/1053279236128724321/tdesign-for-web)
+- Used TDesign's public library: [tdesign-common](https://github.com/Tencent/tdesign-common)
+- Adopted the logic of TDesign-vue-next: [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
+
+At present, the component library is only in the personal learning stage and cannot meet the needs of enterprises for the time being.
 
 # 🎉 Features
 
@@ -48,8 +57,13 @@ TDesign also provides component libraries for other platforms and frameworks.
 
 # Feedback
 
-Create your [Github issues](https://github.com/Tencent/tdesign-vue-next/issues) or scan the QR code below to join our user groups
+Create your [Github issues](https://github.com/hzx000822/tdesign-svelte/issues) or scan the QR code below to join our user groups
 
 # License
 
 The MIT License. Please see [the license file](./LICENSE) for more information.
+
+# Contact me
+
+641477144@qq.com
+programmerhzx@gmail.com
