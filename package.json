@@ -17,6 +17,8 @@
     "web component"
   ],
   "scripts": {
+    "init": "git submodule init && git submodule update",
+    "start": "npm run init && npm run dev",
     "build": "rollup -c",
     "dev": "cd site && vite dev",
     "site": "cd site && vite build",
