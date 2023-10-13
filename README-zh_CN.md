@@ -16,59 +16,62 @@
   </a>
 </p>
 
-English | [简体中文](./README-zh_CN.md) 
+简体中文 | [English](./README.md) 
 
-TDesign svelte is a UI component library for svelte and desktop application.
+TDesign 适配桌面端的组件库，适合在 svelte 技术栈项目中使用。
 
-# Preface
+# 讲在前面
 
-After coming into contact with TDesign, I had the idea of learning a component library. I wanted to complete a simple component library in an intuitive way, and I would try my best to complete all the functions of TDesign components.
-- Referring to TDesign’s design system: [figma](https://www.figma.com/community/file/1053279236128724321/tdesign-for-web)
-- Used TDesign's public library: [tdesign-common](https://github.com/Tencent/tdesign-common)
-- Adopted the logic of TDesign-vue-next: [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
+接触到TDesign后有了学习组件库的想法，想以直观的写法去完成一个简单的组件库，会尽量去完成TDesign组件的全部功能.
+- 参照了TDesign的设计体系：[figma](https://www.figma.com/community/file/1053279236128724321/tdesign-for-web)
+- 使用了TDesign的公共库：[tdesign-common](https://github.com/Tencent/tdesign-common)
+- 采用了TDesign-vue-next的逻辑：[tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
 
-At present, the component library is only in the personal learning stage and cannot meet the needs of enterprises for the time being. We plan to compile the component library into js in the future to adapt to frameworks such as vue and react.
-# 🎉 Features
+目前组件库仅处于个人学习阶段,暂时无法满足企业需求,打算日后把组件库编译为js就可以适配vue、react等框架
 
-- Desktop application interaction
+# 在线文档
 
-# 📦 Installation
+[查看]()
+
+# 🎉 特性
+
+- 适配桌面端交互
+
+# 📦 安装
 
 ```shell
 npm i tdesign-svelte
 ```
 
-# 🔨 Usage
+# 🔨 基础使用
 
 ```js
 import { TButton } from "tdesign-svelte";
 ```
 
-# Browser Support
+# 浏览器兼容性
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br> IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Edge >=84                                                                                                                                                                                                        | Firefox >=83                                                                                                                                                                                                      | Chrome >=84                                                                                                                                                                                                   | Safari >=14.1                                                                                                                                                                                                   |
 
-Read our [browser compatibility](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility) for more details.
-# TDesign component libraries
+详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility)
 
-TDesign also provides component libraries for other platforms and frameworks.
+# TDesign官方技术栈
 
-- component library for Vue 3.x : [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
-- component library for Vue 2.x : [tdesign-vue](https://github.com/Tencent/tdesign-vue)
-- component library for React : [tdesign-react](https://github.com/Tencent/tdesign-react)
-- component library for Wechat miniprogram : [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram)
+- 桌面端 Vue3 实现：[web-vue-next](https://github.com/Tencent/tdesign-vue-next)
+- 桌面端 Vue 实现：[web-vue](https://github.com/Tencent/tdesign-vue)
+- 桌面端 React 实现： [web-react](https://github.com/Tencent/tdesign-react)
+- 移动端小程序实现： [小程序](https://github.com/Tencent/tdesign-miniprogram)
 
-# Feedback
+# 反馈
 
-Create your [Github issues](https://github.com/hzx000822/tdesign-svelte/issues) or scan the QR code below to join our user groups
+有任何问题，建议通过 [Github issues](https://github.com/hzx000822/tdesign-svelte/issues) 反馈。
 
-# License
+# 开源协议
+遵循 [MIT 协议](https://github.com/hzx000822/tdesign-svelte/blob/master/LICENSE.md)。
 
-The MIT License. Please see [the license file](./LICENSE) for more information.
-
-# Contact me
+# 联系我
 
 - QQ: 641477144@qq.com
 - GMAIL: programmerhzx@gmail.com

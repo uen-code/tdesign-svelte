@@ -22,6 +22,13 @@ export function getClassString(classObj) {
 }
 
 /**
+ * 字符串首字母大小写
+ */
+export function firstUpperCase(str) {
+  return str.toLowerCase().replace(/( |^)[a-z]/g, (char) => char.toUpperCase());
+}
+
+/**
  * 组件样式大小
  */
 export const componentSize = {
@@ -37,4 +44,6 @@ export const componentSize = {
 export const componentStatus = {
   loading: `${classPrefix}-is-loading`,
   disabled: `${classPrefix}-is-disabled`,
+  active: `${classPrefix}-is-active`,
+  checked: `${classPrefix}-is-checked`,
 }

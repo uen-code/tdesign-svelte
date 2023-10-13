@@ -1,7 +1,7 @@
 {
   "name": "tdesign-svelte",
   "title": "tdesign-svelte",
-  "version": "0.0.0-dev.2",
+  "version": "0.0.1-dev.1",
   "type": "module",
   "main": "components/index.js",
   "files": [
@@ -17,7 +17,10 @@
     "web component"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "dev": "cd site && vite dev",
+    "site": "cd site && vite build",
+    "site:preview": "cd site && vite preview"
   },
   "devDependencies": {
     "less": "^4.2.0",
@@ -25,6 +28,11 @@
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-multi-input": "^1.4.1",
     "rollup-plugin-styles": "^4.0.0",
-    "svelte": "^4.2.0"
+    "@fontsource/fira-mono": "^4.5.10",
+    "@neoconfetti/svelte": "^1.0.0",
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.20.4",
+    "svelte": "^4.0.5",
+    "vite": "^4.4.2"
   }
 }
