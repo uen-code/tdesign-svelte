@@ -20,7 +20,7 @@
     "init": "git submodule init && git submodule update",
     "start": "npm run init && npm run dev",
     "build": "rollup -c",
-    "dev": "cd site && vite dev",
+    "dev": "cd site && vite",
     "site": "cd site && vite build",
     "site:preview": "cd site && vite preview"
   },
@@ -30,11 +30,8 @@
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-multi-input": "^1.4.1",
     "rollup-plugin-styles": "^4.0.0",
-    "@fontsource/fira-mono": "^4.5.10",
-    "@neoconfetti/svelte": "^1.0.0",
-    "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.20.4",
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "svelte": "^4.0.5",
-    "vite": "^4.4.2"
+    "vite": "^4.4.5"
   }
 }
