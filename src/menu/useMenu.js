@@ -1,0 +1,1 @@
+export const SUB_MENU_ID = 'subMenu'

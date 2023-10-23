@@ -1,7 +1,7 @@
 <script>
   import {getClassString, usePrefixClass} from "../common.js";
 
-  import './style/index.css'
+  import './style/css'
 
   const COMPONENT_NAME = usePrefixClass('layout')
 

@@ -1,18 +1,19 @@
 <script>
 
-  import {componentSize, componentStatus, getClassString, usePrefixClass} from "../common.js";
+  import {SIZE, STATUS, getClassString, usePrefixClass} from "../common.js";
   import isString from "../utils/lodash/isString.js";
   import isArray from "../utils/lodash/isArray.js";
-  import Loading from "../../components/loading/Loading.svelte";
+  import Loading from "../loading/Loading.svelte";
+  import {SIZE_ENUM} from "../config.js";
 
-  const componentName = usePrefixClass('switch');
+  const COMPONENT_NAME = usePrefixClass('switch');
 
-  import './style/index.css'
+  import './style/css'
 
   /** 是否禁用 */
   export let disabled = false
   /** 大小 */
-  export let size = 'medium'
+  export let size = SIZE_ENUM.medium
   /** 开关内容，[开启时内容，关闭时内容]。 */
   export let label = undefined
   /** 是否loading */
@@ -39,31 +40,31 @@
   }
 
   // class
-  $: switchClasses = {
-    [`${componentName}`]: true,
-    [componentSize[size]]: true,
-    [componentStatus.disabled]: disabled,
-    [componentStatus.loading]: loading,
-    [componentStatus.checked]: active,
+  $: switchClass = {
+    [`${COMPONENT_NAME}`]: true,
+    [SIZE[size]]: true,
+    [STATUS.disabled]: disabled,
+    [STATUS.loading]: loading,
+    [STATUS.checked]: active,
   }
-  $: nodeClasses = {
-    [`${componentName}__handle`]: true,
-    [componentStatus.disabled]: disabled,
-    [componentStatus.loading]: loading,
+  $: nodeClass = {
+    [`${COMPONENT_NAME}__handle`]: true,
+    [STATUS.disabled]: disabled,
+    [STATUS.loading]: loading,
   }
-  $: contentClasses = {
-    [`${componentName}__content`]: true,
-    [componentSize[size]]: true,
-    [componentStatus.disabled]: disabled,
+  $: contentClass = {
+    [`${COMPONENT_NAME}__content`]: true,
+    [SIZE[size]]: true,
+    [STATUS.disabled]: disabled,
   }
 </script>
-<div class={getClassString(switchClasses)} {disabled} on:click={handleToggle}>
-  <span class={getClassString(nodeClasses)}>
+<div class={getClassString(switchClass)} {disabled} on:click={handleToggle}>
+  <span class={getClassString(nodeClass)}>
     {#if loading}
       <Loading size="small"/>
     {/if}
   </span>
-  <div class={getClassString(contentClasses)}>
+  <div class={getClassString(contentClass)}>
     {#if !Loading}
       {content}
     {/if}

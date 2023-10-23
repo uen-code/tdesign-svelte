@@ -25,14 +25,18 @@
     "site:preview": "cd site && vite preview"
   },
   "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "less": "^4.2.0",
     "rollup": "^2.79.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-multi-input": "^1.4.1",
     "rollup-plugin-styles": "^4.0.0",
-    "@sveltejs/vite-plugin-svelte": "^2.4.2",
-    "tdesign-site-components": "^0.13.14",
     "svelte": "^4.0.5",
+    "svelte-routing": "^2.5.0",
+    "tdesign-site-components": "^0.13.14",
     "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.5.3"
   }
 }

@@ -20,7 +20,6 @@ export default {
       // 容器大于选项，则设置第一个 nav-item 和容器左边相连
       return 0;
     }
-
     // 一般发生在 window.resize，容器变大，此时设置最后一个 nav-item 和容器右边相连
     if (scrollLeft + containerWidth - rightOperationsZoneWidth > wrapWidth) {
       return wrapWidth + rightOperationsZoneWidth - containerWidth;
@@ -37,6 +36,7 @@ export default {
    * @returns boolean
    */
   calculateCanToLeft(depElement, scrollLeft, placement) {
+    console.log("left",depElement)
     if (['left', 'right'].includes(placement.toLowerCase())) {
       return false;
     }

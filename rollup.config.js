@@ -1,9 +1,10 @@
 import multiInput from "rollup-plugin-multi-input";
 import styles from 'rollup-plugin-styles'
 import copy from "rollup-plugin-copy";
+import clean from "./scripts/build-clean.js";
 
-export default {
-  // use glob in the input
+// components copy
+const components = {
   input: ['src/**/style/index.js'],
   plugins: [
     multiInput(),
@@ -11,10 +12,26 @@ export default {
     copy({
       targets: [{ src: 'src/*', dest: 'components/' }],
       copyOnce: true
-    })
+    }),
+    clean()
   ],
   output: {
     dir: 'components/',
     assetFileNames: '[name].css',
   },
-};
+}
+
+
+// root style
+const rootStyle = {
+  input: 'src/style/index.js',
+  plugins: [
+    styles({mode: 'extract'}),
+  ],
+  output: {
+    dir: 'components/style/',
+    assetFileNames: '[name].css',
+  },
+}
+
+export default [components, rootStyle]

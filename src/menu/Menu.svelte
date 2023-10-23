@@ -2,13 +2,16 @@
   import {setContext} from 'svelte';
   import {getClassString, usePrefixClass} from "../common.js";
 
-  import './style/index.css'
-  import {menuItemValue, menuValue} from "../store.js";
+  import './style/css'
+  import {menuExpand, menuValue} from "../store.js";
+  import isArray from "../utils/lodash/isArray.js";
+  import {get} from "svelte/store";
 
-  const componentName = usePrefixClass()
+  const COMPONENT_NAME = usePrefixClass()
 
-  export let expandMutex = false
-  export let expandType = 'normal'
+  /** 子菜单展开的导航集合 */
+  export let expanded = []
+  /** 激活菜单项 */
   export let value = undefined
   /** 是否收起菜单  */
   export let collapsed = false
@@ -19,24 +22,39 @@
   /** 是否为横向头部菜单 */
   export let isHead = false
 
-  /** value 下放 */
-  setContext('menuRawValue', value)
-
-  menuItemValue.subscribe(childValue => {
-    if (childValue) {
-      value = childValue;
-      menuValue.set(value);
+  // 控制展开的导航集合
+  const setExpand = (val) => {
+    expanded = get(menuExpand)
+    let expandedValues = new Set(isArray(expanded) ? expanded : [])
+    if (expandedValues.has(val)) {
+      expandedValues.delete(val);
+      menuExpand.set([...expandedValues])
+      return [...expandedValues];
     }
-  });
+    expandedValues.add(val);
+    menuExpand.set([...expandedValues])
+    return [...expandedValues]
+  }
+  setContext('open', setExpand)
+  setContext('menuExpand', menuExpand)
 
+  // 控制激活的菜单
+  const setValue = (val) => {
+    if (val) value = val;
+    menuValue.set(value)
+  }
+  setContext('select', setValue)
+  setContext("menuValue", menuValue)
+
+  // class
   const menuClass = {
-    [`${componentName}-default-menu`]: true,
-    [`${componentName}-menu--${theme}`]: true,
-    [`${componentName}-is-collapsed`]: collapsed
+    [`${COMPONENT_NAME}-default-menu`]: true,
+    [`${COMPONENT_NAME}-menu--${theme}`]: true,
+    [`${COMPONENT_NAME}-is-collapsed`]: collapsed
   }
   const innerClass = {
-    [`${componentName}-menu`]: true,
-    [`${componentName}-menu--scroll`]: true,
+    [`${COMPONENT_NAME}-menu`]: true,
+    [`${COMPONENT_NAME}-menu--scroll`]: true,
   }
   const activeWidth = width && Array.isArray(width) ? width : [`${width}px`, '64px']
   const styles = {
@@ -46,14 +64,14 @@
 </script>
 
 <div class='{getClassString(menuClass)}' style="{getClassString(innerClass)}">
-  <div class={`${componentName}-default-menu__inner`}>
-    <div class={`${componentName}-menu__logo`}>
+  <div class={`${COMPONENT_NAME}-default-menu__inner`}>
+    <div class={`${COMPONENT_NAME}-menu__logo`}>
       <slot name="logo"></slot>
     </div>
     <ul class="{getClassString(innerClass)}">
       <slot></slot>
     </ul>
-    <div class={`${componentName}-menu__operations`}>
+    <div class={`${COMPONENT_NAME}-menu__operations`}>
       <slot name="operations"></slot>
     </div>
   </div>

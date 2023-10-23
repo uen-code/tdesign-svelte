@@ -6,7 +6,7 @@ export const classPrefix = 't'
 /**
  * 组件大小
  */
-export const sizeEnum = {
+export const SIZE_ENUM = {
   small: 'small',
   medium: 'medium',
   large: 'large',
@@ -15,7 +15,7 @@ export const sizeEnum = {
 /**
  * 组件主题
  */
-export const themeEnum = {
+export const THEME_ENUM = {
   default: 'default',
   primary: 'primary',
   danger: 'danger',

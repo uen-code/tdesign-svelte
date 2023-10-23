@@ -11,5 +11,10 @@
     "skipLibCheck": true,
     "checkJs": true
   },
-  "include": ["./**/*.js", "./**/*.svelte"]
+  "include": ["./**/*.js", "./**/*.svelte"],
+  "exclude": [
+    "node_modules",
+    "src/_common",
+    "components"
+  ]
 }

@@ -1,10 +1,10 @@
 <script>
-  import {componentStatus, getClassString, usePrefixClass} from "../common.js";
+  import {STATUS, getClassString, usePrefixClass} from "../common.js";
 
-  import './style/index.css'
+  import './style/css'
 
-  const componentBtnName = usePrefixClass('radio-button');
-  const componentName = usePrefixClass('radio');
+  const COMPONENT_NAME = usePrefixClass('radio');
+  const COMPONENT_BTN_NAME = usePrefixClass('radio-button');
 
   /** 是否禁用状态 */
   export let disabled = false
@@ -17,11 +17,11 @@
   }
 
   // class
-  $: prefixClass = componentName
+  $: prefixClass = COMPONENT_NAME
   $: inputClass = {
     [`${prefixClass}`]: true,
-    [componentStatus.checked]: checked,
-    [componentStatus.disabled]: disabled,
+    [STATUS.checked]: checked,
+    [STATUS.disabled]: disabled,
   }
 </script>
 

@@ -1,23 +1,23 @@
 <script>
-  import {componentSize, componentStatus, getClassString, usePrefixClass} from "../common.js";
-  import {sizeEnum, themeEnum} from "../config.js";
+  import {SIZE, STATUS, getClassString, usePrefixClass} from "../common.js";
+  import {SIZE_ENUM, THEME_ENUM} from "../config.js";
 
-  import './style/index.css'
+  import './style/css'
 
   const COMPONENT_NAME = usePrefixClass('link')
 
   /*** color、underline */
   export let hover = 'underline'
-  export let theme = themeEnum.primary
-  export let size = sizeEnum.medium
+  export let theme = THEME_ENUM.default
+  export let size = SIZE_ENUM.medium
   export let isDisabled = false
   export let underline = false
 
-  const linkClass = {
+  $: linkClass = {
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--theme-${theme}`]: true,
-    [componentSize[size]]: size !== 'medium',
-    [componentStatus.disabled]: isDisabled,
+    [SIZE[size]]: size !== 'medium',
+    [STATUS.disabled]: isDisabled,
     [`${COMPONENT_NAME}-is-underline`]: underline,
     [`${COMPONENT_NAME}--hover-${hover}`]: !isDisabled,
   }

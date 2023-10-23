@@ -1,9 +1,8 @@
-import { writable } from 'svelte/store';
+import {writable} from 'svelte/store';
 
 /** menu */
-export const menuItemValue = writable(undefined);
 export const menuValue = writable(undefined);
+export const menuExpand = writable([])
 
 /** tabs */
 export const tabValue = writable(undefined);
-export const tabPanelProps = writable([]);

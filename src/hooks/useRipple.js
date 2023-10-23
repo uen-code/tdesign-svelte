@@ -1,5 +1,4 @@
 import {usePrefixClass} from "../common.js";
-import {onDestroy, onMount} from "svelte";
 
 const period = 200
 const noneRippleBg = 'rgba(0, 0, 0, 0)';

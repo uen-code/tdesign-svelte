@@ -2,15 +2,15 @@
   /** 统一使用的翻转箭头组件 */
   import {getClassString, usePrefixClass} from "../../common.js";
 
-  const componentName = usePrefixClass('fake-arrow')
+  const COMPONENT_NAME = usePrefixClass('fake-arrow')
 
   export let isActive = undefined
   export let overlayClassName = undefined
   export let overlayStyle = undefined
 
-  const arrowClass = {
-    [componentName]: true,
-    [`${componentName}--active`]: isActive,
+  $: arrowClass = {
+    [COMPONENT_NAME]: true,
+    [`${COMPONENT_NAME}--active`]: isActive,
     [overlayClassName]: overlayClassName
   }
 </script>

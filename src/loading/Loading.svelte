@@ -1,15 +1,16 @@
 <script>
 
-  import {componentSize, getClassString, usePrefixClass} from "../common.js";
+  import {SIZE, getClassString, usePrefixClass} from "../common.js";
   import GradientIcon from "./icon/GradientIcon.svelte";
 
-  import './style/index.css'
+  import './style/css'
+  import {SIZE_ENUM} from "../config.js";
 
   // 获取样式并解构
   const classPrefix = usePrefixClass();
   const useComponentClassName = () => {
     return {
-      componentName: usePrefixClass('loading'),
+      COMPONENT_NAME: usePrefixClass('loading'),
       centerClass: usePrefixClass('loading--center'),
       fullscreenClass: usePrefixClass('loading__fullscreen'),
       lockClass: usePrefixClass('loading--lock'),
@@ -20,7 +21,7 @@
     };
   };
   const {
-    componentName,
+    COMPONENT_NAME,
     centerClass,
     fullscreenClass,
     lockClass,
@@ -32,19 +33,19 @@
     useComponentClassName();
 
   /** 尺寸 */
-  export let size = 'medium'
+  export let size = SIZE_ENUM.medium
   /** 加载提示文案 */
   export let text = undefined
 
   // classes
   $: baseClasses = {
     [centerClass]: true,
-    [componentSize[size]]: true,
+    [SIZE[size]]: true,
   }
-  $: fullScreenClasses = `${componentName} ${fullscreenClass} ${centerClass} ${overlayClass}`
-  $: attachClasses = `${getClassString(baseClasses)} ${componentName} ${fullClass}`
-  $: withContentClasses = `${getClassString(baseClasses)} ${componentName} ${fullClass}`
-  $: normalClasses = `${getClassString(baseClasses)} ${componentName}`
+  $: fullScreenClasses = `${COMPONENT_NAME} ${fullscreenClass} ${centerClass} ${overlayClass}`
+  $: attachClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME} ${fullClass}`
+  $: withContentClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME} ${fullClass}`
+  $: normalClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME}`
 </script>
 <div class={normalClasses}>
   <GradientIcon />

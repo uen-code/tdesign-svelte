@@ -1,17 +1,33 @@
 <script>
-  import {componentSize, getClassString, usePrefixClass} from "../common.js";
-  import {sizeEnum} from "../config.js";
+  import {SIZE, getClassString, usePrefixClass} from "../common.js";
+  import {SIZE_ENUM} from "../config.js";
   import tabBase from "./js/base.js"
-
   import ChevronLeft from "../common-components/icon/ChevronLeftIcon.svelte";
   import ChevronRight from "../common-components/icon/ChevronRightIcon.svelte";
   import TabNavBar from "./TabNavBar.svelte";
   import TabNavItem from "./TabNavItem.svelte";
+  import {
+    TAB_NAV_ITEM_ID,
+    TAB_ATTRIBUTE_LABEL,
+    TAB_ATTRIBUTE_VALUE,
+  } from "./useTabs.js";
+  import {getContext, onMount} from "svelte";
+  import {filterChildNodes, getActiveNode, getAttribute} from "../utils/domOperations.js";
+
+  const COMPONENT_NAME = usePrefixClass('tabs');
+  const classPrefix = usePrefixClass();
 
   const {calculateCanToLeft, calculateCanToRight, calcScrollLeft, scrollToLeft, scrollToRight, moveActiveTabIntoView} =
     tabBase;
-  const componentName = usePrefixClass('tabs');
-  const classPrefix = usePrefixClass();
+
+  const tabValue = getContext('tabValue')
+
+  let navs = [];
+  onMount(() => {
+    getNodes();
+    totalAdjust();
+    navs = filterChildNodes(navsWrapNode, TAB_NAV_ITEM_ID)
+  })
 
   /** 选项卡数据 */
   export let panels = []
@@ -21,110 +37,126 @@
   export let value = undefined
   /** 选项卡位置 */
   export let placement = 'top'
-  export let size = 'medium'
+  export let size = SIZE_ENUM.medium
   export let disabled = false
 
   let scrollLeft = 0;
   let canToLeft = false;
   let canToRight = false;
 
-  // els
-  let navsContainerEl;
-  let navsWrapEl;
-  let leftOperationsEl;
-  let toLeftBtnEl;
-  let rightOperationsEl;
-  let toRightBtnEl;
-  let activeTabEl;
-  const getEls = () => ({
-    navsContainer: navsContainerEl,
-    navsWrap: navsWrapEl,
-    leftOperations: leftOperationsEl,
-    toLeftBtn: toLeftBtnEl,
-    rightOperations: rightOperationsEl,
-    toRightBtn: toRightBtnEl,
+  // nodes
+  let navsContainerNode;
+  let navsWrapNode;
+  let leftOperationsNode;
+  let toLeftBtnNode;
+  let rightOperationsNode;
+  let toRightBtnNode;
+  let activeTabNode;
+  const getNodes = () => ({
+    navsContainer: navsContainerNode,
+    navsWrap: navsWrapNode,
+    leftOperations: leftOperationsNode,
+    toLeftBtn: toLeftBtnNode,
+    rightOperations: rightOperationsNode,
+    toRightBtn: toRightBtnNode,
   });
-
-  // style
-  $: wrapTransformStyle = () => {
-    if (['left', 'right'].includes(placement.toLowerCase())) return {};
-    return {
-      transform: `translate3d(${-scrollLeft.value}px, 0, 0)`,
-    };
-  }
-
-  // class
-  $: iconBaseClass = {
-    [`${componentName}__btn`]: true,
-    [componentSize.medium]: size === 'medium',
-    [componentSize.large]: size === 'large',
-  }
-  $: leftIconClass = {
-    [`${componentName}__btn--left`]: true,
-    ...iconBaseClass,
-  }
-  $: rightIconClass = {
-    [`${componentName}__btn--right`]: true,
-    ...iconBaseClass.value,
-  }
-  $: navContainerClass = {
-    [`${componentName}__nav-container`]: true,
-    [`${componentName}__nav--card`]: theme === 'card',
-    [`${classPrefix}-is-${placement}`]: true,
-    // [`${classPrefix}-is-addable`]: addable,
-  }
-  $: navScrollContainerClass = {
-    [`${componentName}__nav-scroll`]: true,
-    [`${classPrefix}-is-scrollable`]: canToLeft || canToRight,
-  }
-  $: navsWrapClass = {
-    [`${componentName}__nav-wrap`]: true,
-    [`${classPrefix}-is-smooth`]: true,
-    [`${classPrefix}-is-vertical`]: placement === 'left' || placement === 'right'
-  }
 
   // 计算滚动值
   const totalAdjust = () => {
     adjustArrowDisplay();
     adjustScrollLeft();
   };
-  $: {
-    totalAdjust();
-  }
   const adjustScrollLeft = () => {
-    scrollLeft = calcScrollLeft(getEls(), scrollLeft);
+    scrollLeft = calcScrollLeft(getNodes(), scrollLeft);
   };
   const adjustArrowDisplay = () => {
-    canToLeft = calculateCanToLeft(getEls(), scrollLeft, placement);
-    canToRight = calculateCanToRight(getEls(), scrollLeft, placement);
+    canToLeft = calculateCanToLeft(getNodes(), scrollLeft, placement);
+    canToRight = calculateCanToRight(getNodes(), scrollLeft, placement);
   };
   const handleScroll = (direction) => {
     if (direction === 'left') {
-      scrollLeft.value = scrollToLeft(getEls(), scrollLeft.value);
+      scrollLeft = scrollToLeft(getNodes(), scrollLeft);
     } else {
-      scrollLeft.value = scrollToRight(getEls(), scrollLeft.value);
+      scrollLeft = scrollToRight(getNodes(), scrollLeft);
     }
   };
+  const setActiveTab = (el) => {
+    const tabNavItemValue = el?.getAttribute(TAB_ATTRIBUTE_VALUE)
+    const activeTabNavItemValue = activeTabNode?.getAttribute(TAB_ATTRIBUTE_VALUE)
+    if (tabNavItemValue === value && tabNavItemValue !== activeTabNavItemValue) {
+      activeTabNode = el
+      scrollLeft = moveActiveTabIntoView(
+        {
+          activeTab: activeTabNode,
+          ...getNodes()
+        },
+        scrollLeft,
+      );
+    }
+  }
+
+  // sub tabValue
+  tabValue.subscribe((val) => {
+    if (val) value = val
+    if (navs.length>0){
+      totalAdjust()
+      setActiveTab(getActiveNode(navs, TAB_ATTRIBUTE_VALUE, value));
+    }
+  })
+
+  // style
+  $: wrapTransformStyle = ['left', 'right'].includes(placement.toLowerCase())
+    ? '' : `transform: translate3d(${-scrollLeft}px, 0px, 0px)`
+
+  // class
+  $: iconBaseClass = {
+    [`${COMPONENT_NAME}__btn`]: true,
+    [SIZE.medium]: size === 'medium',
+    [SIZE.large]: size === 'large',
+  }
+  $: leftIconClass = {
+    [`${COMPONENT_NAME}__btn--left`]: true,
+    ...iconBaseClass,
+  }
+  $: rightIconClass = {
+    [`${COMPONENT_NAME}__btn--right`]: true,
+    ...iconBaseClass,
+  }
+  $: navContainerClass = {
+    [`${COMPONENT_NAME}__nav-container`]: true,
+    [`${COMPONENT_NAME}__nav--card`]: theme === 'card',
+    [`${classPrefix}-is-${placement}`]: true,
+    // [`${classPrefix}-is-addable`]: addable,
+  }
+  $: navScrollContainerClass = {
+    [`${COMPONENT_NAME}__nav-scroll`]: true,
+    [`${classPrefix}-is-scrollable`]: canToLeft || canToRight,
+  }
+  $: navsWrapClass = {
+    [`${COMPONENT_NAME}__nav-wrap`]: true,
+    [`${classPrefix}-is-smooth`]: true,
+    [`${classPrefix}-is-vertical`]: placement === 'left' || placement === 'right'
+  }
 </script>
-<div bind:this={navsContainerEl} class={`${componentName}__nav`}>
+<div bind:this={navsContainerNode} class={`${COMPONENT_NAME}__nav`}>
   <!-- left nav -->
   <div
-    bind:this={leftOperationsEl}
-    class="{`${componentName}__operations`} {`${componentName}__operations--left`}"
+    bind:this={leftOperationsNode}
+    class="{`${COMPONENT_NAME}__operations`} {`${COMPONENT_NAME}__operations--left`}"
   >
     {#if canToLeft}
-      <div bind:this={toLeftBtnEl} class={getClassString(leftIconClass)} on:click={()=>handleScroll('left')}>
+      <div bind:this={toLeftBtnNode} class={getClassString(leftIconClass)} on:click={handleScroll('left')}>
         <ChevronLeft/>
       </div>
     {/if}
   </div>
   <!-- right nav -->
   <div
-    bind:this={rightOperationsEl}
-    class="{`${componentName}__operations`} {`${componentName}__operations--right`}"
+    bind:this={rightOperationsNode}
+    class="{`${COMPONENT_NAME}__operations`} {`${COMPONENT_NAME}__operations--right`}"
   >
     {#if canToRight}
-      <div bind:this={toRightBtnEl} class={getClassString(rightIconClass)} onClick={() => handleScroll('right')}>
+      <div bind:this={toRightBtnNode} class={getClassString(rightIconClass)} on:click={handleScroll('right')}>
         <ChevronRight/>
       </div>
     {/if}
@@ -133,19 +165,19 @@
   <!-- bar and item -->
   <div class={getClassString(navContainerClass)}>
     <div class={getClassString(navScrollContainerClass)}>
-      <div bind:this={navsWrapEl} class={getClassString(navsWrapClass)} style={wrapTransformStyle}>
-        {#if theme !== 'card'}
-          <TabNavBar placement={placement} value={value} navs={panels}></TabNavBar>
+      <div bind:this={navsWrapNode} class={getClassString(navsWrapClass)} style={wrapTransformStyle}>
+        {#if theme !== 'card' && navs.length > 0}
+          <TabNavBar placement={placement} {value} {navs}></TabNavBar>
         {/if}
-        {#each panels as item, index}
+        {#each panels as panel, index}
           <TabNavItem
             theme={theme}
             size={size}
             placement={placement}
-            label={item.props.label}
-            active={item.props.value === value}
-            disabled={disabled || item.disabled}
-            value={value}
+            label={getAttribute(panel,TAB_ATTRIBUTE_LABEL)}
+            active={getAttribute(panel,TAB_ATTRIBUTE_VALUE) === value}
+            disabled={disabled || panel.disabled}
+            value={getAttribute(panel,TAB_ATTRIBUTE_VALUE)}
           />
         {/each}
       </div>

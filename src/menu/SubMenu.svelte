@@ -1,14 +1,27 @@
 <script>
   import {getClassString, usePrefixClass} from "../common.js";
   import FakeArrow from "../common-components/icon/FakeArrow.svelte";
+  import { slide } from 'svelte/transition';
+  import {SUB_MENU_ID} from "./useMenu.js";
 
-  import './style/index.css'
+  import './style/css'
+  import {getContext, onMount} from "svelte";
+  import useRipple from "../hooks/useRipple.js";
 
-  const componentName = usePrefixClass()
-  const transitionClass = usePrefixClass('slide-down');
+  const classPrefix = usePrefixClass()
+  const TRANSITION_CLASS = usePrefixClass('slide-down');
 
-  /** 接收父组件属性 */
-  export let expandType = undefined
+  let subNode;
+  let node;
+  onMount(() => {
+    useRipple(subNode)
+    calculateLeft(node)
+  })
+
+  /** 子菜单展开的导航集合 */
+  const open = getContext('open')
+  const menuExpand = getContext('menuExpand')
+
   export let isHead = false
   export let activeValue = undefined
 
@@ -21,42 +34,64 @@
   /** 菜单内容 */
   export let title = undefined
 
-  const paddingLeft = '60'
+  let isOpen = false
 
-  const submenuClass = {
-    [`${componentName}-menu__item`]: true,
-    [`${componentName}-menu__item-spacer`]: true,
-    [`${componentName}-menu__item-spacer--${isHead ? 'bottom' : 'right'}`]: true,
-
-    [`${componentName}-is-disabled`]: disabled,
-    [`${componentName}-is-opened`]: true,
-    [`${componentName}-is-active`]: activeValue === value,
+  function handleClick() {
+    open(value)
   }
 
-  const subClass = {
-    [`${componentName}-menu__sub`]: true,
-    [`${componentName}-is-opened`]: true,
+  menuExpand.subscribe(expandValues => {
+    isOpen = expandValues && expandValues.includes(value);
+  })
+
+  let paddingLeft = 44
+
+  // 计算left
+  function calculateLeft(el) {
+    // 检查是否有父节点
+    const parentElement = el.parentNode
+    if (parentElement && parentElement.id === SUB_MENU_ID) {
+      paddingLeft += 16
+    }
   }
 
-  const arrowClass = {
-    [`${componentName}-fake-arrow--active`]: true,
+  // class
+  $: submenuClass = {
+    [`${classPrefix}-menu__item`]: true,
+    [`${classPrefix}-menu__item-spacer`]: true,
+    [`${classPrefix}-menu__item-spacer--${isHead ? 'bottom' : 'right'}`]: true,
+    [`${classPrefix}-is-disabled`]: disabled,
+    [`${classPrefix}-is-opened`]: isOpen,
+    [`${classPrefix}-is-active`]: activeValue === value,
   }
-
+  $: subClass = {
+    [`${classPrefix}-menu__sub`]: true,
+    [`${classPrefix}-is-opened`]: isOpen,
+  }
+  $: arrowClass = {
+    [`${classPrefix}-fake-arrow--active`]: isOpen,
+  }
 </script>
 
-<div class={getClassString(submenuClass)}>
+<div class={getClassString(submenuClass)} on:click={handleClick} bind:this={subNode}>
   <slot name="icon"></slot>
   {#if title}
-    <span class={`${componentName}-menu__content`}>{title}</span>
+    <span class={`${classPrefix}-menu__content`}>{title}</span>
   {/if}
   {#if $$slots.default}
     <FakeArrow
       overlayClassName={getClassString(arrowClass)}
-      overlayStyle={{transform: `rotate(0deg)`}}
+      overlayStyle={`transform: rotate(0deg)`}
     />
   {/if}
 </div>
 
-<ul class={getClassString(subClass)} style={{ '--padding-left': `${paddingLeft}px` }}>
-  <slot></slot>
-</ul>
+<div bind:this={node} >
+  {#if isOpen}
+    <ul in:slide="{{duration: 300}}" out:slide={{duration: 200}} id="{SUB_MENU_ID}"
+        class={getClassString(subClass)}
+        style={`--padding-left: ${paddingLeft}px`}>
+      <slot></slot>
+    </ul>
+  {/if}
+</div>

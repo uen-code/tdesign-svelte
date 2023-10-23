@@ -2,21 +2,18 @@
   import {createEventDispatcher, getContext, onMount} from "svelte";
   import {getClassString, usePrefixClass} from "../common.js";
   import useRipple from "../hooks/useRipple.js";
-  import {menuItemValue, menuValue} from "../store.js";
 
-  import './style/index.css'
+  import './style/css'
 
 
   const dispatch = createEventDispatcher()
-  const componentName = usePrefixClass()
+  const classPrefix = usePrefixClass()
 
-  /** 父组件value */
-  let menuRawValue = getContext('menuRawValue')
-  let el;
+  let node;
 
   /** 添加一个过度动画 */
   onMount(() => {
-    useRipple(el)
+    useRipple(node)
   })
 
   /** 是否禁用菜单项展开/收起/跳转等功能 */
@@ -27,31 +24,31 @@
   export let icon = undefined
   export let theme = 'light'
 
+  // 菜单激活
+  let active = false
+  const setSelect = getContext('select')
+  const menuValue = getContext('menuValue')
+  menuValue.subscribe(item => {
+    active = item === value
+  })
 
   function handleClick(event) {
-    menuItemValue.set(value);
+    setSelect(value)
     dispatch('click', event)
   }
 
-  /** menu value 与 menu-item value强一致性 */
-  menuValue.subscribe(item => {
-    menuRawValue = item
-  })
-
-  $: active = menuRawValue === value;
-
   const menuItemClass = {
-    [`${componentName}-menu__item`]: true,
-    [`${componentName}-is-disabled`]: disabled,
-    [`${componentName}-menu__item--plain`]: icon,
-    // [`${componentName}-submenu__item`]: !!submenu && !menu.isHead,
+    [`${classPrefix}-menu__item`]: true,
+    [`${classPrefix}-is-disabled`]: disabled,
+    [`${classPrefix}-menu__item--plain`]: icon,
+    // [`${classPrefix}-submenu__item`]: !!submenu && !menu.isHead,
   }
 </script>
 
-<li class="{getClassString(menuItemClass)} {active ? `${componentName}-is-active` : ''}" bind:this={el}
+<li class="{getClassString(menuItemClass)} {active ? `${classPrefix}-is-active` : ''}" bind:this={node}
     on:click={handleClick}>
   <slot name="logo"></slot>
-  <span class={`${componentName}-menu__content`}>
+  <span class={`${classPrefix}-menu__content`}>
     <slot></slot>
   </span>
 </li>

@@ -1,22 +1,20 @@
 <script>
-  import {createEventDispatcher} from 'svelte';
-  import {usePrefixClass, componentSize, componentStatus, getClassString} from '../common'
-  import {sizeEnum, themeEnum} from '../config'
+  import {usePrefixClass, SIZE, STATUS, getClassString} from '../common'
+  import {SIZE_ENUM, THEME_ENUM} from '../config'
+  import {onMount} from "svelte";
   import useRipple from "../hooks/useRipple";
 
-  import './style/index.css'
+  import './style/index.js'
 
+  let node;
+  onMount(()=>{
+    useRipple(node)
+  })
 
-  const dispatch = createEventDispatcher()
   const COMPONENT_NAME = usePrefixClass('button')
 
-  function handleButtonClick(event) {
-    useRipple(event.currentTarget)
-    dispatch('click', event)
-  }
-
-  export let theme = themeEnum.primary
-  export let size = sizeEnum.medium
+  export let theme = THEME_ENUM.default
+  export let size = SIZE_ENUM.medium
   export let variant = 'base'
   export let isDisabled = false
 
@@ -24,12 +22,12 @@
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--variant-${variant}`]: true,
     [`${COMPONENT_NAME}--theme-${theme}`]: true,
-    [componentSize[size]]: size !== 'medium',
-    [componentStatus.disabled]: isDisabled
+    [SIZE[size]]: size !== 'medium',
+    [STATUS.disabled]: isDisabled
   }
 </script>
 
-<button class={getClassString(buttonClass)} on:click={handleButtonClick} type="button">
+<button class={getClassString(buttonClass)} bind:this={node} type="button">
   <span class={`${COMPONENT_NAME}__text`}>
     <slot>
       <em>确定</em>

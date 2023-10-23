@@ -41,7 +41,7 @@ packageJSON.scripts = Object.assign(packageJSON.scripts, {
 // Write the package JSON
 fs.writeFileSync(path.join(projectRoot, "package.json"), JSON.stringify(packageJSON, null, "  "))
 
-// mv src/main.js to main.ts - note, we need to edit rollup.config.js for this too
+// mv src/main.js to main.ts - note, we need to edit rollup.config.json for this too
 const beforeMainJSPath = path.join(projectRoot, "src", "main.js")
 const afterMainTSPath = path.join(projectRoot, "src", "main.ts")
 fs.renameSync(beforeMainJSPath, afterMainTSPath)
@@ -54,7 +54,7 @@ appFile = appFile.replace("export let name;", 'export let name: string;')
 fs.writeFileSync(appSveltePath, appFile)
 
 // Edit rollup config
-const rollupConfigPath = path.join(projectRoot, "rollup.config.js")
+const rollupConfigPath = path.join(projectRoot, "rollup.config.json")
 let rollupConfig = fs.readFileSync(rollupConfigPath, "utf8")
 
 // Edit imports
@@ -78,7 +78,7 @@ rollupConfig = rollupConfig.replace(
 );
 fs.writeFileSync(rollupConfigPath, rollupConfig)
 
-// Add svelte.config.js
+// Add svelte.config.json
 const tsconfig = `{
   "extends": "@tsconfig/svelte/tsconfig.json",
 
@@ -95,7 +95,7 @@ export default {
   preprocess: sveltePreprocess()
 };
 `
-const svelteConfigPath =  path.join(projectRoot, "svelte.config.js")
+const svelteConfigPath =  path.join(projectRoot, "svelte.config.json")
 fs.writeFileSync(svelteConfigPath, svelteConfig)
 
 // Add global.d.ts

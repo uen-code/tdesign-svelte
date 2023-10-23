@@ -1,11 +1,11 @@
-import { classPrefix } from './config'
+import {classPrefix} from './config'
 
 
 /**
  * 获取样式前缀
  */
-export function usePrefixClass(componentName) {
-    return componentName ? `${classPrefix}-${componentName}` : classPrefix;
+export function usePrefixClass(COMPONENT_NAME) {
+  return COMPONENT_NAME ? `${classPrefix}-${COMPONENT_NAME}` : classPrefix;
 }
 
 /**
@@ -31,7 +31,7 @@ export function firstUpperCase(str) {
 /**
  * 组件样式大小
  */
-export const componentSize = {
+export const SIZE = {
   default: '',
   small: `${classPrefix}-size-s`,
   medium: `${classPrefix}-size-m`,
@@ -41,9 +41,10 @@ export const componentSize = {
 /**
  * 组件样式状态
  */
-export const componentStatus = {
+export const STATUS = {
   loading: `${classPrefix}-is-loading`,
   disabled: `${classPrefix}-is-disabled`,
+  focused: `${classPrefix}-is-focused`,
   active: `${classPrefix}-is-active`,
   checked: `${classPrefix}-is-checked`,
 }

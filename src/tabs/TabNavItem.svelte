@@ -1,15 +1,18 @@
 <script>
-  import {onMount} from "svelte";
+  import {getContext, onMount} from "svelte";
   import useRipple from "../hooks/useRipple.js";
-  import {componentSize, componentStatus, getClassString, usePrefixClass} from "../common.js";
+  import {SIZE, STATUS, getClassString, usePrefixClass} from "../common.js";
+  import {TAB_NAV_ITEM_ID} from "./useTabs.js";
 
-  const componentName = usePrefixClass('tabs__nav-item')
+  const COMPONENT_NAME = usePrefixClass('tabs__nav-item')
   const classPrefix = usePrefixClass();
 
-  let el;
+  const setTabValue = getContext('setTabValue')
+
+  let node;
   /** 添加一个过渡动画 */
   onMount(() => {
-    useRipple(el)
+    useRipple(node)
   })
 
   export let active = false
@@ -22,33 +25,33 @@
   /** 唯一标识 */
   export let value = undefined
 
-  let statusClass;
-  let navItemClass;
-  $: {
-    navItemClass = {
-      [componentName]: true,
-      [componentStatus.disabled]: disabled,
-      [componentStatus.active]: active,
-      [`${classPrefix}-is-left`]: placement === 'left',
-      [`${classPrefix}-is-right`]: placement === 'right',
-      [componentSize.medium]: size === 'medium',
-      [componentSize.large]: size === 'large',
-    }
-    statusClass = {
-      [componentStatus.disabled]: disabled,
-      [componentStatus.active]: active,
-    }
+  // handle
+  function handleClick() {
+    setTabValue(value)
+  }
+
+  // class
+  $: navItemClass = {
+    [COMPONENT_NAME]: true,
+    [STATUS.disabled]: disabled,
+    [STATUS.active]: active,
+    [`${classPrefix}-is-left`]: placement === 'left',
+    [`${classPrefix}-is-right`]: placement === 'right',
+    [SIZE.medium]: size === 'medium',
+    [SIZE.large]: size === 'large',
+  }
+  $: statusClass = {
+    [STATUS.disabled]: disabled,
+    [STATUS.active]: active,
   }
 </script>
 
-{#if theme === 'card'}
-  <div class={getClassString(navItemClass)} bind:this={el}>
-    <span class={`${classPrefix}-text-wrapper`}>{label}</span>
-  </div>
-{:else}
-  <div class={getClassString(navItemClass)}>
-    <div class="{`${componentName}-wrapper`} {getClassString(statusClass)}" bind:this={el}>
-      <span class={`${componentName}-text-wrapper`}>{label}</span>
+<div class={getClassString(navItemClass)} id={TAB_NAV_ITEM_ID} {value} on:click={handleClick}>
+  {#if theme === 'card'}
+    <span bind:this={node} class={`${classPrefix}-text-wrapper`}>{label}</span>
+  {:else}
+    <div bind:this={node} class="{`${COMPONENT_NAME}-wrapper`} {getClassString(statusClass)}">
+      <span class={`${COMPONENT_NAME}-text-wrapper`}>{label}</span>
     </div>
-  </div>
-{/if}
+  {/if}
+</div>

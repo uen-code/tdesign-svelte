@@ -20,14 +20,23 @@ import TTabPanel from "./tabs/TabPanel.svelte";
 import TInput from "./input/Input.svelte"
 import TRadio from "./radio/Radio.svelte"
 import TSwitch from "./switch/Switch.svelte"
+import TTextarea from "./textarea/Textarea.svelte"
 
 // 数据展示
+import TAvatar from "./avatar/Avatar.svelte"
 import TLoading from "./loading/Loading.svelte"
+import TCard from "./card/Card.svelte"
+import TImage from "./image/Image.svelte"
+
+// 消息提醒
+import TPopup from "./popup/Popup.svelte"
+import TMessage from "./message/Message.svelte"
 
 export {
   TButton, TLink,
   TLayout, TAside, TContent, TFooter, THeader,
   TMenu, TSubMenu, TMenuItem, TTabs, TTabPanel,
-  TInput, TRadio, TSwitch,
-  TLoading
+  TInput, TRadio, TSwitch, TTextarea,
+  TAvatar, TImage, TLoading, TCard,
+  TPopup, TMessage
 }
