@@ -63,7 +63,7 @@
             {/each}
           {/if}
           {#if demoChild.url}
-            <TLink theme="primary" size="large" href="https://github.com/hzx000822/tdesign-svelte">查看</TLink>
+            <TLink theme="primary" href="https://github.com/hzx000822/tdesign-svelte">查看</TLink>
           {/if}
           {#if demoChild.code}
             <div class={`language-${demoChild.language}`}>
