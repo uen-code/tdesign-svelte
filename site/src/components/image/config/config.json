@@ -10,7 +10,7 @@
         "value": "image"
       }
     ],
-    "code": ""
+    "code": "<TImage codeReplace src=\"https://tdesign.gtimg.com/demo/demo-image-1.png\" style=\"{`width:120px; height:120px`}\"/>"
   },
   "demo": [
     {

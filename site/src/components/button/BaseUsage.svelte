@@ -14,7 +14,6 @@
     usageNode.addEventListener('ConfigChange', onConfigChange);
   })
 
-  /** 监听prop变化 */
   let changedProps = {}
   let usageCode = codeReplace(baseCode,changedProps)
   function onConfigChange(e) {

@@ -10,7 +10,7 @@
         "value": "tabs"
       }
     ],
-    "code": ""
+    "code": "<TTabs codeReplace value=\"1\">\n      <TTabPanel value=\"1\" label=\"选项卡1\">\n        <p style=\"padding: 25px\">选项卡1</p>\n      </TTabPanel>\n      <TTabPanel value=\"2\" label=\"选项卡2\">\n        <p style=\"padding: 25px\">选项卡2</p>\n      </TTabPanel>\n      <TTabPanel value=\"3\" label=\"选项卡3\">\n        <p style=\"padding: 25px\">选项卡1</p>\n      </TTabPanel>\n    </TTabs>"
   },
   "demo": [
     {

@@ -10,7 +10,7 @@
         "value": "popup"
       }
     ],
-    "code": ""
+    "code": " <TPopup codeReplace content=\"这是一个弹出框\" showArrow trigger=\"click\" placement=\"top\">\n      <TButton variant=\"outline\">触发</TButton>\n    </TPopup>"
   },
   "demo": [
     {

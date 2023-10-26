@@ -69,14 +69,12 @@
   };
   const adjustScrollLeft = () => {
     scrollLeft = calcScrollLeft(getNodes(), scrollLeft);
-    console.log("adjustScrollLeft", scrollLeft)
   };
   const adjustArrowDisplay = () => {
     canToLeft = calculateCanToLeft(getNodes(), scrollLeft, placement);
     canToRight = calculateCanToRight(getNodes(), scrollLeft, placement);
   };
   const handleScroll = (direction) => {
-    console.log("点击事件", direction)
     if (direction === 'left') {
       scrollLeft = scrollToLeft(getNodes(), scrollLeft);
     } else {

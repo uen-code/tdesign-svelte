@@ -10,7 +10,7 @@
         "value": "textarea"
       }
     ],
-    "code": ""
+    "code": "<TTextarea codeReplace placeholder=\"请输入内容\"/>"
   },
   "demo": [
     {

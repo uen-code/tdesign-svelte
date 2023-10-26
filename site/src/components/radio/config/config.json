@@ -10,7 +10,7 @@
         "value": "radio"
       }
     ],
-    "code": ""
+    "code": "<TRadio codeReplace>单选框</TRadio>"
   },
   "demo": [
     {

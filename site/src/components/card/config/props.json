@@ -1,109 +1,65 @@
 [
   {
-    "name": "destroyOnClose",
+    "name": "bordered",
+    "type": "Boolean",
+    "defaultValue": true,
+    "options": []
+  },
+  {
+    "name": "headerBordered",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "disabled",
+    "name": "hoverShadow",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "hideEmptyPopup",
+    "name": "loading",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "overlayStyle",
+    "name": "shadow",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "showArrow",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
-    "name": "placement",
+    "name": "size",
     "type": "enum",
-    "defaultValue": "top",
+    "defaultValue": "medium",
     "options": [
       {
-        "label": "top",
-        "value": "top"
+        "label": "medium",
+        "value": "medium"
       },
       {
-        "label": "left",
-        "value": "left"
-      },
-      {
-        "label": "right",
-        "value": "right"
-      },
-      {
-        "label": "bottom",
-        "value": "bottom"
-      },
-      {
-        "label": "top-left",
-        "value": "top-left"
-      },
-      {
-        "label": "top-right",
-        "value": "top-right"
-      },
-      {
-        "label": "bottom-left",
-        "value": "bottom-left"
-      },
-      {
-        "label": "bottom-right",
-        "value": "bottom-right"
-      },
-      {
-        "label": "left-top",
-        "value": "left-top"
-      },
-      {
-        "label": "left-bottom",
-        "value": "left-bottom"
-      },
-      {
-        "label": "right-top",
-        "value": "right-top"
-      },
-      {
-        "label": "right-bottom",
-        "value": "right-bottom"
+        "label": "small",
+        "value": "small"
       }
     ]
   },
   {
-    "name": "trigger",
+    "name": "theme",
     "type": "enum",
-    "defaultValue": "click",
+    "defaultValue": "normal",
     "options": [
       {
-        "label": "hover",
-        "value": "hover"
+        "label": "normal",
+        "value": "normal"
       },
       {
-        "label": "click",
-        "value": "click"
+        "label": "poster1",
+        "value": "poster1"
       },
       {
-        "label": "focus",
-        "value": "focus"
-      },
-      {
-        "label": "context-menu",
-        "value": "context-menu"
+        "label": "poster2",
+        "value": "poster2"
       }
     ]
   }

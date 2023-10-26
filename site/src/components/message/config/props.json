@@ -1,74 +1,44 @@
 [
   {
-    "name": "disabled",
+    "name": "closeBtn",
     "type": "Boolean",
-    "defaultValue": false,
+    "defaultValue": true,
     "options": []
   },
   {
-    "name": "underline",
+    "name": "icon",
     "type": "Boolean",
-    "defaultValue": false,
+    "defaultValue": true,
     "options": []
   },
   {
     "name": "theme",
     "type": "enum",
-    "defaultValue": "default",
+    "defaultValue": "info",
     "options": [
       {
-        "label": "default",
-        "value": "default"
+        "label": "info",
+        "value": "info"
       },
       {
-        "label": "primary",
-        "value": "primary"
-      },
-      {
-        "label": "danger",
-        "value": "danger"
+        "label": "success",
+        "value": "success"
       },
       {
         "label": "warning",
         "value": "warning"
       },
       {
-        "label": "success",
-        "value": "success"
-      }
-    ]
-  },
-  {
-    "name": "hover",
-    "type": "enum",
-    "defaultValue": "underline",
-    "options": [
-      {
-        "label": "underline",
-        "value": "underline"
+        "label": "error",
+        "value": "error"
       },
       {
-        "label": "color",
-        "value": "color"
-      }
-    ]
-  },
-  {
-    "name": "size",
-    "type": "enum",
-    "defaultValue": "medium",
-    "options": [
-      {
-        "label": "small",
-        "value": "small"
+        "label": "question",
+        "value": "question"
       },
       {
-        "label": "medium",
-        "value": "medium"
-      },
-      {
-        "label": "large",
-        "value": "large"
+        "label": "loading",
+        "value": "loading"
       }
     ]
   }

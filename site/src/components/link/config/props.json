@@ -1,109 +1,74 @@
 [
   {
-    "name": "destroyOnClose",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
     "name": "disabled",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "hideEmptyPopup",
+    "name": "underline",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "overlayStyle",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
-    "name": "showArrow",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
-    "name": "placement",
+    "name": "theme",
     "type": "enum",
-    "defaultValue": "top",
+    "defaultValue": "default",
     "options": [
       {
-        "label": "top",
-        "value": "top"
+        "label": "default",
+        "value": "default"
       },
       {
-        "label": "left",
-        "value": "left"
+        "label": "primary",
+        "value": "primary"
       },
       {
-        "label": "right",
-        "value": "right"
+        "label": "danger",
+        "value": "danger"
       },
       {
-        "label": "bottom",
-        "value": "bottom"
+        "label": "warning",
+        "value": "warning"
       },
       {
-        "label": "top-left",
-        "value": "top-left"
-      },
-      {
-        "label": "top-right",
-        "value": "top-right"
-      },
-      {
-        "label": "bottom-left",
-        "value": "bottom-left"
-      },
-      {
-        "label": "bottom-right",
-        "value": "bottom-right"
-      },
-      {
-        "label": "left-top",
-        "value": "left-top"
-      },
-      {
-        "label": "left-bottom",
-        "value": "left-bottom"
-      },
-      {
-        "label": "right-top",
-        "value": "right-top"
-      },
-      {
-        "label": "right-bottom",
-        "value": "right-bottom"
+        "label": "success",
+        "value": "success"
       }
     ]
   },
   {
-    "name": "trigger",
+    "name": "hover",
     "type": "enum",
-    "defaultValue": "click",
+    "defaultValue": "underline",
     "options": [
       {
-        "label": "hover",
-        "value": "hover"
+        "label": "underline",
+        "value": "underline"
       },
       {
-        "label": "click",
-        "value": "click"
+        "label": "color",
+        "value": "color"
+      }
+    ]
+  },
+  {
+    "name": "size",
+    "type": "enum",
+    "defaultValue": "medium",
+    "options": [
+      {
+        "label": "small",
+        "value": "small"
       },
       {
-        "label": "focus",
-        "value": "focus"
+        "label": "medium",
+        "value": "medium"
       },
       {
-        "label": "context-menu",
-        "value": "context-menu"
+        "label": "large",
+        "value": "large"
       }
     ]
   }

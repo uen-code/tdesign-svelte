@@ -17,6 +17,7 @@
   export let content = ''
   /** 是否有关闭按钮 */
   export let closeBtn = false
+  console.log("closeBt",closeBtn)
 
   // class
   $: messageClasses = {
@@ -26,7 +27,7 @@
   }
 
   // icon
-  const Icon = {
+  $: Icon = {
     info: TInfoCircleFilledIcon,
     success: TCheckCircleFilledIcon,
     warning: TErrorCircleFilledIcon,

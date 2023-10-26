@@ -10,7 +10,7 @@
         "value": "message"
       }
     ],
-    "code": ""
+    "code": "<TMessage closeBtn codeReplace>这里是Message消息</TMessage>"
   },
   "demo": [
     {

@@ -15,7 +15,7 @@
   /** 卡片描述文案 */
   export let description = undefined
   /** 是否有边框 */
-  export let bordered = true
+  export let bordered = false
   /** 头部是否带分割线，仅在有header时有效 */
   export let headerBordered = false
   /** hover时是否有阴影 */

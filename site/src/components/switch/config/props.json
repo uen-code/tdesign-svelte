@@ -1,109 +1,32 @@
 [
   {
-    "name": "destroyOnClose",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
     "name": "disabled",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "hideEmptyPopup",
+    "name": "loading",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "overlayStyle",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
-    "name": "showArrow",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
-    "name": "placement",
+    "name": "size",
     "type": "enum",
-    "defaultValue": "top",
+    "defaultValue": "medium",
     "options": [
       {
-        "label": "top",
-        "value": "top"
+        "label": "small",
+        "value": "small"
       },
       {
-        "label": "left",
-        "value": "left"
+        "label": "medium",
+        "value": "medium"
       },
       {
-        "label": "right",
-        "value": "right"
-      },
-      {
-        "label": "bottom",
-        "value": "bottom"
-      },
-      {
-        "label": "top-left",
-        "value": "top-left"
-      },
-      {
-        "label": "top-right",
-        "value": "top-right"
-      },
-      {
-        "label": "bottom-left",
-        "value": "bottom-left"
-      },
-      {
-        "label": "bottom-right",
-        "value": "bottom-right"
-      },
-      {
-        "label": "left-top",
-        "value": "left-top"
-      },
-      {
-        "label": "left-bottom",
-        "value": "left-bottom"
-      },
-      {
-        "label": "right-top",
-        "value": "right-top"
-      },
-      {
-        "label": "right-bottom",
-        "value": "right-bottom"
-      }
-    ]
-  },
-  {
-    "name": "trigger",
-    "type": "enum",
-    "defaultValue": "click",
-    "options": [
-      {
-        "label": "hover",
-        "value": "hover"
-      },
-      {
-        "label": "click",
-        "value": "click"
-      },
-      {
-        "label": "focus",
-        "value": "focus"
-      },
-      {
-        "label": "context-menu",
-        "value": "context-menu"
+        "label": "large",
+        "value": "large"
       }
     ]
   }

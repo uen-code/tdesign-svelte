@@ -1,74 +1,22 @@
 [
   {
-    "name": "disabled",
+    "name": "hideOnLoadFailed",
     "type": "Boolean",
     "defaultValue": false,
     "options": []
   },
   {
-    "name": "underline",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
-    "name": "theme",
+    "name": "shape",
     "type": "enum",
-    "defaultValue": "default",
+    "defaultValue": "circle",
     "options": [
       {
-        "label": "default",
-        "value": "default"
+        "label": "circle",
+        "value": "circle"
       },
       {
-        "label": "primary",
-        "value": "primary"
-      },
-      {
-        "label": "danger",
-        "value": "danger"
-      },
-      {
-        "label": "warning",
-        "value": "warning"
-      },
-      {
-        "label": "success",
-        "value": "success"
-      }
-    ]
-  },
-  {
-    "name": "hover",
-    "type": "enum",
-    "defaultValue": "underline",
-    "options": [
-      {
-        "label": "underline",
-        "value": "underline"
-      },
-      {
-        "label": "color",
-        "value": "color"
-      }
-    ]
-  },
-  {
-    "name": "size",
-    "type": "enum",
-    "defaultValue": "medium",
-    "options": [
-      {
-        "label": "small",
-        "value": "small"
-      },
-      {
-        "label": "medium",
-        "value": "medium"
-      },
-      {
-        "label": "large",
-        "value": "large"
+        "label": "round",
+        "value": "round"
       }
     ]
   }

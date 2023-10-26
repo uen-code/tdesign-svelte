@@ -36,7 +36,6 @@ export default {
    * @returns boolean
    */
   calculateCanToLeft(depElement, scrollLeft, placement) {
-    console.log("left",depElement)
     if (['left', 'right'].includes(placement.toLowerCase())) {
       return false;
     }
