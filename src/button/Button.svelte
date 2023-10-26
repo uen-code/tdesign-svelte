@@ -13,17 +13,17 @@
 
   const COMPONENT_NAME = usePrefixClass('button')
 
-  export let theme = THEME_ENUM.default
+  export let theme = THEME_ENUM.primary
   export let size = SIZE_ENUM.medium
   export let variant = 'base'
-  export let isDisabled = false
+  export let disabled = false
 
-  const buttonClass = {
+  $: buttonClass = {
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--variant-${variant}`]: true,
     [`${COMPONENT_NAME}--theme-${theme}`]: true,
     [SIZE[size]]: size !== 'medium',
-    [STATUS.disabled]: isDisabled
+    [STATUS.disabled]: disabled
   }
 </script>
 

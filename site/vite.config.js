@@ -6,6 +6,7 @@ import path from "path";
 export default defineConfig({
   resolve: {
     alias: {
+      '@common': path.resolve(__dirname, '../src/_common'),
       'tdesign-svelte': path.resolve(__dirname, '../src'),
     }
   },

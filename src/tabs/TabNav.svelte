@@ -24,9 +24,10 @@
 
   let navs = [];
   onMount(() => {
+    navs = filterChildNodes(navsWrapNode, TAB_NAV_ITEM_ID)
     getNodes();
     totalAdjust();
-    navs = filterChildNodes(navsWrapNode, TAB_NAV_ITEM_ID)
+    setActiveTab();
   })
 
   /** 选项卡数据 */
@@ -68,19 +69,22 @@
   };
   const adjustScrollLeft = () => {
     scrollLeft = calcScrollLeft(getNodes(), scrollLeft);
+    console.log("adjustScrollLeft", scrollLeft)
   };
   const adjustArrowDisplay = () => {
     canToLeft = calculateCanToLeft(getNodes(), scrollLeft, placement);
     canToRight = calculateCanToRight(getNodes(), scrollLeft, placement);
   };
   const handleScroll = (direction) => {
+    console.log("点击事件", direction)
     if (direction === 'left') {
       scrollLeft = scrollToLeft(getNodes(), scrollLeft);
     } else {
       scrollLeft = scrollToRight(getNodes(), scrollLeft);
     }
   };
-  const setActiveTab = (el) => {
+  const setActiveTab = () => {
+    const el = getActiveNode(navs, TAB_ATTRIBUTE_VALUE, value)
     const tabNavItemValue = el?.getAttribute(TAB_ATTRIBUTE_VALUE)
     const activeTabNavItemValue = activeTabNode?.getAttribute(TAB_ATTRIBUTE_VALUE)
     if (tabNavItemValue === value && tabNavItemValue !== activeTabNavItemValue) {
@@ -98,9 +102,9 @@
   // sub tabValue
   tabValue.subscribe((val) => {
     if (val) value = val
-    if (navs.length>0){
+    if (navs.length > 0) {
       totalAdjust()
-      setActiveTab(getActiveNode(navs, TAB_ATTRIBUTE_VALUE, value));
+      setActiveTab();
     }
   })
 
@@ -145,7 +149,7 @@
     class="{`${COMPONENT_NAME}__operations`} {`${COMPONENT_NAME}__operations--left`}"
   >
     {#if canToLeft}
-      <div bind:this={toLeftBtnNode} class={getClassString(leftIconClass)} on:click={handleScroll('left')}>
+      <div bind:this={toLeftBtnNode} class={getClassString(leftIconClass)} on:click={()=>handleScroll('left')}>
         <ChevronLeft/>
       </div>
     {/if}
@@ -156,7 +160,7 @@
     class="{`${COMPONENT_NAME}__operations`} {`${COMPONENT_NAME}__operations--right`}"
   >
     {#if canToRight}
-      <div bind:this={toRightBtnNode} class={getClassString(rightIconClass)} on:click={handleScroll('right')}>
+      <div bind:this={toRightBtnNode} class={getClassString(rightIconClass)} on:click={()=>handleScroll('right')}>
         <ChevronRight/>
       </div>
     {/if}

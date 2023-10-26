@@ -13,6 +13,9 @@ registerLocaleChange();
 
 // import style
 import 'tdesign-svelte/style'
+import '@common/style/web/docs.less';
+
+import 'tdesign-theme-generator';
 
 const app = new App({
   target: document.getElementById('app'),

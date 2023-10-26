@@ -2,7 +2,7 @@
   import {Router, Route, navigate} from "svelte-routing";
   import {onMount} from "svelte";
 
-  import {routerList, menuItems} from './Router.js'
+  import {routerList, menuItems} from './router.js'
 
   let dom;
   onMount(() => {
@@ -15,10 +15,9 @@
 </script>
 
 <td-doc-layout>
-  <td-header slot="header">
-    <td-doc-search slot="search"></td-doc-search>
+  <td-header slot="header" framework="svelte">
   </td-header>
-  <td-doc-aside title="Vue for Web" bind:this={dom} on:change={change}>
+  <td-doc-aside title="Svelte for Web" bind:this={dom} on:change={change}>
     <td-select value="1" slot="extra"></td-select>
   </td-doc-aside>
   <Router>

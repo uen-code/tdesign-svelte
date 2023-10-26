@@ -8,3 +8,10 @@ em {
   width: 100%;
   height: 100%;
 }
+/* 替换component样式 */
+@media screen and (min-width: 1200px) {
+  :root,
+  :root[theme-mode="light"] {
+    --content-padding-left-right: 24px;
+  }
+}

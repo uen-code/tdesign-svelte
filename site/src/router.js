@@ -1,5 +1,7 @@
 import flatten from "tdesign-svelte/utils/lodash/flatten.js";
 
+import Starter from "./docs/starter/Starter.svelte";
+import Overview from "./docs/overview/Overview.svelte";
 import Button from './components/button/Index.svelte'
 import Popup from "./components/popup/Index.svelte";
 import Message from "./components/message/Index.svelte";
@@ -22,14 +24,16 @@ export const routerList = [
     type: "doc", // 组件文档
     children: [
       {
-        title: "说明",
-        name: "install",
-        path: "/svelte/install",
+        title: "快速开始",
+        name: "starter",
+        path: "/svelte/getting-started",
+        component: Starter
       },
       {
-        title: "更新日志",
-        name: "changelog",
-        path: "/svelte/changelog",
+        title: "组件概述",
+        name: "overview",
+        path: "/svelte/overview",
+        component: Overview
       },
     ],
   },
@@ -45,20 +49,15 @@ export const routerList = [
         component: Button
       },
       {
-        title: "Divider 分割线",
-        name: "divider",
-        path: "/svelte/components/dividersss",
+        title: "Icon 图标",
+        name: "icon",
+        path: "/svelte/components/icon",
       },
       {
         title: "Link 线",
         name: "link",
-        path: "/svelte/components/divider",
+        path: "/svelte/components/link",
         component: Link
-      },
-      {
-        title: "Icon 图标",
-        name: "icon",
-        path: "/svelte/components/icon",
       },
     ],
   },

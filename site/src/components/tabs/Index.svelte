@@ -21,11 +21,11 @@
     <iframe src="https://tdesign.tencent.com/design" style="overflow-x: hidden;" width="100%" height="100%" frameborder="0"></iframe>
   </td-doc-phone> -->
 
-  <td-contributors platform="mobile" framework="vue" component-name="dialog"></td-contributors>
+  <td-contributors  framework="vue" component-name="dialog"></td-contributors>
 
   <td-avatar username="chazzhou"></td-avatar>
 
   <td-doc-history time="1639583136582"></td-doc-history>
 
-  <td-doc-footer platform="mobile" slot="doc-footer"></td-doc-footer>
+  <td-doc-footer  slot="doc-footer"></td-doc-footer>
 </td-doc-content>

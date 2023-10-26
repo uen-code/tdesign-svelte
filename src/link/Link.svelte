@@ -12,6 +12,7 @@
   export let size = SIZE_ENUM.medium
   export let isDisabled = false
   export let underline = false
+  export let href = ''
 
   $: linkClass = {
     [COMPONENT_NAME]: true,
@@ -23,7 +24,7 @@
   }
 </script>
 
-<a class={getClassString(linkClass)}>
+<a class={getClassString(linkClass)} href={isDisabled || !href ? undefined : href}>
   <slot>
     <em>跳转链接</em>
   </slot>
