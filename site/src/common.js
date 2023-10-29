@@ -1,5 +1,5 @@
 /** 代码替换为字符串 */
-export function codeReplace(baseCode,changeProps) {
+export function codeReplace(baseCode, changeProps) {
   const propsStr = Object.keys(changeProps)
     .map((name) => `${stringifyProp(name, changeProps[name])}`)
     .filter(Boolean);

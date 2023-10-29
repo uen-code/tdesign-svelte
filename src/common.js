@@ -36,6 +36,7 @@ export const SIZE = {
   small: `${classPrefix}-size-s`,
   medium: `${classPrefix}-size-m`,
   large: `${classPrefix}-size-l`,
+  block: `${classPrefix}-size-full-width`,
 }
 
 /**

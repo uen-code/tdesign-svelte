@@ -1,6 +1,6 @@
 <script>
   import {getClassString, usePrefixClass} from "../common.js";
-  import FakeArrow from "../common-components/icon/FakeArrow.svelte";
+  import FakeArrow from "../common-components/FakeArrow.svelte";
   import { slide } from 'svelte/transition';
   import {SUB_MENU_ID} from "./useMenu.js";
 

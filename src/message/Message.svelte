@@ -1,9 +1,9 @@
 <script>
   import {getClassString, usePrefixClass} from "../common.js";
   import {
-    TCheckCircleFilledIcon, TCloseIcon, TErrorCircleFilledIcon,
-    THelpCircleFilledIcon, TInfoCircleFilledIcon,
-  } from "../common-components/icon";
+    CheckCircleFilledIcon, CloseIcon, ErrorCircleFilledIcon,
+    HelpCircleFilledIcon, InfoCircleFilledIcon,
+  } from "../icon";
   import TLoading from "../loading/Loading.svelte";
 
   const COMPONENT_NAME = usePrefixClass('message');
@@ -28,11 +28,11 @@
 
   // icon
   $: Icon = {
-    info: TInfoCircleFilledIcon,
-    success: TCheckCircleFilledIcon,
-    warning: TErrorCircleFilledIcon,
-    error: TErrorCircleFilledIcon,
-    question: THelpCircleFilledIcon,
+    info: InfoCircleFilledIcon,
+    success: CheckCircleFilledIcon,
+    warning: ErrorCircleFilledIcon,
+    error: ErrorCircleFilledIcon,
+    question: HelpCircleFilledIcon,
     loading: TLoading
   }[theme]
 </script>
@@ -42,7 +42,7 @@
   <slot/>
   {#if closeBtn}
     <span class={`${COMPONENT_NAME}__close`}>
-      <TCloseIcon/>
+      <CloseIcon/>
     </span>
   {/if}
 </div>

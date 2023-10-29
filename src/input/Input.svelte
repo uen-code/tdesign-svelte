@@ -1,8 +1,7 @@
 <script>
   import {SIZE_ENUM} from "../config.js";
   import {SIZE, STATUS, getClassString, usePrefixClass} from "../common.js";
-  import CloseCircleFilledIcon from "../common-components/icon/CloseCircleFilledIcon.svelte";
-  import BrowseOffIcon from "../common-components/icon/BrowseOffIcon.svelte";
+  import {CloseCircleFilledIcon,BrowseOffIcon} from "../icon";
 
   import './style/css'
 
@@ -70,7 +69,7 @@
       placeholder="{placeholder ? placeholder : '请输入'}"
       on:focus={emitFocus}
     />
-    <!--  suffix or content  -->
+    <!--  suffix or docs  -->
     {#if clearable && type === 'password'}
       <span class="{getClassString(inputSuffixClass)} {`${COMPONENT_NAME}__clear`}">
         <CloseCircleFilledIcon classes={`${COMPONENT_NAME}__suffix-clear`}/>

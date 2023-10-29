@@ -1,0 +1,17 @@
+{
+  "docHeader": {
+    "spline": "layout",
+    "title": "Space 间距",
+    "desc": "控制组件之间的间距。"
+  },
+  "base": {
+    "componentName": "space",
+    "panelList": [
+      {
+        "label": "space",
+        "value": "space"
+      }
+    ],
+    "code": "<TButton codeReplace>确定</TButton>"
+  }
+}

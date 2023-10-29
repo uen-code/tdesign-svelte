@@ -15,7 +15,7 @@
   /** 卡片描述文案 */
   export let description = undefined
   /** 是否有边框 */
-  export let bordered = false
+  export let bordered = true
   /** 头部是否带分割线，仅在有header时有效 */
   export let headerBordered = false
   /** hover时是否有阴影 */
@@ -96,7 +96,7 @@
       </div>
     {/if}
 
-    <!--  content  -->
+    <!--  docs  -->
     {#if $$slots.default}
       <div class={`${classPrefix}-card__body`}>
         <slot/>

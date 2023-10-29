@@ -7,6 +7,10 @@
   "files": [
     "components"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hzx000822/tdesign-svelte.git"
+  },
   "keywords": [
     "svelte",
     "tdesign",
@@ -27,6 +31,8 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "less": "^4.2.0",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-toc-done-right": "^4.2.0",
     "rollup": "^2.79.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-multi-input": "^1.4.1",
@@ -35,7 +41,8 @@
     "svelte-routing": "^2.5.0",
     "tdesign-site-components": "^0.13.14",
     "tdesign-theme-generator": "^1.0.15",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-svelte-md": "^0.1.7"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.5.3"

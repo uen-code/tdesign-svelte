@@ -25,7 +25,7 @@
     active = !active
   }
 
-  // content
+  // docs
   let content = null;
   $: {
     if (isString(label)) {

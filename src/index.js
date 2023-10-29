@@ -8,6 +8,7 @@ import TAside from './layout/Aside.svelte'
 import TContent from './layout/Content.svelte'
 import TFooter from './layout/Footer.svelte'
 import THeader from './layout/Header.svelte'
+import TSpace from './space/Space.svelte'
 
 // 导航
 import TMenu from './menu/Menu.svelte'
@@ -34,7 +35,7 @@ import TMessage from "./message/Message.svelte"
 
 export {
   TButton, TLink,
-  TLayout, TAside, TContent, TFooter, THeader,
+  TLayout, TAside, TContent, TFooter, THeader,TSpace,
   TMenu, TSubMenu, TMenuItem, TTabs, TTabPanel,
   TInput, TRadio, TSwitch, TTextarea,
   TAvatar, TImage, TLoading, TCard,

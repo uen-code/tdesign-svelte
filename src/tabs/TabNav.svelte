@@ -2,8 +2,7 @@
   import {SIZE, getClassString, usePrefixClass} from "../common.js";
   import {SIZE_ENUM} from "../config.js";
   import tabBase from "./js/base.js"
-  import ChevronLeft from "../common-components/icon/ChevronLeftIcon.svelte";
-  import ChevronRight from "../common-components/icon/ChevronRightIcon.svelte";
+  import {ChevronLeftIcon, ChevronRightIcon} from "../icon";
   import TabNavBar from "./TabNavBar.svelte";
   import TabNavItem from "./TabNavItem.svelte";
   import {
@@ -148,7 +147,7 @@
   >
     {#if canToLeft}
       <div bind:this={toLeftBtnNode} class={getClassString(leftIconClass)} on:click={()=>handleScroll('left')}>
-        <ChevronLeft/>
+        <ChevronLeftIcon/>
       </div>
     {/if}
   </div>
@@ -159,7 +158,7 @@
   >
     {#if canToRight}
       <div bind:this={toRightBtnNode} class={getClassString(rightIconClass)} on:click={()=>handleScroll('right')}>
-        <ChevronRight/>
+        <ChevronRightIcon/>
       </div>
     {/if}
   </div>

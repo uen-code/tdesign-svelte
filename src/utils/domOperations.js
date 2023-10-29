@@ -10,6 +10,16 @@ export const getAttribute = (el, key) => {
 }
 
 /***
+ * 根据节点 遍历出子节点
+ */
+export function getChildNodes(el) {
+  if (!el) return [];
+  const childNodes = el.children
+  if (!isArrayLike(childNodes)) return [];
+  return childNodes;
+}
+
+/***
  * 根据节点id 筛选出子节点列表
  */
 export function filterChildNodes(el, id) {
@@ -25,7 +35,7 @@ export function filterChildNodes(el, id) {
 /***
  * 根据节点列表 筛选节点
  */
-export function getActiveNode(els,attribute,value){
+export function getActiveNode(els, attribute, value) {
   if (!isArrayLike(els) || !value) return undefined;
-  return els.find(el=>el.getAttribute(attribute) === value)
+  return els.find(el => el.getAttribute(attribute) === value)
 }

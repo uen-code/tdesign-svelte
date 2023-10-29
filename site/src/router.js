@@ -1,7 +1,7 @@
 import flatten from "tdesign-svelte/utils/lodash/flatten.js";
 
-import Starter from "./docs/starter/Starter.svelte";
-import Overview from "./docs/overview/Overview.svelte";
+import Starter from "./components/starter/Starter.svelte";
+import Overview from "./components/overview/Overview.svelte";
 import Button from './components/button/Index.svelte'
 import Popup from "./components/popup/Index.svelte";
 import Message from "./components/message/Index.svelte";
@@ -16,6 +16,7 @@ import Input from "./components/input/Index.svelte";
 import Card from "./components/card/Index.svelte";
 import Avatar from "./components/avatar/Index.svelte";
 import Image from "./components/image/Index.svelte";
+import Space from "./components/space/Index.svelte";
 
 export const routerList = [
   {
@@ -26,7 +27,7 @@ export const routerList = [
       {
         title: "快速开始",
         name: "starter",
-        path: "/svelte/getting-started",
+        path: "/",
         component: Starter
       },
       {
@@ -75,6 +76,12 @@ export const routerList = [
         title: "Layout 布局",
         name: "layout",
         path: "/svelte/components/layout",
+      },
+      {
+        title: "Space 间距",
+        name: "space",
+        path: "/svelte/components/space",
+        component: Space
       },
     ],
   },
