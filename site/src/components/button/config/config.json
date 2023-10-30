@@ -13,5 +13,11 @@
       }
     ],
     "code": "<TButton codeReplace>确定</TButton>"
+  },
+  "badge": {
+    "statements": "100%",
+    "branches": "85.71%",
+    "functions": "100%",
+    "lines": "100%"
   }
 }

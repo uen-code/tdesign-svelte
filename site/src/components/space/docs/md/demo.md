@@ -1,75 +1,75 @@
 ---
-title: Button 按钮
-description: 按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
+title: Space 间距
+description: 控制组件之间的间距。
 isComponent: true
 usage: { title: '', description: '' }
-spline: base
+spline: layout
 ---
-
 [[toc]]
 
-### 基础按钮
+<script>
+import DocUsage from '../DocUsage.svelte'
+</script>
+<DocUsage></DocUsage>
 
-基础按钮包括填充按钮、描边按钮、虚框按钮、和文字按钮。
+### 基本用法
 
-#### 填充按钮
-
-一般用于主按钮，是用户在整个页面需要关注优先级最高的操作，引导用户关注并操作。
-
-#### 描边按钮
-
-描边按钮常见白底加文字的形式，在视觉强调程度上弱于填充按钮，通常与填充按钮搭配成组使用。
-
-#### 虚框按钮
-
-按钮边框线为虚线，常用于表单中的添加配置项。
-
-#### 文字按钮
-
-直接使用文字作为按钮。是视觉吸引力最弱的一个按钮，通常出现在表格操作栏、标题和字段旁等。
+默认为横向排列，控制相邻组件水平间距。
 
 <script>
-import Base from "../../example/Base.svelte"
+import Base from '../../example/Base.svelte'
 </script>
 
 <Base></Base>
 
-### 图标按钮
+### 垂直间距
 
-图标按钮由图标+文字或图标构成。通过图标可增强识别性，以便直观理解。
+可以设置 `direction=vertical` 调整为竖向排列。
+
+<script>
+import Vertical from '../../example/Vertical.svelte'
+</script>
+
+<Vertical></Vertical>
+
+### 间距大小
+
+可以通过 `size` 调整间距大小，自带三个可选值 `small`、`medium`、`large`。
+也可以自定义设置。
+
+<script>
+import Size from '../../example/Size.svelte'
+</script>
+
+<Size></Size>
+
+### 对齐方式
+
+可以通过 `align` 设置辅轴对齐方式，效果与 `align-items` 一致。
+
+<script>
+import Align from '../../example/Align.svelte'
+</script>
+
+<Align></Align>
+
+### 自动换行
+
+可以通过 `breakLine` 控制是否自动换行，默认不换行。
+
+<script>
+import BreakLine from '../../example/BreakLine.svelte'
+</script>
+
+<BreakLine></BreakLine>
 
 
-### 幽灵按钮
+### 设置分隔符
 
-幽灵按钮将按钮的内容反色，背景变为透明，一般是底色透明。常用于有色背景上，例如 banner 图等。
+可以通过 `separator` 设置分隔符。
 
+<script>
+import Separator from '../../example/Separator.svelte'
+</script>
 
-### Block 按钮
-
-Block 按钮在宽度上充满其所在的父容器（无 padding 和 margin 值）。该按钮常见于移动端和一些表单场景中。
-
-
-### 不同颜色主题按钮
-
-提供浅灰色、蓝色、红色、黄色和绿色为主题的按钮。
-
-
-### 不同状态的按钮
-
-提供加载、禁用两种状态。
-
-
-### 不同尺寸的按钮
-
-提供大、中（默认）、小三种尺寸。
-
-
-### 不同形状的按钮
-
-提供长方形、正方形、圆角长方形、圆形四种形状。
-
-
-### 自定义渲染元素
-
-支持自定义渲染元素，支持 `div/a/button`
-
+<Separator></Separator>

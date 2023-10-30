@@ -3,9 +3,6 @@
   import {getClassString, usePrefixClass} from "../common.js";
   import useRipple from "../hooks/useRipple.js";
 
-  import './style/css'
-
-
   const dispatch = createEventDispatcher()
   const classPrefix = usePrefixClass()
 
@@ -20,8 +17,6 @@
   export let disabled = false
   /** 菜单项唯一标识 */
   export let value = undefined
-  /** 图标 */
-  export let icon = undefined
   export let theme = 'light'
 
   // 菜单激活
@@ -40,14 +35,14 @@
   const menuItemClass = {
     [`${classPrefix}-menu__item`]: true,
     [`${classPrefix}-is-disabled`]: disabled,
-    [`${classPrefix}-menu__item--plain`]: icon,
+    [`${classPrefix}-menu__item--plain`]: $$slots.icon,
     // [`${classPrefix}-submenu__item`]: !!submenu && !menu.isHead,
   }
 </script>
 
 <li class="{getClassString(menuItemClass)} {active ? `${classPrefix}-is-active` : ''}" bind:this={node}
     on:click={handleClick}>
-  <slot name="logo"></slot>
+  <slot name="icon"></slot>
   <span class={`${classPrefix}-menu__content`}>
     <slot></slot>
   </span>

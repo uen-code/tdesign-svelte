@@ -1,17 +1,14 @@
 <script>
   import {usePrefixClass} from "../common.js";
 
-  import './style/css'
-
   const COMPONENT_NAME = usePrefixClass('layout__footer');
 
-  export let height = '24'
+  export let height = ''
+  export let style = ''
 
-  const styles = {
-    height: `${height}px`
-  }
+  $: style = height ? `height:${height}px; ${style}` : `${style}`
 </script>
 
-<footer class={COMPONENT_NAME} style={styles}>
+<footer class={COMPONENT_NAME} style={style}>
   <slot></slot>
 </footer>

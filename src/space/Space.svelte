@@ -26,6 +26,8 @@
   export let breakLine = false
   /** 对齐方式 */
   export let align = undefined
+  /** 接收样式 */
+  export let style = ''
 
   // style
   $: gapStyle = isString(size) ? `gap:${sizeMap[size] || size}` : isNumber(size) ? `gap:${size}px` : ''
@@ -43,7 +45,7 @@
   <slot/>
 </div>
 
-<div class={getClassString(spaceClass)} style={`${gapStyle};${breakStyle}`}>
+<div class={getClassString(spaceClass)} style={`${gapStyle};${breakStyle};${style}`}>
   {#if childes && childes.length > 0}
     {#each childes as child,index}
       <div class={`${COMPONENT_NAME}-item`}>{@html child.outerHTML}</div>

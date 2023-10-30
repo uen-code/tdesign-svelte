@@ -1,0 +1,23 @@
+{
+  "docHeader": {
+    "spline": "layout",
+    "title": "Layout 布局",
+    "desc": "用于组织网页的框架结构。"
+  },
+  "base": {
+    "componentName": "button",
+    "panelList": [
+      {
+        "label": "button",
+        "value": "button"
+      }
+    ],
+    "code": "<TButton codeReplace>确定</TButton>"
+  },
+  "badge": {
+    "statements": "98.88%",
+    "branches": "95.83%",
+    "functions": "100%",
+    "lines": "98.88%"
+  }
+}

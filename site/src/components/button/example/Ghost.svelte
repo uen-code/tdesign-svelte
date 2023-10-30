@@ -2,7 +2,7 @@
   import {TSpace, TButton} from 'tdesign-svelte'
 </script>
 
-<div class="tdesign-demo-item--button-ghost">
+<div class="tdesign-demo-wrapper tdesign-demo-item--button-ghost tdesign-demo-item--button">
   <td-doc-demo mode="auto" language="markup" demo-name="ghost">
     <div class="tdesign-demo-item__body">
       <TSpace direction="vertical">

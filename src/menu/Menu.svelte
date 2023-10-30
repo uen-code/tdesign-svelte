@@ -20,21 +20,21 @@
   /** 菜单宽度 值类型为数组时: [ 展开时的宽度, 折叠时的宽度 ]，示例：['200px', '80px'] */
   export let width = ['232', '64']
   /** 是否为横向头部菜单 */
-  export let isHead = false
+    // export let isHead = false
 
-  // 控制展开的导航集合
+    // 控制展开的导航集合
   const setExpand = (val) => {
-    expanded = get(menuExpand)
-    let expandedValues = new Set(isArray(expanded) ? expanded : [])
-    if (expandedValues.has(val)) {
-      expandedValues.delete(val);
+      expanded = get(menuExpand)
+      let expandedValues = new Set(isArray(expanded) ? expanded : [])
+      if (expandedValues.has(val)) {
+        expandedValues.delete(val);
+        menuExpand.set([...expandedValues])
+        return [...expandedValues];
+      }
+      expandedValues.add(val);
       menuExpand.set([...expandedValues])
-      return [...expandedValues];
+      return [...expandedValues]
     }
-    expandedValues.add(val);
-    menuExpand.set([...expandedValues])
-    return [...expandedValues]
-  }
   setContext('open', setExpand)
   setContext('menuExpand', menuExpand)
 
@@ -56,23 +56,29 @@
     [`${COMPONENT_NAME}-menu`]: true,
     [`${COMPONENT_NAME}-menu--scroll`]: true,
   }
-  const activeWidth = width && Array.isArray(width) ? width : [`${width}px`, '64px']
-  const styles = {
-    height: '100%',
-    width: collapsed ? `${activeWidth[1]}px` : `${activeWidth[0]}px`,
-  }
+
+  // todo popup 逻辑
+  // const activeWidth = width && Array.isArray(width) ? width : [`${width}px`, '64px']
+  // const styles = {
+  //   height: '100%',
+  //   width: collapsed ? `${activeWidth[1]}px` : `${activeWidth[0]}px`,
+  // }
 </script>
 
 <div class='{getClassString(menuClass)}' style="{getClassString(innerClass)}">
   <div class={`${COMPONENT_NAME}-default-menu__inner`}>
-    <div class={`${COMPONENT_NAME}-menu__logo`}>
-      <slot name="logo"></slot>
-    </div>
+    {#if $$slots.logo}
+      <div class={`${COMPONENT_NAME}-menu__logo`}>
+        <slot name="logo"></slot>
+      </div>
+    {/if}
     <ul class="{getClassString(innerClass)}">
       <slot></slot>
     </ul>
-    <div class={`${COMPONENT_NAME}-menu__operations`}>
-      <slot name="operations"></slot>
-    </div>
+    {#if $$slots.operations}
+      <div class={`${COMPONENT_NAME}-menu__operations`}>
+        <slot name="operations"></slot>
+      </div>
+    {/if}
   </div>
 </div>

@@ -4,7 +4,6 @@
   import { slide } from 'svelte/transition';
   import {SUB_MENU_ID} from "./useMenu.js";
 
-  import './style/css'
   import {getContext, onMount} from "svelte";
   import useRipple from "../hooks/useRipple.js";
 

@@ -3,12 +3,14 @@ import flatten from "tdesign-svelte/utils/lodash/flatten.js";
 import Starter from "./components/starter/Starter.svelte";
 import Overview from "./components/overview/Overview.svelte";
 import Button from './components/button/Index.svelte'
+import Divider from './components/divider/Index.svelte'
 import Popup from "./components/popup/Index.svelte";
 import Message from "./components/message/Index.svelte";
 import Menu from "./components/menu/Index.svelte";
 import Tabs from "./components/tabs/Index.svelte";
 import Switch from "./components/switch/Index.svelte";
 import Link from "./components/link/Index.svelte";
+import Layout from "./components/layout/Index.svelte";
 import Radio from "./components/radio/Index.svelte";
 import Loading from "./components/loading/Index.svelte";
 import Textarea from "./components/textarea/Index.svelte";
@@ -68,14 +70,16 @@ export const routerList = [
     type: "component", // 组件文档
     children: [
       {
-        title: "Grid 姗格",
-        name: "grid",
-        path: "/svelte/components/grid",
+        title: "Divider 分割线",
+        name: "divider",
+        path: "/svelte/components/divider",
+        component: Divider
       },
       {
         title: "Layout 布局",
         name: "layout",
         path: "/svelte/components/layout",
+        component: Layout
       },
       {
         title: "Space 间距",

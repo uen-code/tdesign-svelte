@@ -9,6 +9,8 @@
   import config from "./config/config.json"
   import {onMount} from "svelte";
 
+  const coverage = config.badge
+
   let headerNode;
   onMount(() => {
     headerNode.docInfo = config.docHeader
@@ -29,7 +31,10 @@
 <td-doc-content>
   <td-doc-header bind:this={headerNode} component-name="{config.base.componentName}" slot="doc-header"
                  spline="{config.docHeader.spline}">
-    <td-doc-badge slot="badge" message="100%" color="brightgreen"></td-doc-badge>
+    <td-doc-badge style="margin-right: 10px" slot="badge" label="coverages: lines" message="{coverage.lines || '0%'}" />
+    <td-doc-badge style="margin-right: 10px" slot="badge" label="coverages: functions" message="{coverage.functions || '0%'}" />
+    <td-doc-badge style="margin-right: 10px" slot="badge" label="coverages: statements" message="{coverage.statements || '0%'}" />
+    <td-doc-badge style="margin-right: 10px" slot="badge" label="coverages: branches" message="{coverage.branches || '0%'}" />
   </td-doc-header>
 
   <td-doc-tabs on:change={handleTabChange}></td-doc-tabs>

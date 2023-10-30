@@ -7,12 +7,12 @@
 
   import './style/index.js'
 
+  const COMPONENT_NAME = usePrefixClass('button')
+
   let node;
   onMount(() => {
     useRipple(node)
   })
-
-  const COMPONENT_NAME = usePrefixClass('button')
 
   /** 主题 */
   export let theme = undefined
@@ -59,9 +59,11 @@
   {:else}
     <slot name="icon"/>
   {/if}
-  <span class={`${COMPONENT_NAME}__text`}>
-    <slot/>
-  </span>
+  {#if $$slots.default}
+    <span class={`${COMPONENT_NAME}__text`}>
+      <slot/>
+    </span>
+  {/if}
   {#if $$slots.suffix}
     <span class={`${COMPONENT_NAME}__suffix`}>
       <slot name="suffix"/>

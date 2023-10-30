@@ -5,12 +5,13 @@
   import './style/css'
 
   const COMPONENT_NAME = usePrefixClass('link')
+  const classPrefix = usePrefixClass()
 
   /*** color、underline */
   export let hover = 'underline'
   export let theme = THEME_ENUM.default
   export let size = SIZE_ENUM.medium
-  export let isDisabled = false
+  export let disabled = false
   export let underline = false
   export let href = ''
 
@@ -18,14 +19,22 @@
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--theme-${theme}`]: true,
     [SIZE[size]]: size !== 'medium',
-    [STATUS.disabled]: isDisabled,
-    [`${COMPONENT_NAME}-is-underline`]: underline,
-    [`${COMPONENT_NAME}--hover-${hover}`]: !isDisabled,
+    [STATUS.disabled]: disabled,
+    [`${classPrefix}-is-underline`]: underline,
+    [`${COMPONENT_NAME}--hover-${hover}`]: !disabled,
   }
 </script>
 
-<a class={getClassString(linkClass)} href={isDisabled || !href ? undefined : href}>
-  <slot>
-    <em>跳转链接</em>
-  </slot>
+<a class={getClassString(linkClass)} href={disabled || !href ? undefined : href}>
+  {#if $$slots.prefixIcon}
+    <span class={`${COMPONENT_NAME}__prefix-icon`}>
+      <slot name="prefixIcon"/>
+    </span>
+  {/if}
+  <slot/>
+  {#if $$slots.suffixIcon}
+    <span class={`${COMPONENT_NAME}__suffix-icon`}>
+      <slot name="suffixIcon"/>
+    </span>
+  {/if}
 </a>

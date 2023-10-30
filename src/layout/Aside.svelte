@@ -1,17 +1,21 @@
 <script>
   import {usePrefixClass} from "../common.js";
 
-  import './style/css'
+  import {getContext} from "svelte";
 
   const COMPONENT_NAME = usePrefixClass('layout__sider');
 
-  export let width = '232'
+  // 获取 layout 状态
+  const setHasSide = getContext("setHasSide")
 
-  const styles = {
-    width: `${width}px`
-  }
+  setHasSide(true)
+
+  export let width = ''
+  export let style = ''
+
+  $: style = width ? `width:${width}px; ${style}` : `${style}`
 </script>
 
-<aside class={COMPONENT_NAME} style={styles}>
+<aside class={COMPONENT_NAME} style={style}>
   <slot></slot>
 </aside>

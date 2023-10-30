@@ -8,6 +8,12 @@ spline: base
 
 [[toc]]
 
+<script>
+import Usage from "../DocUsage.svelte"
+</script>
+
+<Usage></Usage>
+
 ### 基础按钮
 
 基础按钮包括填充按钮、描边按钮、虚框按钮、和文字按钮。
