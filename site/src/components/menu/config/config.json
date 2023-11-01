@@ -1,6 +1,8 @@
 {
   "docHeader": {
-    "spline": "navigation"
+    "spline": "navigation",
+    "title": "Menu 导航菜单",
+    "desc": "用于承载网站的架构，并提供跳转的菜单列表。"
   },
   "base": {
     "componentName": "menu",
@@ -14,36 +16,15 @@
         "value": "headMenu"
       }
     ],
-    "code": "<div style=\"padding: 24px; background: var(--bg-color-page); border-radius: 3px\">\n      <TMenu codeReplace>\n        <TMenuItem value=\"0\">\n          仪表盘\n        </TMenuItem>\n\n        <TSubMenu value=\"1\" title=\"资源列表\">\n          <TMenuItem value=\"1-1\" disabled>\n            <span>菜单二</span>\n          </TMenuItem>\n        </TSubMenu>\n        <TSubMenu value=\"2\" title=\"调度平台\">\n          <TSubMenu value=\"2-1\" title=\"二级菜单-1\">\n            <TMenuItem value=\"3-1\">三级菜单-1</TMenuItem>\n            <TMenuItem value=\"3-2\">三级菜单-2</TMenuItem>\n            <TMenuItem value=\"3-3\">三级菜单-3</TMenuItem>\n          </TSubMenu>\n          <TMenuItem value=\"2-2\">\n            <span>二级菜单-2</span>\n          </TMenuItem>\n        </TSubMenu>\n      </TMenu>\n    </div>"
-  },
-  "demo": [
-    {
-      "title": "基础按钮",
-      "desc": "基础按钮包括填充按钮、描边按钮、虚框按钮、和文字按钮。",
-      "code": "",
-      "child": [
-        {
-          "title": "填充按钮",
-          "desc": "一般用于主按钮，是用户在整个页面需要关注优先级最高的操作，引导用户关注并操作。"
-        },
-        {
-          "title": "描边按钮",
-          "desc": "描边按钮常见白底加文字的形式，在视觉强调程度上弱于填充按钮，通常与填充按钮搭配成组使用。"
-        },
-        {
-          "title": "虚框按钮",
-          "desc": "按钮边框线为虚线，常用于表单中的添加配置项。"
-        },
-        {
-          "title": "文字按钮",
-          "desc": "直接使用文字作为按钮。是视觉吸引力最弱的一个按钮，通常出现在表格操作栏、标题和字段旁等。"
-        }
-      ]
-    },
-    {
-      "title": "图标按钮",
-      "desc": "图标按钮由图标+文字或图标构成。通过图标可增强识别性，以便直观理解。",
-      "code": ""
+    "code": {
+      "menu": "<div style=\"padding: 24px; background: var(--bg-color-page); border-radius: 3px\">\n      <TMenu codeReplace>\n        <TMenuItem value=\"0\">\n          仪表盘\n        </TMenuItem>\n\n        <TSubMenu value=\"1\" title=\"资源列表\">\n          <TMenuItem value=\"1-1\" disabled>\n            <span>菜单二</span>\n          </TMenuItem>\n        </TSubMenu>\n        <TSubMenu value=\"2\" title=\"调度平台\">\n          <TSubMenu value=\"2-1\" title=\"二级菜单-1\">\n            <TMenuItem value=\"3-1\">三级菜单-1</TMenuItem>\n            <TMenuItem value=\"3-2\">三级菜单-2</TMenuItem>\n            <TMenuItem value=\"3-3\">三级菜单-3</TMenuItem>\n          </TSubMenu>\n          <TMenuItem value=\"2-2\">\n            <span>二级菜单-2</span>\n          </TMenuItem>\n        </TSubMenu>\n      </TMenu>\n    </div>",
+      "headMenu": "<div style=\"padding: 24px; background: var(--bg-color-page); borderRadius: 3px \">\n      <THeadMenu codeReplace>\n        <img slot=\"logo\" src=\"https://www.tencent.com/img/index/menu_logo_hover.png\" width=\"136\"/>\n        <TMenuItem value=\"0\">\n          <span>菜单1</span>\n        </TMenuItem>\n        <TMenuItem value=\"1\">\n          <span>菜单2</span>\n        </TMenuItem>\n      </THeadMenu>\n    </div>"
     }
-  ]
+  },
+  "badge": {
+    "statements": "67.89%",
+    "branches": "65.09%",
+    "functions": "43.54%",
+    "lines": "67.89%"
+  }
 }

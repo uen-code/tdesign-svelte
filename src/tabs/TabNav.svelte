@@ -7,11 +7,10 @@
   import TabNavItem from "./TabNavItem.svelte";
   import {
     TAB_NAV_ITEM_ID,
-    TAB_ATTRIBUTE_LABEL,
     TAB_ATTRIBUTE_VALUE,
   } from "./useTabs.js";
   import {getContext, onMount} from "svelte";
-  import {filterChildNodes, getActiveNode, getAttribute} from "../utils/domOperations.js";
+  import {filterChildNodes, getActiveNode} from "../utils/domOperations.js";
 
   const COMPONENT_NAME = usePrefixClass('tabs');
   const classPrefix = usePrefixClass();
@@ -19,7 +18,7 @@
   const {calculateCanToLeft, calculateCanToRight, calcScrollLeft, scrollToLeft, scrollToRight, moveActiveTabIntoView} =
     tabBase;
 
-  const tabValue = getContext('tabValue')
+  const [tabValue] = getContext('tabStore')
 
   let navs = [];
   onMount(() => {
@@ -175,10 +174,12 @@
             theme={theme}
             size={size}
             placement={placement}
-            label={getAttribute(panel,TAB_ATTRIBUTE_LABEL)}
-            active={getAttribute(panel,TAB_ATTRIBUTE_VALUE) === value}
+            label={panel.label}
+            active={panel.value === value}
             disabled={disabled || panel.disabled}
-            value={getAttribute(panel,TAB_ATTRIBUTE_VALUE)}
+            value={panel.value}
+            labelIcon={panel.labelIcon}
+            labelIconClass={panel.labelIconClass}
           />
         {/each}
       </div>

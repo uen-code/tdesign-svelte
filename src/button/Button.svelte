@@ -5,7 +5,7 @@
   import useRipple from "../hooks/useRipple";
   import TLoading from "../loading/Loading.svelte";
 
-  import './style/index.js'
+  import './style/css'
 
   const COMPONENT_NAME = usePrefixClass('button')
 

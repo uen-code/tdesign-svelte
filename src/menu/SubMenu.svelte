@@ -1,7 +1,7 @@
 <script>
   import {getClassString, usePrefixClass} from "../common.js";
   import FakeArrow from "../common-components/FakeArrow.svelte";
-  import { slide } from 'svelte/transition';
+  import {slide} from 'svelte/transition';
   import {SUB_MENU_ID} from "./useMenu.js";
 
   import {getContext, onMount} from "svelte";
@@ -10,16 +10,14 @@
   const classPrefix = usePrefixClass()
   const TRANSITION_CLASS = usePrefixClass('slide-down');
 
+  const [,,menuExpands,setMenuExpands] = getContext('menuStore')
+
   let subNode;
   let node;
   onMount(() => {
     useRipple(subNode)
     calculateLeft(node)
   })
-
-  /** 子菜单展开的导航集合 */
-  const open = getContext('open')
-  const menuExpand = getContext('menuExpand')
 
   export let isHead = false
   export let activeValue = undefined
@@ -34,14 +32,11 @@
   export let title = undefined
 
   let isOpen = false
+  menuExpands.subscribe((expands) => isOpen = expands.includes(value))
 
-  function handleClick() {
-    open(value)
+  function handleClick(e) {
+    setMenuExpands(value)
   }
-
-  menuExpand.subscribe(expandValues => {
-    isOpen = expandValues && expandValues.includes(value);
-  })
 
   let paddingLeft = 44
 
@@ -85,7 +80,7 @@
   {/if}
 </div>
 
-<div bind:this={node} >
+<div bind:this={node}>
   {#if isOpen}
     <ul in:slide="{{duration: 300}}" out:slide={{duration: 200}} id="{SUB_MENU_ID}"
         class={getClassString(subClass)}

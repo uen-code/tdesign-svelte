@@ -1,13 +1,13 @@
 <script>
-  import {TLink, TSpace} from 'tdesign-svelte'
+  import {TLink} from 'tdesign-svelte'
   import {JumpIcon} from 'tdesign-svelte-icon';
 
 </script>
 
 <td-doc-demo mode="auto" language="markup">
   <div class="tdesign-demo-item__body">
-    <TSpace direction="vertical">
-      <TSpace>
+    <div style="display: flex;flex-direction: column">
+      <div class="fl">
         <TLink theme="default" size="small"> 跳转链接</TLink>
         <TLink theme="primary" size="small"> 跳转链接</TLink>
         <TLink theme="danger" size="small"> 跳转链接</TLink>
@@ -16,8 +16,8 @@
           <JumpIcon slot="suffixIcon"/>
           跳转链接
         </TLink>
-      </TSpace>
-      <TSpace>
+      </div>
+      <div class="fl">
         <TLink theme="default" size="medium"> 跳转链接</TLink>
         <TLink theme="primary" size="medium"> 跳转链接</TLink>
         <TLink theme="danger" size="medium"> 跳转链接</TLink>
@@ -26,8 +26,8 @@
           <JumpIcon slot="suffixIcon"/>
           跳转链接
         </TLink>
-      </TSpace>
-      <TSpace>
+      </div>
+      <div class="fl">
         <TLink theme="default" size="large"> 跳转链接</TLink>
         <TLink theme="primary" size="large"> 跳转链接</TLink>
         <TLink theme="danger" size="large"> 跳转链接</TLink>
@@ -36,7 +36,16 @@
           <JumpIcon slot="suffixIcon"/>
           跳转链接
         </TLink>
-      </TSpace>
-    </TSpace>
+      </div>
+    </div>
   </div>
 </td-doc-demo>
+
+
+<style>
+  .fl {
+    margin-top: 16px;
+    display: inline-flex;
+    gap: 16px
+  }
+</style>

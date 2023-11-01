@@ -13,11 +13,13 @@ import ControlPlatformIcon from './components/ControlPlatformIcon.svelte'
 import DashboardIcon from './components/DashboardIcon.svelte'
 import DiscountIcon from './components/DiscountIcon.svelte'
 import Edit1Icon from './components/Edit1Icon.svelte'
+import EllipsisIcon from './components/EllipsisIcon.svelte'
 import ErrorCircleFilledIcon from './components/ErrorCircleFilledIcon.svelte'
 import HelpCircleFilledIcon from './components/HelpCircleFilledIcon.svelte'
 import HomeIcon from './components/HomeIcon.svelte'
 import InfoCircleFilledIcon from './components/InfoCircleFilledIcon.svelte'
 import JumpIcon from './components/JumpIcon.svelte'
+import LayersIcon from './components/LayersIcon.svelte'
 import LinkIcon from './components/LinkIcon.svelte'
 import MailIcon from './components/MailIcon.svelte'
 import NotificationFilledIcon from './components/NotificationFilledIcon.svelte'
@@ -27,6 +29,7 @@ import RootListIcon from './components/RootListIcon.svelte'
 import SearchIcon from './components/SearchIcon.svelte'
 import ServerIcon from './components/ServerIcon.svelte'
 import UserCircleIcon from './components/UserCircleIcon.svelte'
+import UserIcon from './components/UserIcon.svelte'
 
 export const components = {
   "add": AddIcon,
@@ -44,11 +47,13 @@ export const components = {
   "dashboard": DashboardIcon,
   "discount": DiscountIcon,
   "edit1": Edit1Icon,
+  "ellipsis": EllipsisIcon,
   "errorCircleFilled": ErrorCircleFilledIcon,
   "helpCircleFilled": HelpCircleFilledIcon,
   "home": HomeIcon,
   "infoCircleFilled": InfoCircleFilledIcon,
   "jump": JumpIcon,
+  "layers": LayersIcon,
   "link": LinkIcon,
   "mail": MailIcon,
   "notificationFilled": NotificationFilledIcon,
@@ -58,6 +63,7 @@ export const components = {
   "search": SearchIcon,
   "server": ServerIcon,
   "userCircle": UserCircleIcon,
+  "user": UserIcon,
 }
 
 export {
@@ -66,8 +72,9 @@ export {
   ChevronLeftIcon, CheckCircleFilledIcon, CloudDownloadIcon, CloudUploadIcon,
   CloseIcon, ErrorCircleFilledIcon, ChevronRightIcon, CloseCircleFilledIcon,
   DiscountIcon, DashboardIcon,
-  Edit1Icon,
+  Edit1Icon, EllipsisIcon,
   JumpIcon,
+  LayersIcon,
   HelpCircleFilledIcon, HomeIcon,
   InfoCircleFilledIcon,
   LinkIcon,
@@ -76,5 +83,5 @@ export {
   PlayCircleIcon, PreciseMonitorIcon,
   RootListIcon,
   SearchIcon, ServerIcon,
-  UserCircleIcon,
+  UserCircleIcon, UserIcon,
 }

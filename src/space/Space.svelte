@@ -30,8 +30,8 @@
   export let style = ''
 
   // style
-  $: gapStyle = isString(size) ? `gap:${sizeMap[size] || size}` : isNumber(size) ? `gap:${size}px` : ''
-  $: breakStyle = breakLine ? "flex-wrap: wrap" : ''
+  $: gapStyle = isString(size) ? `gap:${sizeMap[size] || size};` : isNumber(size) ? `gap:${size}px;` : ''
+  $: breakStyle = breakLine ? "flex-wrap: wrap;" : ''
 
   // class
   $: spaceClass = {
@@ -45,7 +45,7 @@
   <slot/>
 </div>
 
-<div class={getClassString(spaceClass)} style={`${gapStyle};${breakStyle};${style}`}>
+<div class={getClassString(spaceClass)} style={`${gapStyle}${breakStyle}${style}`}>
   {#if childes && childes.length > 0}
     {#each childes as child,index}
       <div class={`${COMPONENT_NAME}-item`}>{@html child.outerHTML}</div>

@@ -1,11 +1,11 @@
 <script>
-  import {TLayout, THeader, TContent, TFooter, TSpace, TAside} from 'tdesign-svelte'
+  import {TLayout, THeader, TContent, TFooter, TAside} from 'tdesign-svelte'
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--layout-base tdesign-demo-item--layout">
   <td-doc-demo mode="auto" language="markup">
     <div class="tdesign-demo-item__body">
-      <TSpace direction="vertical">
+      <div style="display: flex;flex-direction: column;gap:16px">
         <div>
           <TLayout>
             <THeader>Header</THeader>
@@ -46,7 +46,7 @@
             </TLayout>
           </TLayout>
         </div>
-      </TSpace>
+      </div>
     </div>
   </td-doc-demo>
 </div>

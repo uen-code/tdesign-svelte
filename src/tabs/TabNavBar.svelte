@@ -2,12 +2,12 @@
   import {firstUpperCase, usePrefixClass} from "../common.js";
   import {TAB_ATTRIBUTE_VALUE} from "./useTabs.js";
   import {getAttribute} from "../utils/domOperations.js";
-  import {getContext, onMount} from "svelte";
+  import {getContext} from "svelte";
 
   const COMPONENT_NAME = usePrefixClass('tabs');
   const classPrefix = usePrefixClass();
 
-  const tabValue = getContext('tabValue')
+  const [tabValue] = getContext('tabStore')
 
   /** 标签数组 */
   export let navs = []
@@ -16,13 +16,14 @@
   /** 唯一标识 */
   export let value = undefined;
 
-  onMount(() => {
-    getStyle();
+  // sub tabValue
+  tabValue.subscribe((val) => {
+    if (val) value = val
   })
 
-  let barStyle;
   /** 指示条偏移 */
-  function getStyle() {
+  let barStyle;
+  $: {
     const isVertical = ['left', 'right'].includes(placement.toLowerCase());
     const [sizePropName, offsetPropName] = isVertical ? ['height', 'top'] : ['width', 'left'];
     let offset = 0;
@@ -36,12 +37,6 @@
     if (!navs[i]) barStyle = '';
     barStyle = `${offsetPropName}: ${offset}px; ${sizePropName}:${navs[i]?.[`client${firstUpperCase(sizePropName)}`] || 0}px`
   }
-
-  // sub tabValue
-  tabValue.subscribe((val) => {
-    if (val) value = val
-    getStyle()
-  })
 
   // class
   $: navBarClass = `${COMPONENT_NAME}__bar ${classPrefix}-is-${placement}`

@@ -95,25 +95,10 @@ export const routerList = [
     type: "component", // 组件文档
     children: [
       {
-        title: "Anchor 锚点",
-        name: "anchor",
-        path: "/svelte/components/anchor",
-      },
-      {
         title: "Menu 导航",
         name: "menu",
         path: "/svelte/components/menu",
         component: Menu
-      },
-      {
-        title: "Pagination 分页",
-        name: "pagination",
-        path: "/svelte/components/pagination",
-      },
-      {
-        title: "Steps 步骤条",
-        name: "steps",
-        path: "/svelte/components/steps",
       },
       {
         title: "Tabs 选项卡",

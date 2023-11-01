@@ -1,9 +1,11 @@
 <script>
   import {getClassString, usePrefixClass} from "../common.js";
-  import {menuValue} from "../store.js";
   import {setContext} from "svelte";
+  import {MenuStore} from "./useMenu.js";
 
   const classPrefix = usePrefixClass();
+
+  import './style/css'
 
   /** 主题 */
   export let theme = 'light'
@@ -11,14 +13,12 @@
   export let value = undefined
   /** 右侧图标集合 */
   export let operations = []
+  /** 样式 */
+  export let className = ''
 
-  // 控制激活的菜单
-  const setValue = (val) => {
-    if (val) value = val;
-    menuValue.set(value)
-  }
-  setContext('select', setValue)
-  setContext("menuValue", menuValue)
+  const menuStore = MenuStore(value)
+
+  setContext("menuStore", menuStore)
 
   // class
   $: headerMenuClass = {
@@ -28,7 +28,7 @@
   }
 </script>
 
-<div class={getClassString(headerMenuClass)}>
+<div class="{getClassString(headerMenuClass)} {className}">
   <div class={`${classPrefix}-head-menu__inner`}>
     {#if $$slots.logo}
       <div class={`${classPrefix}-menu__logo`}>

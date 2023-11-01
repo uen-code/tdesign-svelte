@@ -6,8 +6,9 @@
   const dispatch = createEventDispatcher()
   const classPrefix = usePrefixClass()
 
-  let node;
+  const [menuValue,setMenuValue] = getContext('menuStore')
 
+  let node;
   /** 添加一个过度动画 */
   onMount(() => {
     useRipple(node)
@@ -21,15 +22,11 @@
 
   // 菜单激活
   let active = false
-  const setSelect = getContext('select')
-  const menuValue = getContext('menuValue')
-  menuValue.subscribe(item => {
-    active = item === value
-  })
+  menuValue.subscribe((val) => active = val === value)
 
-  function handleClick(event) {
-    setSelect(value)
-    dispatch('click', event)
+  function handleClick(e) {
+    setMenuValue(value)
+    dispatch('click', e)
   }
 
   const menuItemClass = {

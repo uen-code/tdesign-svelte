@@ -1,7 +1,7 @@
 {
   "docHeader": {
     "spline": "layout",
-    "title": "Space 间距",
+    "title": "Space 间距（不可用）",
     "desc": "控制组件之间的间距。"
   },
   "base": {
@@ -13,5 +13,11 @@
       }
     ],
     "code": "<TButton codeReplace>确定</TButton>"
+  },
+  "badge": {
+    "statements": "100%",
+    "branches": "81.81%",
+    "functions": "100%",
+    "lines": "100%"
   }
 }
