@@ -15,6 +15,7 @@ import Radio from "./components/radio/Index.svelte";
 import Loading from "./components/loading/Index.svelte";
 import Textarea from "./components/textarea/Index.svelte";
 import Input from "./components/input/Index.svelte";
+import InputAdornment from "./components/input-adornment/Index.svelte";
 import Card from "./components/card/Index.svelte";
 import Avatar from "./components/avatar/Index.svelte";
 import Image from "./components/image/Index.svelte";
@@ -130,20 +131,16 @@ export const routerList = [
         component: Input
       },
       {
-        title: "InputNumber 数字输入",
-        name: "input-number",
-        path: "/svelte/components/input-number",
+        title: "InputAdornment 输入装饰器",
+        name: "input-adornment",
+        path: "/svelte/components/input-adornment",
+        component: InputAdornment
       },
       {
         title: "Radio 单选框",
         name: "radio",
         path: "/svelte/components/radio",
         component: Radio
-      },
-      {
-        title: "Select 选择器",
-        name: "select",
-        path: "/svelte/components/select",
       },
       {
         title: "Switch 开关",

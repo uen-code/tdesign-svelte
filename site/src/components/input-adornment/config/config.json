@@ -1,0 +1,16 @@
+{
+  "docHeader": {
+    "spline": "form",
+    "title": "InputAdornment 输入装饰器",
+    "desc": "用于装饰输入类组件的装饰器。"
+  },
+  "base": {
+    "componentName": "input-adornment"
+  },
+  "badge": {
+    "statements": "93.25%",
+    "branches": "66.66%",
+    "functions": "66.66%",
+    "lines": "93.25%"
+  }
+}

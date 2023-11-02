@@ -22,7 +22,11 @@ import TTabPanel from "./tabs/TabPanel.svelte";
 
 // 输入
 import TInput from "./input/Input.svelte"
+import TInputGroup from "./input/InputGroup.svelte"
+import TInputAdornment from "./input-adornment/InputAdornment.svelte"
 import TRadio from "./radio/Radio.svelte"
+import TRadioButton from "./radio/RadioButton.svelte"
+import TRadioGroup from "./radio/RadioGroup.svelte"
 import TSwitch from "./switch/Switch.svelte"
 import TTextarea from "./textarea/Textarea.svelte"
 
@@ -40,7 +44,7 @@ export {
   TButton, TIcon, TLink,
   TDivider, TLayout, TAside, TContent, TFooter, THeader, TSpace,
   TMenu, THeadMenu, TSubMenu, TMenuItem, TTabs, TTabPanel,
-  TInput, TRadio, TSwitch, TTextarea,
+  TInput, TInputGroup, TInputAdornment, TRadio, TRadioButton, TRadioGroup, TSwitch, TTextarea,
   TAvatar, TImage, TLoading, TCard,
   TPopup, TMessage
 }

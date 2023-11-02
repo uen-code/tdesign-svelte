@@ -1,12 +1,11 @@
 <script>
-  import configJson from './config/config.json'
+  import configJson from '../config/config.json'
+  import propJson from '../config/props.json'
   import {onMount} from "svelte";
   import {TInput} from "tdesign-svelte";
-  import propJson from "./config/props.json";
-  import {codeReplace} from "../../common.js";
+  import {codeReplace} from "../../../common.js";
 
   const baseCode = configJson.base.code
-
   // 初始化dom
   let usageNode;
   onMount(() => {
@@ -16,16 +15,17 @@
   })
 
   let changedProps = {}
-  let usageCode = codeReplace(baseCode,changedProps)
+  let usageCode = codeReplace(baseCode, changedProps)
+
   function onConfigChange(e) {
-    const { name, value } = e.detail;
+    const {name, value} = e.detail;
     changedProps[name] = value
-    usageCode = codeReplace(baseCode,changedProps)
+    usageCode = codeReplace(baseCode, changedProps)
   }
 </script>
 
 <td-doc-usage bind:this={usageNode} code={usageCode}>
   <div slot="input" style="width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;">
-    <TInput {...changedProps}/>
+    <TInput {...changedProps}></TInput>
   </div>
 </td-doc-usage>

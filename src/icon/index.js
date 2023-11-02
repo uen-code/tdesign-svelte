@@ -21,6 +21,7 @@ import InfoCircleFilledIcon from './components/InfoCircleFilledIcon.svelte'
 import JumpIcon from './components/JumpIcon.svelte'
 import LayersIcon from './components/LayersIcon.svelte'
 import LinkIcon from './components/LinkIcon.svelte'
+import LockOnIcon from './components/LockOnIcon.svelte'
 import MailIcon from './components/MailIcon.svelte'
 import NotificationFilledIcon from './components/NotificationFilledIcon.svelte'
 import PlayCircleIcon from './components/PlayCircleIcon.svelte'
@@ -55,6 +56,7 @@ export const components = {
   "jump": JumpIcon,
   "layers": LayersIcon,
   "link": LinkIcon,
+  "lockOn": LockOnIcon,
   "mail": MailIcon,
   "notificationFilled": NotificationFilledIcon,
   "playCircle": PlayCircleIcon,
@@ -74,10 +76,9 @@ export {
   DiscountIcon, DashboardIcon,
   Edit1Icon, EllipsisIcon,
   JumpIcon,
-  LayersIcon,
   HelpCircleFilledIcon, HomeIcon,
   InfoCircleFilledIcon,
-  LinkIcon,
+  LayersIcon, LinkIcon, LockOnIcon,
   MailIcon,
   NotificationFilledIcon,
   PlayCircleIcon, PreciseMonitorIcon,
