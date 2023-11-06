@@ -1,0 +1,16 @@
+{
+  "docHeader": {
+    "spline": "data",
+    "title": "Comment 评论",
+    "desc": "评论用于对页面内容的反馈、评价、讨论等，如对文章的评价，对话题的讨论等。"
+  },
+  "base": {
+    "componentName": "comment"
+  },
+  "badge": {
+    "statements": "98.44%",
+    "branches": "73.68%",
+    "functions": "80%",
+    "lines": "98.44%"
+  }
+}

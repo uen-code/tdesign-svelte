@@ -21,6 +21,7 @@ import Avatar from "./components/avatar/Index.svelte";
 import Image from "./components/image/Index.svelte";
 import Space from "./components/space/Index.svelte";
 import Grid from "./components/grid/Index.svelte"
+import Comment from "./components/comment/Index.svelte"
 
 export const routerList = [
   {
@@ -179,6 +180,12 @@ export const routerList = [
         name: "card",
         path: "/svelte/components/card",
         component: Card
+      },
+      {
+        title: "Comment 评论",
+        name: "comment",
+        path: "/svelte/components/comment",
+        component: Comment
       },
       {
         title: "Image 图片",

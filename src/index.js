@@ -38,6 +38,7 @@ import TAvatarGroup from "./avatar/AvatarGroup.svelte"
 import TLoading from "./loading/Loading.svelte"
 import TCard from "./card/Card.svelte"
 import TImage from "./image/Image.svelte"
+import TComment from './comment/Comment.svelte'
 
 // 消息提醒
 import TPopup from "./popup/Popup.svelte"
@@ -48,6 +49,6 @@ export {
   TDivider, TLayout, TAside, TContent, TFooter, THeader, TSpace, TRow, TCol,
   TMenu, THeadMenu, TSubMenu, TMenuItem, TTabs, TTabPanel,
   TInput, TInputGroup, TInputAdornment, TRadio, TRadioButton, TRadioGroup, TSwitch, TTextarea,
-  TAvatar, TAvatarGroup, TImage, TLoading, TCard,
+  TAvatar, TAvatarGroup, TImage, TLoading, TCard, TComment,
   TPopup, TMessage
 }
