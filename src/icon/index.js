@@ -2,6 +2,7 @@ import AddIcon from "./components/AddIcon.svelte"
 import BrowseIcon from "./components/BrowseIcon.svelte"
 import BrowseOffIcon from "./components/BrowseOffIcon.svelte"
 import CalendarIcon from "./components/CalendarIcon.svelte"
+import CaretRightSmallIcon from "./components/CaretRightSmallIcon.svelte"
 import ChatIcon from "./components/ChatIcon.svelte"
 import CheckCircleFilledIcon from './components/CheckCircleFilledIcon.svelte'
 import CheckIcon from './components/CheckIcon.svelte'
@@ -43,6 +44,7 @@ export const components = {
   "browse": BrowseIcon,
   "browseOff": BrowseOffIcon,
   "calendar": CalendarIcon,
+  "caretRightSmall": CaretRightSmallIcon,
   "chat": ChatIcon,
   "checkCircleFilled": CheckCircleFilledIcon,
   "check": CheckIcon,
@@ -82,7 +84,8 @@ export const components = {
 
 export {
   AddIcon,
-  BrowseIcon, BrowseOffIcon, CalendarIcon, ControlPlatformIcon,
+  BrowseIcon, BrowseOffIcon,
+  CalendarIcon,CaretRightSmallIcon, ControlPlatformIcon,
   ChevronLeftIcon, CheckCircleFilledIcon, CloudDownloadIcon, CloudUploadIcon,
   CloseIcon, ErrorCircleFilledIcon, ChevronRightIcon, CloseCircleFilledIcon,
   CheckIcon, ChatIcon,

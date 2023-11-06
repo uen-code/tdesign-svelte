@@ -2,6 +2,7 @@
     import {TComment, TIcon} from 'tdesign-svelte'
 
     const operations = [{content: '6', icon: 'thumbUp'}, {content: '回复', icon: 'chat'}]
+    const authors = [{name:'评论作者名B'},{name:'caretRightSmall'},{name:'评论作者名A'}]
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--comment-reply tdesign-demo-item--comment">
@@ -27,7 +28,11 @@
             avatar="https://tdesign.gtimg.com/site/avatar.jpg"
             datetime="今天 16:38"
             content="这里是评论者写的评论内容。">
-
+          <div slot="author" style="display: inline-flex; align-items: center">
+            <span>评论作者名B</span>
+            <TIcon name="caretRightSmall" style="margin: 0 4px"/>
+            <span>评论作者名A</span>
+          </div>
           <div slot="action" let:action style="gap: 6px;display: inline-flex">
             <div>
               <TIcon name="{action.icon}"/>
