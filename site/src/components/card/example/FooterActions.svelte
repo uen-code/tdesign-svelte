@@ -8,7 +8,7 @@
 
 </script>
 
-<div class="tdesign-demo-wrapper tdesign-demo-item--card-footer tdesign-demo-item--card">
+<div class="tdesign-demo-wrapper tdesign-demo-item--card-footer-actions tdesign-demo-item--card">
   <td-doc-demo mode="auto" language="markup">
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction: column;gap: 16px">

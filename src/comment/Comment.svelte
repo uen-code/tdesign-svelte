@@ -26,16 +26,19 @@
 <div class={COMPONENT_NAME}>
   <div class={`${COMPONENT_NAME}__inner`}>
     <!--  avatar  -->
-    <div class={`${COMPONENT_NAME}__avatar`}>
-      {#if isString(avatar)}
+    {#if isString(avatar)}
+      <div class={`${COMPONENT_NAME}__avatar`}>
         <img src={avatar} alt="" class={`${COMPONENT_NAME}__avatar-image`}/>
-      {/if}
-    </div>
+      </div>
+    {/if}
 
     <!--  content  -->
     <div class={`${COMPONENT_NAME}__content`}>
-      <!--   author and datetime   -->
-      <div class={`${COMPONENT_NAME}__author`}>
+      {#if $$slots.content}
+        <slot name="content" />
+      {:else}
+        <!--   author and datetime   -->
+        <div class={`${COMPONENT_NAME}__author`}>
         {#if author || $$slots.author}
           <span class={`${COMPONENT_NAME}__name`}>
             {#if author}
@@ -56,17 +59,13 @@
         {/if}
       </div>
 
-      <!--   content   -->
-      <div class={`${COMPONENT_NAME}__detail`}>
-        {#if content}
-          {content}
-        {:else}
-          <slot content/>
-        {/if}
+        <!--   content   -->
+        <div class={`${COMPONENT_NAME}__detail`}>
+        {content}
       </div>
 
-      <!--   quote   -->
-      {#if quote || $$slots.quote}
+        <!--   quote   -->
+        {#if quote || $$slots.quote}
         <div class={`${COMPONENT_NAME}__quote`}>
           {#if quote}
             {quote}
@@ -76,25 +75,27 @@
         </div>
       {/if}
 
-      <!-- actions -->
-      {#if actions && actions.length > 0}
-        {#each actions as action,i}
-          <TButton size="small" variant="text">
-            <slot slot="action" {action}></slot>
-          </TButton>
-        {/each}
+        <!-- actions -->
+        {#if actions && actions.length > 0}
+        <div class={`${COMPONENT_NAME}__actions`}>
+          {#each actions as action,i}
+            <TButton size="small" variant="text">
+              <slot name="action" {action}></slot>
+            </TButton>
+          {/each}
+        </div>
+      {/if}
+    {/if}
+    </div>
+  </div>
+  <!--  reply  -->
+  {#if reply || $$slots.reply}
+    <div class={`${COMPONENT_NAME}__reply`}>
+      {#if reply}
+        {reply}
+      {:else}
+        <slot name="reply"/>
       {/if}
     </div>
-
-    <!--  reply  -->
-    {#if reply || $$slots.reply}
-      <div class={`${COMPONENT_NAME}__reply`}>
-        {#if reply}
-          {reply}
-        {:else}
-          <slot name="reply"/>
-        {/if}
-      </div>
-    {/if}
-  </div>
+  {/if}
 </div>

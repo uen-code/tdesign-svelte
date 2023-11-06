@@ -74,11 +74,35 @@ import FooterActions from '../../example/FooterActions.svelte'
 
 #### 全部为展示内容的底部栏
 
+<script>
+import FooterContent from '../../example/FooterContent.svelte'
+</script>
+
+<FooterContent></FooterContent>
+
 #### 同时带展示内容与操作内容的底部栏
+
+<script>
+import FooterContentActions from '../../example/FooterContentActions.svelte'
+</script>
+
+<FooterContentActions></FooterContentActions>
 
 ### 同时带 header 和 footer 的卡片
 
 由顶部栏、底部栏和极简卡片组成的复杂卡片，三个区域内容可根据需要对内容进行配置。
+
+<script>
+import HeaderSubtitleFooterActions from '../../example/HeaderSubtitleFooterActions.svelte'
+</script>
+
+<HeaderSubtitleFooterActions></HeaderSubtitleFooterActions>
+
+<script>
+import HeaderFooterActions from '../../example/HeaderFooterActions.svelte'
+</script>
+
+<HeaderFooterActions></HeaderFooterActions>
 
 ### 不同标题内容的卡片
 
@@ -86,7 +110,25 @@ import FooterActions from '../../example/FooterActions.svelte'
 
 #### 带主副标题的卡片
 
+<script>
+import HeaderSubtitle from '../../example/HeaderSubtitle.svelte'
+</script>
+
+<HeaderSubtitle></HeaderSubtitle>
+
 #### 带标题描述的卡片
 
+<script>
+import HeaderDescription from '../../example/HeaderDescription.svelte'
+</script>
+
+<HeaderDescription></HeaderDescription>
+
 #### 同时带主副标题与标题描述的卡片
+
+<script>
+import HeaderSubtitleDescription from '../../example/HeaderSubtitleDescription.svelte'
+</script>
+
+<HeaderSubtitleDescription></HeaderSubtitleDescription>
 

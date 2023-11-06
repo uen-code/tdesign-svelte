@@ -10,7 +10,7 @@
   }
 </script>
 
-<div class="tdesign-demo-wrapper tdesign-demo-item--card-bordered tdesign-demo-item--card">
+<div class="tdesign-demo-wrapper tdesign-demo-item--card-bordered-none tdesign-demo-item--card">
   <td-doc-demo mode="auto" language="markup">
     <div class="tdesign-demo-item__body">
       <div class="demo-card">
