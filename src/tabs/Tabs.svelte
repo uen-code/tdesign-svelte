@@ -1,6 +1,6 @@
 <script>
   import {getClassString, usePrefixClass} from "../common.js";
-  import {onMount, setContext} from "svelte";
+  import {createEventDispatcher, onMount, setContext} from "svelte";
   import TabNav from "./TabNav.svelte";
   import TabPanel from "./TabPanel.svelte";
   import {SIZE_ENUM} from "../config.js";
@@ -16,6 +16,8 @@
   import {filterChildNodes, getAttribute} from "../utils/domOperations.js";
 
   import './style/css'
+
+  const dispatch = createEventDispatcher();
 
   const COMPONENT_NAME = usePrefixClass('tabs');
   const classPrefix = usePrefixClass();
@@ -40,8 +42,13 @@
   export let list = []
 
   const tabStore = TabStore(value)
-  const [, setTabValue] = tabStore
+  const [tabValue, setTabValue] = tabStore
   setContext("tabStore", tabStore)
+
+  // handle
+  tabValue.subscribe((val) => {
+    dispatch('change',val)
+  })
 
   $: if (defaultValue) setTabValue(defaultValue)
 

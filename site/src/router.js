@@ -20,6 +20,7 @@ import Card from "./components/card/Index.svelte";
 import Avatar from "./components/avatar/Index.svelte";
 import Image from "./components/image/Index.svelte";
 import Space from "./components/space/Index.svelte";
+import Grid from "./components/grid/Index.svelte"
 
 export const routerList = [
   {
@@ -75,6 +76,12 @@ export const routerList = [
         name: "divider",
         path: "/svelte/components/divider",
         component: Divider
+      },
+      {
+        title: "Grid 栅格",
+        name: "grid",
+        path: "/svelte/components/grid",
+        component: Grid
       },
       {
         title: "Layout 布局",
@@ -185,26 +192,6 @@ export const routerList = [
         path: "/svelte/components/badge",
       },
       {
-        title: "Calendar 日历",
-        name: "calendar",
-        path: "/svelte/components/calendar",
-      },
-      {
-        title: "List 列表",
-        name: "list",
-        path: "/svelte/components/list",
-      },
-      {
-        title: "Progress 进度条",
-        name: "progress",
-        path: "/svelte/components/progress",
-      },
-      {
-        title: "Table 表格",
-        name: "table",
-        path: "/svelte/components/table",
-      },
-      {
         title: "Tag 标签",
         name: "tag",
         path: "/svelte/components/tag",
@@ -222,21 +209,6 @@ export const routerList = [
     type: "component", // 组件文档
     children: [
       {
-        title: "Alert 警告提醒",
-        name: "alert",
-        path: "/svelte/components/alert",
-      },
-      {
-        title: "Dialog 对话框",
-        name: "dialog",
-        path: "/svelte/components/dialog",
-      },
-      {
-        title: "Drawer 模态抽屉",
-        name: "drawer",
-        path: "/svelte/components/drawer",
-      },
-      {
         title: "Loading 加载",
         name: "loading",
         path: "/svelte/components/loading",
@@ -247,16 +219,6 @@ export const routerList = [
         name: "message",
         path: "/svelte/components/message",
         component: Message
-      },
-      {
-        title: "Notification 消息通知",
-        name: "notification",
-        path: "/svelte/components/notification",
-      },
-      {
-        title: "Popconfirm 气泡确认框",
-        name: "popconfirm",
-        path: "/svelte/components/popconfirm",
       },
       {
         title: "Popup 弹出层",

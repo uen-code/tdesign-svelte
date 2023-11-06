@@ -21,6 +21,27 @@ export function getClassString(classObj) {
   return classString.trim();
 }
 
+/***
+ * 获取样式 样式对象转为字符串
+ */
+export function getStyleString(obj) {
+  if (Object.keys(obj).length === 0) {
+    return '';
+  }
+  return Object.keys(obj)
+    .map(key => `${camelToDash(key)}:${obj[key]}`)
+    .join(';');
+}
+
+/***
+ * 处理驼峰命名 minHeight => min-height
+ * @param str
+ * @returns {string}
+ */
+function camelToDash(str) {
+  return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
 /**
  * 字符串首字母大小写
  */

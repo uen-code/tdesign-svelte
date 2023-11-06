@@ -1,0 +1,23 @@
+{
+  "docHeader": {
+    "spline": "layout",
+    "title": "Grid 栅格",
+    "desc": "栅格是以规则的网格阵列来指导和规范网页中的版面布局以及信息分布，提高界面内布局的一致性，节约成本。"
+  },
+  "base": {
+    "componentName": "grid",
+    "panelList": [
+      {
+        "label": "grid",
+        "value": "grid"
+      }
+    ],
+    "code": "<TButton codeReplace>确定</TButton>"
+  },
+  "badge": {
+    "statements": "89.83%",
+    "branches": "72.41%",
+    "functions": "93.75%",
+    "lines": "89.83%"
+  }
+}

@@ -1,14 +1,31 @@
-/***
- * 监听指定元素的大小变化
- * @param listener 回调
- * @param observer 元素
+import {onMount, onDestroy} from "svelte";
+
+/**
+ * 用于订阅Listener事件
  */
+export function useListener(type, listener) {
+  onMount(() => {
+    window.addEventListener(type, listener);
+  });
+
+  onDestroy(() => {
+    window.removeEventListener(type, listener);
+  });
+}
+
 export function useResize(listener, observer) {
-  window.addEventListener('resize', listener);
+  useListener('resize', listener);
 
   let resizeObserver = null;
 
-  if (!window.ResizeObserver || !observer) return;
-  resizeObserver = new window.ResizeObserver(listener);
-  resizeObserver.observe(observer);
+  onMount(() => {
+    if (!window.ResizeObserver || !observer) return;
+    resizeObserver = new window.ResizeObserver(listener);
+    resizeObserver.observe(observer);
+  });
+
+  onDestroy(() => {
+    resizeObserver?.disconnect();
+  });
 }
+

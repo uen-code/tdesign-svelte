@@ -27,7 +27,8 @@ TDesign 适配桌面端的组件库，适合在 svelte 技术栈项目中使用�
 - 使用了TDesign的公共库：[tdesign-common](https://github.com/Tencent/tdesign-common)
 - 采用了TDesign-vue-next的逻辑：[tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
 
-目前组件库仅处于个人使用阶段，暂时无法满足企业需求。
+所有组件都是个人参考TDesign vue-next开发，暂时无法满足企业需求。
+下个版本会优化部分组件Dom
 
 # 在线文档
 

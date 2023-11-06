@@ -1,10 +1,12 @@
 <script>
+  import {createEventDispatcher} from "svelte";
   import {SIZE_ENUM} from "../config.js";
   import {SIZE, STATUS, getClassString, usePrefixClass} from "../common.js";
   import {CloseCircleFilledIcon, BrowseOffIcon, BrowseIcon} from "../icon";
-  import {useInputEventHandler} from "./useInput.js";
 
   import './style/css'
+
+  const dispatch = createEventDispatcher();
 
   const COMPONENT_NAME = usePrefixClass('input');
   const COMPONENT_WRAP_NAME = usePrefixClass('input__wrap');
@@ -52,18 +54,21 @@
 
   // handle
   /** input 聚焦 */
-  function onFocus() {
+  function onFocus(e) {
     if (disabled) return;
+    dispatch('focus',e)
     focused = true
   }
 
   /** input 失焦 */
-  function onBlur() {
+  function onBlur(e) {
+    dispatch('blur',e)
     focused = false
   }
 
   /** 点击 clear icon 处理 */
   function emitClear(e) {
+    dispatch('clear',e)
     value = ''
   }
 
@@ -74,11 +79,13 @@
 
   /** 鼠标移入 input 处理 */
   function onInputMouseenter(e) {
+    dispatch('mouseenter',e)
     isHover = true
   }
 
   /** 鼠标移出 input 处理 */
   function onInputMouseleave(e) {
+    dispatch('mouseleave',e)
     isHover = false
   }
 

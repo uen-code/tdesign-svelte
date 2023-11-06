@@ -11,6 +11,8 @@ import TContent from './layout/Content.svelte'
 import TFooter from './layout/Footer.svelte'
 import THeader from './layout/Header.svelte'
 import TSpace from './space/Space.svelte'
+import TRow from './grid/Row.svelte'
+import TCol from './grid/Col.svelte'
 
 // 导航
 import TMenu from './menu/Menu.svelte'
@@ -32,6 +34,7 @@ import TTextarea from "./textarea/Textarea.svelte"
 
 // 数据展示
 import TAvatar from "./avatar/Avatar.svelte"
+import TAvatarGroup from "./avatar/AvatarGroup.svelte"
 import TLoading from "./loading/Loading.svelte"
 import TCard from "./card/Card.svelte"
 import TImage from "./image/Image.svelte"
@@ -42,9 +45,9 @@ import TMessage from "./message/Message.svelte"
 
 export {
   TButton, TIcon, TLink,
-  TDivider, TLayout, TAside, TContent, TFooter, THeader, TSpace,
+  TDivider, TLayout, TAside, TContent, TFooter, THeader, TSpace, TRow, TCol,
   TMenu, THeadMenu, TSubMenu, TMenuItem, TTabs, TTabPanel,
   TInput, TInputGroup, TInputAdornment, TRadio, TRadioButton, TRadioGroup, TSwitch, TTextarea,
-  TAvatar, TImage, TLoading, TCard,
+  TAvatar, TAvatarGroup, TImage, TLoading, TCard,
   TPopup, TMessage
 }

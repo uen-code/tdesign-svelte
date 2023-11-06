@@ -20,11 +20,11 @@
       label: '选项四',
     },
   ]
-  const value = '';
+  let value = '2';
   const itemOptions = ['选项一', '选项二', '选项三', '选项四'];
 
   function onChange(e) {
-    console.log("change", e.detail)
+    console.log("change", value)
   }
 </script>
 
@@ -33,7 +33,7 @@
     <div class="tdesign-demo-item__body">
       <div style="display: inline-flex;flex-direction:column;gap: 16px" class="fl">
         <div>
-          <TRadioGroup value="value" allowUncheck name="city" {options} on:change={onChange}></TRadioGroup>
+          <TRadioGroup bind:value allowUncheck name="city" {options} on:change={onChange}></TRadioGroup>
         </div>
         <div>
           <TRadioGroup defaultValue="选项一" options={itemOptions} name="city"></TRadioGroup>

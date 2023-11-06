@@ -34,16 +34,6 @@ import Icon from "../../example/Icon.svelte"
 
 <Icon></Icon>
 
-### 增删选项卡
-
-用户可添加、删除选项卡，满足自定义场景。
-
-<script>
-import Custom from "../../example/Custom.svelte"
-</script>
-
-<Custom></Custom>
-
 ### 不同尺寸的选项卡
 
 提供 大、中（默认）两种尺寸。
@@ -103,6 +93,16 @@ import Disabled from "../../example/Disabled.svelte"
 </script>
 
 <Disabled></Disabled>
+
+### 增删选项卡
+
+用户可添加、删除选项卡，满足自定义场景。
+
+<script>
+import Custom from "../../example/Custom.svelte"
+</script>
+
+<Custom></Custom>
 
 ### 可拖拽的选项卡
 

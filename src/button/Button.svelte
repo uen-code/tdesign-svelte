@@ -50,6 +50,7 @@
 </script>
 
 <button bind:this={node}
+        on:click
         disabled={disabled || loading}
         class="{getClassString(buttonClass)} {className}"
         type="button"

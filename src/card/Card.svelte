@@ -31,6 +31,9 @@
   /** 卡片封面图。值类型为字符串，会自动使用 `img` 标签输出封面图；也可以完全自定义封面图  */
   export let cover = ''
 
+  export let className = ''
+  export let style = ''
+
   // 是否显示顶部
   $: isHeader = $$slots.header || title || subtitle || description || $$slots.avatar || ($$slots.actions && theme !== 'footer')
   // 是否显示底部
@@ -52,7 +55,7 @@
 {#if loading}
   <Loading/>
 {:else }
-  <div class={getClassString(cardClass)}>
+  <div class={getClassString(cardClass)} {style}>
     <!--  header  -->
     {#if !isHeader}
     {:else}

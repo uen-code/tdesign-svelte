@@ -25,7 +25,7 @@
   }
 </script>
 
-<a class={getClassString(linkClass)} href={disabled || !href ? undefined : href}>
+<a class={getClassString(linkClass)} href={disabled || !href ? undefined : href} on:click>
   {#if $$slots.prefixIcon}
     <span class={`${COMPONENT_NAME}__prefix-icon`}>
       <slot name="prefixIcon"/>

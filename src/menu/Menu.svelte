@@ -1,14 +1,19 @@
 <script>
-  import {setContext} from 'svelte';
+  import {createEventDispatcher, setContext} from 'svelte';
   import {getClassString, usePrefixClass} from "../common.js";
 
   import './style/css'
   import {MenuStore} from "./useMenu.js";
 
+
+  const dispatch = createEventDispatcher()
+
   const COMPONENT_NAME = usePrefixClass()
 
   /** 子菜单展开的导航集合 */
   export let expanded = []
+  /** 子菜单展开的导航集合，非受控属性 */
+  export let defaultExpanded = []
   /** 激活菜单项 */
   export let value = undefined
   /** 默认选中 */
@@ -21,9 +26,17 @@
   export let width = ['232', '64']
   export let style = ''
 
-  const menuStore = MenuStore(value, expanded)
+  const menuStore = MenuStore(value, expanded || defaultExpanded)
   setContext("menuStore", menuStore)
-  const [,setMenuValue] = menuStore
+  const [menuValue, setMenuValue, menuExpands] = menuStore
+
+  // handle
+  menuValue.subscribe((val) => {
+    dispatch('change', val)
+  })
+  menuExpands.subscribe((val) => {
+    dispatch('expand', val)
+  })
 
   $: if (defaultValue) setMenuValue(defaultValue)
 

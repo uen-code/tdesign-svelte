@@ -1,11 +1,13 @@
 <script>
   import {getClassString, usePrefixClass} from "../common.js";
-  import {setContext} from "svelte";
+  import {createEventDispatcher, setContext} from "svelte";
   import {MenuStore} from "./useMenu.js";
+  import './style/css'
 
   const classPrefix = usePrefixClass();
 
-  import './style/css'
+
+  const dispatch = createEventDispatcher()
 
   /** 主题 */
   export let theme = 'light'
@@ -17,8 +19,13 @@
   export let className = ''
 
   const menuStore = MenuStore(value)
+  const [menuValue] = menuStore
 
   setContext("menuStore", menuStore)
+
+  menuValue.subscribe((val) => {
+    dispatch('change', val)
+  })
 
   // class
   $: headerMenuClass = {
