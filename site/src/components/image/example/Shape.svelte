@@ -1,62 +1,42 @@
 <script>
-  import {TButton} from 'tdesign-svelte'
-  import {CalendarIcon} from "tdesign-svelte-icon";
+  import {TImage} from 'tdesign-svelte'
+
 </script>
 
-<div class="tdesign-demo-wrapper tdesign-demo-item--button-base tdesign-demo-item--button">
+<div class="tdesign-demo-wrapper tdesign-demo-item--image-fill-shape tdesign-demo-item--image">
   <td-doc-demo mode="auto" language="markup">
     <div class="tdesign-demo-item__body">
-      <div style="display: flex;flex-direction: column">
-        <div class="fl">
-          <TButton theme="primary" shape="rectangle" variant="base">填充按钮</TButton>
-          <TButton theme="primary" shape="square" variant="base">
-            <CalendarIcon slot="icon"/>
-          </TButton>
-          <TButton theme="primary" shape="round" variant="base">填充按钮</TButton>
-          <TButton theme="primary" shape="circle" variant="base">
-            <CalendarIcon slot="icon"/>
-          </TButton>
+      <div style="display: inline-flex;gap: 16px">
+        <div style="display: flex;flex-direction: column;gap: 16px;align-items: center">
+          <TImage
+            src="https://tdesign.gtimg.com/demo/demo-image-1.png"
+            shape="square"
+            style="width: 160px; height: 160px"
+            fit="cover"
+          />
+          <span>square</span>
         </div>
-        <div class="fl">
-          <TButton shape="rectangle" variant="outline">描边按钮</TButton>
-          <TButton shape="square" variant="outline">
-            <CalendarIcon slot="icon"/>
-          </TButton>
-          <TButton shape="round" variant="outline">描边按钮</TButton>
-          <TButton shape="circle" variant="outline">
-            <CalendarIcon slot="icon"/>
-          </TButton>
+
+        <div style="display: flex;flex-direction: column;gap: 16px;align-items: center">
+          <TImage
+            src="https://tdesign.gtimg.com/demo/demo-image-1.png"
+            style="width: 160px; height: 160px"
+            fit="cover"
+            shape="round"
+          />
+          <span>round</span>
         </div>
-        <div class="fl">
-          <TButton shape="rectangle" variant="dashed">虚框按钮</TButton>
-          <TButton shape="square" variant="dashed">
-            <CalendarIcon slot="icon"/>
-          </TButton>
-          <TButton shape="round" variant="dashed">虚框按钮</TButton>
-          <TButton shape="circle" variant="dashed">
-            <CalendarIcon slot="icon"/>
-          </TButton>
-        </div>
-        <div class="fl">
-          <TButton shape="rectangle" variant="text">文字按钮</TButton>
-          <TButton shape="square" variant="text">
-            <CalendarIcon slot="icon"/>
-          </TButton>
-          <TButton shape="round" variant="text">文字按钮</TButton>
-          <TButton shape="circle" variant="text">
-            <CalendarIcon slot="icon"/>
-          </TButton>
+
+        <div style="display: flex;flex-direction: column;gap: 16px;align-items: center">
+          <TImage
+            src="https://tdesign.gtimg.com/demo/demo-image-1.png"
+            style="width: 160px; height: 160px"
+            shape="circle"
+            fit="cover"
+          />
+          <span>circle</span>
         </div>
       </div>
     </div>
   </td-doc-demo>
-
 </div>
-
-<style>
-  .fl {
-    margin-top: 16px;
-    display: inline-flex;
-    gap: 16px
-  }
-</style>

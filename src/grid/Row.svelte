@@ -18,12 +18,14 @@
   /** flex 布局下的水平排列方式 */
   export let justify = 'start'
 
+  export let className = ''
+  export let style = ''
+
   setContext('rowGutter', gutter)
 
   let size = calcSize(window.innerWidth);
 
   // handle
-
   const updateSize = () => {
     size = calcSize(window.innerWidth);
   };
@@ -31,7 +33,7 @@
   useListener('resize', updateSize);
 
   // style
-  $: rowStyle = getStyleString(calcRowStyle(gutter, size))
+  $: rowStyle = getStyleString(calcRowStyle(gutter, size));
 
   // class
   $: rowClass = {
@@ -39,8 +41,8 @@
     [`${COMPONENT_NAME}--${justify}`]: justify,
     // 区分 justify 传值
     [`${COMPONENT_NAME}--align-${align}`]: align,
-  }
+  };
 </script>
-<div class="{getClassString(rowClass)}" style={rowStyle}>
+<div class="{getClassString(rowClass)}" style="{rowStyle};{style}">
   <slot/>
 </div>

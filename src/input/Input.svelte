@@ -56,19 +56,30 @@
   /** input 聚焦 */
   function onFocus(e) {
     if (disabled) return;
-    dispatch('focus',e)
+    dispatch('focus', e)
     focused = true
   }
 
   /** input 失焦 */
   function onBlur(e) {
-    dispatch('blur',e)
+    dispatch('blur', e)
     focused = false
+  }
+
+  /** keydown 键盘 */
+  function onKeydown(e) {
+    if (disabled) return;
+    const {code} = e;
+    if (/enter/i.test(code) || /enter/i.test(e.key)) {
+      dispatch('enter', e.target.value)
+    } else {
+      dispatch('keydown', e.target.value)
+    }
   }
 
   /** 点击 clear icon 处理 */
   function emitClear(e) {
-    dispatch('clear',e)
+    dispatch('clear', e)
     value = ''
   }
 
@@ -79,13 +90,13 @@
 
   /** 鼠标移入 input 处理 */
   function onInputMouseenter(e) {
-    dispatch('mouseenter',e)
+    dispatch('mouseenter', e)
     isHover = true
   }
 
   /** 鼠标移出 input 处理 */
   function onInputMouseleave(e) {
-    dispatch('mouseleave',e)
+    dispatch('mouseleave', e)
     isHover = false
   }
 
@@ -96,6 +107,7 @@
 
   // class
   $: inputClass = {
+    [className]: className,
     [COMPONENT_NAME]: true,
     [SIZE[size]]: size !== 'medium',
     [STATUS.disabled]: disabled,
@@ -135,12 +147,14 @@
         {/if}
       </div>
     {/if}
+
     <!-- prefix icon -->
     {#if $$slots.prefixIcon}
       <span class="{`${COMPONENT_NAME}__prefix`} {`${COMPONENT_NAME}__prefix-icon`}">
         <slot name="prefixIcon"/>
       </span>
     {/if}
+
     <!--  input  -->
     <input
       class="{`${COMPONENT_NAME}__inner`}"
@@ -150,7 +164,9 @@
       placeholder="{placeholder ? placeholder : '请输入'}"
       on:focus={onFocus}
       on:blur={onBlur}
+      on:keydown={onKeydown}
     />
+
     <!--  suffix content  -->
     {#if suffix || $$slots.suffix}
       <div class={`${COMPONENT_NAME}__suffix`}>
@@ -161,6 +177,7 @@
         {/if}
       </div>
     {/if}
+
     <!--  password icon  -->
     {#if type === 'password'}
       <span class="{getClassString(inputSuffixClass)} {`${COMPONENT_NAME}__clear`}">
@@ -171,12 +188,14 @@
         {/if}
       </span>
     {/if}
+
     <!--  clearable icon  -->
     {#if showClear}
       <span class="{getClassString(inputSuffixClass)} {`${COMPONENT_NAME}__clear`}">
         <CloseCircleFilledIcon className={`${COMPONENT_NAME}__suffix-clear`} on:click={emitClear}/>
       </span>
     {/if}
+
     <!-- suffix icon -->
     {#if $$slots.suffixIcon}
       <span class="{getClassString(inputSuffixClass)} {clearable? `${COMPONENT_NAME}__clear`:''}">

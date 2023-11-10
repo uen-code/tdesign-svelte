@@ -1,6 +1,6 @@
 <script>
   import {usePrefixClass, SIZE, STATUS, getClassString} from '../common'
-  import {SIZE_ENUM, THEME_ENUM} from '../config'
+  import {SIZE_ENUM} from '../config'
   import {onMount} from "svelte";
   import useRipple from "../hooks/useRipple";
   import TLoading from "../loading/Loading.svelte";
@@ -29,6 +29,7 @@
   export let shape = 'rectangle'
   /** 是否为幽灵按钮 */
   export let ghost = false
+
   export let className = ''
   export let style = ''
 
@@ -36,6 +37,7 @@
   $: mergeTheme = theme ? theme : variant === 'base' ? 'primary' : 'default'
   $: iconOnly = $$slots.icon && !$$slots.default;
   $: buttonClass = {
+    [className]: className,
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--variant-${variant}`]: true,
     [`${COMPONENT_NAME}--theme-${mergeTheme}`]: true,
@@ -52,7 +54,7 @@
 <button bind:this={node}
         on:click
         disabled={disabled || loading}
-        class="{getClassString(buttonClass)} {className}"
+        class="{getClassString(buttonClass)}"
         type="button"
         style="{style}">
   {#if loading}

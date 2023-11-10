@@ -28,6 +28,9 @@
   /** 是否选中 */
   export let checked = false
 
+  export let className = ''
+  export let style = ''
+
   /** 当前值 */
   let currentValue = value || checked ? value || checked : false
   /** 自定义内容 */
@@ -58,6 +61,7 @@
 
   // class
   $: switchClass = {
+    [className]:className,
     [`${COMPONENT_NAME}`]: true,
     [SIZE[size]]: true,
     [STATUS.disabled]: disabled,

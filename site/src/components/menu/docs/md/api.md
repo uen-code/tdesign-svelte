@@ -58,15 +58,14 @@ default | String / Slot  | - | 菜单项内容，同 content。JS 类型：`stri
 disabled | Boolean | - | 是否禁用菜单项展开/收起/跳转等功能 | N
 icon | Slot  | - | 菜单项图标。JS 类型：`Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 popupProps | Object | - | 【开发中】透传 Popup 组件全部特性。JS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/menu/type.ts) | N
-title | String / Slot | - | 二级菜单内容。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
+title | String | - | 二级菜单内容。JS 类型：`string`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 value | String / Number | - | 菜单项唯一标识。JS 类型：`MenuValue` | N
 
 ### MenuItem Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-content | String / Slot | - | 菜单项内容。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
-default | String / Slot | - | 菜单项内容，同 content。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
+default | String | - | 菜单项内容，同 content。JS 类型：`string`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 disabled | Boolean | - | 是否禁用菜单项展开/收起/跳转等功能 | N
 href | String | - | 【开发中】跳转链接 | N
 icon | Slot  | - | 图标。JS 类型：`Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N

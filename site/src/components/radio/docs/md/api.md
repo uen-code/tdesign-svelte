@@ -9,9 +9,9 @@
 allowUncheck | Boolean | false | 是否允许取消选中 | N
 checked | Boolean | false | 是否选中。 | N
 defaultChecked | Boolean | false | 是否选中。非受控属性 | N
-default | String / Slot  | - | 单选按钮内容，同 label。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
+default | Slot  | - | 单选按钮内容，同 label。JS 类型：`Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 disabled | Boolean | undefined | 是否为禁用态。如果存在父组件 RadioGroup，默认值由 RadioGroup.disabled 控制。Radio.disabled 优先级高于 RadioGroup.disabled | N
-label | String / Slot  | - | 主文案。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
+label | String  | - | 主文案。JS 类型：`string`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 name | String | - | HTML 元素原生属性 | N
 value | String / Number / Boolean | undefined | 单选按钮的值。JS 类型：`string \| number \| boolean` | N
 onChange | Function |  | JS 类型：`(checked: boolean, context: { e: Event }) => void`<br/>选中状态变化时触发 | N
@@ -31,7 +31,7 @@ click | `(context: { e: MouseEvent })` | 点击时出发，一般用于外层阻
 allowUncheck | Boolean | false | 是否允许取消选中 | N
 disabled | Boolean | - | 是否禁用全部子单选框。默认为 false。RadioGroup.disabled 优先级低于 Radio.disabled | N
 name | String | - | HTML 元素原生属性 | N
-options | Array | - | 单选组件按钮形式。RadioOption 数据类型为 string 或 number 时，表示 label 和 value 值相同。JS 类型：` { label?: string; value?: string \| number \| boolean; disabled?: boolean }`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/radio/type.ts) | N
+options | Array | - | 【讨论中】单选组件按钮形式。RadioOption 数据类型为 string 或 number 时，表示 label 和 value 值相同。JS 类型：` { label?: string; value?: string \| number \| boolean; disabled?: boolean }`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/radio/type.ts) | N
 size | String | medium | 组件尺寸【讨论中】。可选项：small/medium/large。JS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 value | String / Number / Boolean | - | 选中的值。支持语法糖 `bind:value`。JS 类型：`T` `type RadioValue = string \| number \| boolean`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/radio/type.ts) | N
 defaultValue | String / Number / Boolean | - | 选中的值。非受控属性。JS 类型：`T` `type RadioValue = string \| number \| boolean`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/radio/type.ts) | N

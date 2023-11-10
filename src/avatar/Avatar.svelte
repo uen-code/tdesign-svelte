@@ -60,6 +60,7 @@
 
   // class
   $: avatarClass = {
+    [className]: className,
     [`${COMPONENT_NAME}`]: true,
     [SIZE[sizeValue]]: sizeValue && SIZE[sizeValue],
     [`${COMPONENT_NAME}--circle`]: shape === 'circle',
@@ -67,7 +68,7 @@
     [`${COMPONENT_NAME}__icon`]: $$slots.icon && !$$slots.default,
   }
 </script>
-<div class="{getClassString(avatarClass)} {className}" bind:this={avatarNode} style="{customAvatarSize} {style}">
+<div class="{getClassString(avatarClass)}" bind:this={avatarNode} style="{customAvatarSize} {style}">
   {#if image}
     <TImage src={image} {alt}/>
   {:else if $$slots.icon}

@@ -6,8 +6,7 @@
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-content | String / Slot  | - | 链接内容。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
-default | String / Slot  | - | 链接内容，同 content。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
+default | String  | - | 链接内容，同 content。JS 类型：`Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
 disabled | Boolean | undefined | 禁用链接。优先级：Link.disabled > Form.disabled | N
 hover | String | underline | 链接悬浮态样式，有 文本颜色变化、添加下划线等 2 种方法。可选项：color/underline | N
 href | String | - | 【开发中】跳转链接 | N

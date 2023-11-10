@@ -7,12 +7,10 @@
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 alt | String | - | 头像替换文本，仅当图片加载失败时有效 | N
-content | String / Slot  | - | 子元素内容。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
-default | String / Slot  | - | 子元素内容，同 content。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
+default | Slot  | - | 子元素内容。JS 类型：`Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 hideOnLoadFailed | Boolean | false | 加载失败时隐藏图片 | N
 icon | Slot  | - | 图标。JS 类型：`Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 image | String | - | 图片地址 | N
-imageProps | Object | - | 透传至 Image 组件。JS 类型：`ImageProps`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/avatar/type.ts) | N
 shape | String | circle | 形状。可选项：circle/round。JS 类型：`ShapeEnum ` `type ShapeEnum = 'circle' \| 'round'`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/avatar/type.ts) | N
 size | String | - | 尺寸，示例值：small/medium/large/24px/38px 等。优先级高于 AvatarGroup.size 。Avatar 单独存在时，默认值为 medium。如果父组件存在 AvatarGroup，默认值便由 AvatarGroup.size 决定 | N
 onError | Function |  | JS 类型：`(context: { e: Event }) => void`<br/>图片加载失败时触发 | N

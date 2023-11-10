@@ -59,6 +59,7 @@
 
   // class
   $: colClass = {
+    [className]: className,
     [`${COMPONENT_NAME}`]: true,
     [`${COMPONENT_NAME}-${span}`]: !isUndefined(span) && span,
     [`${COMPONENT_NAME}-order-${order}`]: order && order,
@@ -87,7 +88,7 @@
     };
   }, {});
 </script>
-<div class="{getClassString(colClass)} {getClassString(colSizeClass)} {className}"
+<div class="{getClassString(colClass)} {getClassString(colSizeClass)}"
      style="{getStyleString(colStyle)};{style}">
   <slot/>
 </div>

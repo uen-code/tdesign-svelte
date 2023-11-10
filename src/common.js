@@ -69,4 +69,5 @@ export const STATUS = {
   focused: `${classPrefix}-is-focused`,
   active: `${classPrefix}-is-active`,
   checked: `${classPrefix}-is-checked`,
+  indeterminate: `${classPrefix}-is-indeterminate`,
 }

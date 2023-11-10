@@ -1,7 +1,7 @@
 import multiInput from "rollup-plugin-multi-input";
 import styles from 'rollup-plugin-styles'
 import copy from "rollup-plugin-copy";
-import clean from "./scripts/build-clean.js";
+import deleteDirectory from "./scripts/build-clean.js";
 
 // components copy
 const components = {
@@ -13,7 +13,7 @@ const components = {
       targets: [{ src: 'src/*', dest: 'components/' }],
       copyOnce: true
     }),
-    clean()
+    deleteDirectory({directoryPath: 'components/_common'})
   ],
   output: {
     dir: 'components/',

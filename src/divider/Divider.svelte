@@ -12,8 +12,12 @@
   /** 分隔线类型有两种：水平和垂直 */
   export let layout = 'horizontal'
 
+  export let className = ''
+  export let style = ''
+
   // class
   $: dividerClass = {
+    [className]: className,
     [`${COMPONENT_NAME}`]: true,
     [`${COMPONENT_NAME}--${layout}`]: true,
     [`${COMPONENT_NAME}--dashed`]: dashed,
@@ -22,7 +26,7 @@
   }
 </script>
 
-<div class={getClassString(dividerClass)}>
+<div class={getClassString(dividerClass)} style="{style}">
   {#if $$slots.default}
     <span class={`${COMPONENT_NAME}__inner-text`}>
       <slot/>

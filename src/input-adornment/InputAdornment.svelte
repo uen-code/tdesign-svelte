@@ -10,8 +10,12 @@
   /** 前缀装饰 */
   export let prepend = undefined;
 
+  export let className = '';
+  export let style = '';
+
   // class
   $: inputAdrnmentClass = {
+    [className]: className,
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--prepend`]: prepend,
     [`${COMPONENT_NAME}--append`]: append,
@@ -33,7 +37,7 @@
   {/if}
 
   <!-- content -->
-  <slot />
+  <slot/>
 
   <!-- append -->
   {#if append || $$slots.append}

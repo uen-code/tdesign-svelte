@@ -1,0 +1,23 @@
+{
+  "docHeader": {
+    "spline": "form",
+    "title": "Checkbox 多选框",
+    "desc": "多选框是一个选择控件，允许用户通过单击在选中和未选中之间切换。"
+  },
+  "base": {
+    "componentName": "checkbox",
+    "panelList": [
+      {
+        "label": "checkbox",
+        "value": "checkbox"
+      }
+    ],
+    "code": "<TCheckbox codeReplace>基础多选框</TCheckbox>"
+  },
+  "badge": {
+    "statements": "95.85%",
+    "branches": "80.45%",
+    "functions": "94.11%",
+    "lines": "95.85%"
+  }
+}

@@ -24,6 +24,7 @@
   export let theme = 'light'
   /** 菜单宽度 值类型为数组时: [ 展开时的宽度, 折叠时的宽度 ]，示例：['200px', '80px'] */
   export let width = ['232', '64']
+  export let className = ''
   export let style = ''
 
   const menuStore = MenuStore(value, expanded || defaultExpanded)
@@ -42,6 +43,7 @@
 
   // class
   const menuClass = {
+    [className]: className,
     [`${COMPONENT_NAME}-default-menu`]: true,
     [`${COMPONENT_NAME}-menu--${theme}`]: true,
     [`${COMPONENT_NAME}-is-collapsed`]: collapsed

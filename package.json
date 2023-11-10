@@ -1,25 +1,27 @@
 {
   "name": "tdesign-svelte",
   "title": "tdesign-svelte",
-  "version": "0.0.1-dev.1",
+  "version": "0.0.1-alpha.1",
+  "description": "TDesign Component for svelte",
   "type": "module",
   "main": "components/index.js",
   "files": [
     "components"
   ],
+  "keywords": [
+    "svelte",
+    "svelte3",
+    "svelte kit",
+    "tdesign",
+    "javascript"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hzx000822/tdesign-svelte.git"
   },
-  "keywords": [
-    "svelte",
-    "tdesign",
-    "tdesign svelte",
-    "ui framework",
-    "ui 组件库",
-    "svelte ui",
-    "web component"
-  ],
   "scripts": {
     "init": "git submodule init && git submodule update",
     "start": "npm run init && npm run dev",

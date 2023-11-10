@@ -4,6 +4,9 @@
   import './style/css'
   import {setContext} from "svelte";
 
+  export let className = '';
+  export let style = '';
+
   const COMPONENT_NAME = usePrefixClass('layout')
 
   // 是否包含侧边栏
@@ -17,11 +20,12 @@
 
   // class
   $: layoutClass = {
+    [className]: className,
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--with-sider`]: hasSide,
   }
 </script>
 
-<section class={getClassString(layoutClass)}>
+<section class={getClassString(layoutClass)} {style}>
   <slot></slot>
 </section>

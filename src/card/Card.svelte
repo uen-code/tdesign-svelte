@@ -41,16 +41,19 @@
 
   // class
   $: cardClass = {
+    [className]: className,
     [COMPONENT_NAME]: true,
     [`${SIZE[size]}`]: size === 'small',
     [`${COMPONENT_NAME}--bordered`]: bordered,
     [`${COMPONENT_NAME}--shadow`]: shadow,
     [`${COMPONENT_NAME}--shadow-hover`]: hoverShadow,
-  }
+  };
+
   $: headerClass = {
     [`${COMPONENT_NAME}__header`]: true,
     [`${COMPONENT_NAME}__title--bordered`]: headerBordered,
   }
+
 </script>
 {#if loading}
   <Loading/>

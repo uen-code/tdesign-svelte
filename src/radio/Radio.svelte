@@ -25,6 +25,9 @@
   /** 是否选中 */
   export let checked = false
 
+  export let className = ''
+  export let style = ''
+
   // handle
   function onLabelClick(e) {
     if (radioDisabled) return;
@@ -49,6 +52,7 @@
   // class
   $: prefixClass = type === 'button' ? COMPONENT_BTN_NAME : COMPONENT_NAME;
   $: inputClass = {
+    [className]:className,
     [`${prefixClass}`]: true,
     [STATUS.checked]: radioChecked,
     [STATUS.disabled]: radioDisabled,
@@ -59,6 +63,7 @@
   class={getClassString(inputClass)}
   tabindex={disabled ? undefined : '0'}
   on:click={onLabelClick}
+  {style}
 >
   <input
     type="radio"

@@ -13,8 +13,8 @@ autocomplete | String | undefined | 【开发中】是否开启自动填充功�
 autofocus | Boolean | false | 【开发中】自动聚焦 | N
 clearable | Boolean | false | 是否可清空 | N
 disabled | Boolean | - | 是否禁用输入框 | N
-format | Function | - | 指定输入框展示值的格式。JS 类型：`InputFormatType` `type InputFormatType = (value: InputValue) => string`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/input/type.JS) | N
-inputClass | String / Object / Array | - | t-input 同级类名，示例：'name1 name2 name3' 或 `['name1', 'name2']` 或 `[{ 'name1': true }]`。JS 类型：`ClassName`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
+format | Function | - | 【开发中】指定输入框展示值的格式。JS 类型：`InputFormatType` `type InputFormatType = (value: InputValue) => string`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/input/type.JS) | N
+inputClass | String | - | t-input 同级类名，示例：'name1 name2 name3' 。JS 类型：`ClassName`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
 label | String / Slot  | - | 左侧文本。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
 name | String | - | 名称 | N
 placeholder | String | undefined | 占位符 | N
@@ -22,11 +22,11 @@ prefixIcon | Slot  | - | 组件前置图标。JS 类型：`Node`。[通用类型
 readonly | Boolean | false | 只读状态 | N
 size | String | medium | 输入框尺寸。可选项：small/medium/large。JS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
 status | String | undefined | 输入框状态。默认情况会由组件内部根据实际情况呈现，如果文本过长引起的状态变化。可选项：default/success/warning/error | N
-suffix | String / Slot  | - | 后置图标前的后置内容。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
+suffix | Slot  | - | 后置图标前的后置内容。JS 类型：`Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
 suffixIcon | Slot  | - | 组件后置图标。JS 类型：`Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
-tips | String / Slot  | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
+tips | String  | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。JS 类型：`string`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.JS) | N
 type | String | text | 输入框类型。可选项：text/number/url/tel/password/search/submit/hidden | N
-value | String | '' | 输入框的值。支持语法糖 `v-model` 或 `v-model:value`。JS 类型：`InputValue` `type InputValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/input/type.JS) | N
+value | String | '' | 输入框的值。支持语法糖 `bind:value`。JS 类型：`InputValue` `type InputValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/input/type.JS) | N
 defaultValue | String | '' | 输入框的值。非受控属性。JS 类型：`InputValue` `type InputValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/input/type.JS) | N
 onBlur | Function |  | JS 类型：`(value: InputValue, context: { e: FocusEvent }) => void`<br/>失去焦点时触发 | N
 onChange | Function |  | JS 类型：`(value: InputValue, context?: { e?: InputEvent \| MouseEvent \| CompositionEvent; trigger: 'input' \| 'initial' \| 'clear' }) => void`<br/>输入框值发生变化时触发。`trigger=initial` 表示传入的数据不符合预期，组件自动处理后触发 change 告知父组件。如：初始值长度超过 `maxlength` 限制 | N

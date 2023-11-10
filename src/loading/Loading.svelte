@@ -37,8 +37,12 @@
   /** 加载提示文案 */
   export let text = undefined
 
+  export let className = '';
+  export let style = '';
+
   // classes
   $: baseClasses = {
+    [className]: className,
     [centerClass]: true,
     [SIZE[size]]: true,
   }
@@ -47,7 +51,7 @@
   $: withContentClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME} ${fullClass}`
   $: normalClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME}`
 </script>
-<div class={normalClasses}>
+<div class={normalClasses} {style}>
   <GradientIcon />
   {#if text}
     {text}

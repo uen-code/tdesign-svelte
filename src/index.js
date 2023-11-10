@@ -31,6 +31,8 @@ import TRadioButton from "./radio/RadioButton.svelte"
 import TRadioGroup from "./radio/RadioGroup.svelte"
 import TSwitch from "./switch/Switch.svelte"
 import TTextarea from "./textarea/Textarea.svelte"
+import TCheckbox from "./checkbox/Checkbox.svelte"
+import TCheckboxGroup from "./checkbox/CheckboxGroup.svelte"
 
 // 数据展示
 import TAvatar from "./avatar/Avatar.svelte"
@@ -39,6 +41,8 @@ import TLoading from "./loading/Loading.svelte"
 import TCard from "./card/Card.svelte"
 import TImage from "./image/Image.svelte"
 import TComment from './comment/Comment.svelte'
+import TTag from './tag/Tag.svelte'
+import TCheckTag from './tag/CheckTag.svelte'
 
 // 消息提醒
 import TPopup from "./popup/Popup.svelte"
@@ -48,7 +52,8 @@ export {
   TButton, TIcon, TLink,
   TDivider, TLayout, TAside, TContent, TFooter, THeader, TSpace, TRow, TCol,
   TMenu, THeadMenu, TSubMenu, TMenuItem, TTabs, TTabPanel,
+  TCheckbox, TCheckboxGroup,
   TInput, TInputGroup, TInputAdornment, TRadio, TRadioButton, TRadioGroup, TSwitch, TTextarea,
-  TAvatar, TAvatarGroup, TImage, TLoading, TCard, TComment,
+  TAvatar, TAvatarGroup, TImage, TLoading, TCard, TComment, TTag, TCheckTag,
   TPopup, TMessage
 }

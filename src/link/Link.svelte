@@ -15,7 +15,11 @@
   export let underline = false
   export let href = ''
 
+  export let className = ''
+  export let style = '';
+
   $: linkClass = {
+    [className]: className,
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--theme-${theme}`]: true,
     [SIZE[size]]: size !== 'medium',
@@ -25,7 +29,7 @@
   }
 </script>
 
-<a class={getClassString(linkClass)} href={disabled || !href ? undefined : href} on:click>
+<a class={getClassString(linkClass)} href={disabled || !href ? undefined : href} on:click {style}>
   {#if $$slots.prefixIcon}
     <span class={`${COMPONENT_NAME}__prefix-icon`}>
       <slot name="prefixIcon"/>

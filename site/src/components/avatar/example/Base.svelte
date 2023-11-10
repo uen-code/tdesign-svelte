@@ -10,7 +10,7 @@
   <td-doc-demo mode="auto" language="markup">
     <div class="tdesign-demo-item__body">
       <div style="display: inline-flex;gap: 40px">
-        <TAvatar >
+        <TAvatar>
           <UserIcon slot="icon"/>
         </TAvatar>
         <TAvatar {image} />

@@ -16,7 +16,7 @@ name | String | - | 名称，HTML 元素原生属性 | N
 placeholder | String | undefined | 占位符 | N
 readonly | Boolean | false | 只读状态 | N
 status | String | - | 文本框状态。可选项：default/success/warning/error | N
-tips | String / Slot | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。JS 类型：`string \| Node`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
+tips | String | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。JS 类型：`string`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/src/common.ts) | N
 value | String / Number | - | 文本框值。支持语法糖 `bind:value`。JS 类型：`TextareaValue` `type TextareaValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/textarea/type.ts) | N
 defaultValue | String / Number | - | 文本框值。非受控属性。JS 类型：`TextareaValue` `type TextareaValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/tree/develop/src/textarea/type.ts) | N
 onBlur | Function |  | 【开发中】JS 类型：`(value: TextareaValue, context: { e: FocusEvent }) => void`<br/>失去焦点时触发 | N

@@ -30,7 +30,7 @@ import Base from '../../example/Base.svelte'
 头像默认支持两种形状：round、circle，用户也可自定义设置头像形状
 
 <script>
-import Shape from '../../example/GroupMax.svelte'
+import Shape from '../../example/Shape.svelte'
 </script>
 
 <Shape></Shape>

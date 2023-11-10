@@ -22,6 +22,8 @@ import Image from "./components/image/Index.svelte";
 import Space from "./components/space/Index.svelte";
 import Grid from "./components/grid/Index.svelte"
 import Comment from "./components/comment/Index.svelte"
+import Checkbox from "./components/checkbox/Index.svelte"
+import Tag from "./components/tag/Index.svelte"
 
 export const routerList = [
   {
@@ -126,6 +128,7 @@ export const routerList = [
         title: "Checkbox 多选框",
         name: "checkbox",
         path: "/svelte/components/checkbox",
+        component: Checkbox,
       },
       {
         title: "Form 表单",
@@ -202,6 +205,7 @@ export const routerList = [
         title: "Tag 标签",
         name: "tag",
         path: "/svelte/components/tag",
+        component: Tag
       },
       {
         title: "Tooltip 文字提示",

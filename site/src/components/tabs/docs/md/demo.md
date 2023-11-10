@@ -94,33 +94,50 @@ import Disabled from "../../example/Disabled.svelte"
 
 <Disabled></Disabled>
 
-### 增删选项卡
+[//]: # (### 增删选项卡)
 
-用户可添加、删除选项卡，满足自定义场景。
+[//]: # ()
+[//]: # (用户可添加、删除选项卡，满足自定义场景。)
 
-<script>
-import Custom from "../../example/Custom.svelte"
-</script>
+[//]: # ()
+[//]: # (<script>)
 
-<Custom></Custom>
+[//]: # (import Custom from "../../example/Custom.svelte")
 
-### 可拖拽的选项卡
+[//]: # (</script>)
 
-提供了可拖拽的选项卡。
+[//]: # ()
+[//]: # (<Custom></Custom>)
 
-<script>
-import DragSort from "../../example/DragSort.svelte"
-</script>
+[//]: # ()
+[//]: # (### 可拖拽的选项卡)
 
-<DragSort></DragSort>
+[//]: # ()
+[//]: # (提供了可拖拽的选项卡。)
 
-### 懒加载
+[//]: # ()
+[//]: # (<script>)
 
-通过设置 lazy，可以实现懒加载，只在选中tab时才进行渲染。
+[//]: # (import DragSort from "../../example/DragSort.svelte")
 
-<script>
-import LazyLoad from "../../example/LazyLoad.svelte"
-</script>
+[//]: # (</script>)
 
-<LazyLoad></LazyLoad>
+[//]: # ()
+[//]: # (<DragSort></DragSort>)
+
+[//]: # ()
+[//]: # (### 懒加载)
+
+[//]: # ()
+[//]: # (通过设置 lazy，可以实现懒加载，只在选中tab时才进行渲染。)
+
+[//]: # ()
+[//]: # (<script>)
+
+[//]: # (import LazyLoad from "../../example/LazyLoad.svelte")
+
+[//]: # (</script>)
+
+[//]: # ()
+[//]: # (<LazyLoad></LazyLoad>)
 

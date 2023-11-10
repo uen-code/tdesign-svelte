@@ -21,9 +21,12 @@
   export let reply = undefined;
   /** 引用 */
   export let quote = undefined;
+
+  export let className = '';
+  export let style = '';
 </script>
 
-<div class={COMPONENT_NAME}>
+<div class="{COMPONENT_NAME} {className}" style="{style}">
   <div class={`${COMPONENT_NAME}__inner`}>
     <!--  avatar  -->
     {#if isString(avatar)}

@@ -28,14 +28,19 @@ import Operation from '../../example/Operation.svelte'
 </script>
 <Operation></Operation>
 
-### 列表评论
+[//]: # (### 列表评论)
 
-以列表形式展示的评论。
+[//]: # ()
+[//]: # (以列表形式展示的评论。)
 
-<script>
-import List from '../../example/List.svelte'
-</script>
-<List></List>
+[//]: # ()
+[//]: # (<script>)
+
+[//]: # (import List from '../../example/List.svelte')
+
+[//]: # (</script>)
+
+[//]: # (<List></List>)
 
 ### 带回复评论
 

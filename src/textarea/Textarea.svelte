@@ -6,7 +6,6 @@
   import {createEventDispatcher, onMount} from "svelte";
   import calcTextareaHeight from "./calcTextareaHeight.js";
   import isNumber from "../utils/lodash/isNumber.js";
-  import Maxlength from "../../site/src/components/textarea/example/Maxlength.svelte";
 
   const classPrefix = usePrefixClass()
   const COMPONENT_NAME = usePrefixClass('textarea')
@@ -38,6 +37,9 @@
   export let autosize = false
   /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
   export let tips = undefined
+
+  export let className = ''
+  export let style = ''
 
   // 是否聚焦
   let focused = false
@@ -94,6 +96,7 @@
 
   // class
   $: textareaClass = {
+    [className]:className,
     [COMPONENT_NAME]: true,
     [STATUS.disabled]: disabled,
     [`${classPrefix}-is-readonly`]: readonly
@@ -111,7 +114,7 @@
   }
 </script>
 
-<div class={getClassString(textareaClass)}>
+<div class={getClassString(textareaClass)} {style}>
   <textarea
     bind:this={textareaNode}
     bind:value

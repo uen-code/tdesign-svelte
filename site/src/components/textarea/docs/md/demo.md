@@ -33,14 +33,19 @@ import Maxlength from '../../example/Maxlength.svelte'
 <Maxlength></Maxlength>
 
 
-### 绑定 DOM 事件
+[//]: # (### 绑定 DOM 事件)
 
-可绑定 `onKeypress` `onKeydown` `onKeyup` `onFocus` `onBlur` 等 DOM 原生事件。
+[//]: # ()
+[//]: # (可绑定 `onKeypress` `onKeydown` `onKeyup` `onFocus` `onBlur` 等 DOM 原生事件。)
 
-<script>
-import Event from '../../example/Event.svelte'
-</script>
-<Event></Event>
+[//]: # ()
+[//]: # (<script>)
+
+[//]: # (import Event from '../../example/Event.svelte')
+
+[//]: # (</script>)
+
+[//]: # (<Event></Event>)
 
 
 

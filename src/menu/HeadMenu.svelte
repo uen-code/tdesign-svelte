@@ -29,13 +29,14 @@
 
   // class
   $: headerMenuClass = {
+    [className]: className,
     [`${classPrefix}-menu`]: true,
     [`${classPrefix}-head-menu`]: true,
     [`${classPrefix}-menu--${theme}`]: true
   }
 </script>
 
-<div class="{getClassString(headerMenuClass)} {className}">
+<div class="{getClassString(headerMenuClass)}">
   <div class={`${classPrefix}-head-menu__inner`}>
     {#if $$slots.logo}
       <div class={`${classPrefix}-menu__logo`}>

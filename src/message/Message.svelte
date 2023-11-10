@@ -17,10 +17,12 @@
   export let content = ''
   /** 是否有关闭按钮 */
   export let closeBtn = false
-  console.log("closeBt",closeBtn)
+  export let className = ''
+  export let style = ''
 
   // class
   $: messageClasses = {
+    [className]: className,
     [COMPONENT_NAME]: true,
     [`${classPrefix}-is-${theme}`]: theme,
     [`${classPrefix}-is-closable`]: closeBtn
@@ -37,7 +39,7 @@
   }[theme]
 </script>
 
-<div class={getClassString(messageClasses)}>
+<div class={getClassString(messageClasses)} {style}>
   <Icon/>
   <slot/>
   {#if closeBtn}
