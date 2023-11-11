@@ -30,12 +30,17 @@
 </script>
 
 <a class={getClassString(linkClass)} href={disabled || !href ? undefined : href} on:click {style}>
+  <!-- prefix icon -->
   {#if $$slots.prefixIcon}
     <span class={`${COMPONENT_NAME}__prefix-icon`}>
       <slot name="prefixIcon"/>
     </span>
   {/if}
+
+  <!-- content -->
   <slot/>
+
+  <!-- suffix icon -->
   {#if $$slots.suffixIcon}
     <span class={`${COMPONENT_NAME}__suffix-icon`}>
       <slot name="suffixIcon"/>

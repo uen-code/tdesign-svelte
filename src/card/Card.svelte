@@ -69,23 +69,31 @@
       {:else}
         <div class={getClassString(headerClass)}>
           <div class={`${classPrefix}-card__header-wrapper`}>
+            <!-- header avatar 卡片顶部头像 -->
             {#if $$slots.avatar}
               <div class={`${classPrefix}-card__avatar`}>
                 <slot name="avatar"></slot>
               </div>
             {/if}
             <div>
+              <!-- header title 卡片顶部标题 -->
               {#if title}
                 <div class={`${classPrefix}-card__title`}>{title}</div>
               {/if}
+
+              <!-- header subtitle 卡片顶部副标题 -->
               {#if subtitle}
                 <div class={`${classPrefix}-card__subtitle`}>{subtitle}</div>
               {/if}
+
+              <!-- header desc 卡片顶部描述 -->
               {#if description}
                 <div class={`${classPrefix}-card__description`}>{description}</div>
               {/if}
             </div>
           </div>
+
+          <!-- header actions 卡片顶部操作区域 -->
           {#if $$slots.actions && theme !== 'footer'}
             <div class={`${classPrefix}-card__actions`}>
               <slot name="actions"></slot>
@@ -115,6 +123,7 @@
         <div class={`${classPrefix}-card__footer-wrapper`}>
           <slot name="footer"/>
         </div>
+        <!-- footer actions 卡片底部操作区域 -->
         {#if $$slots.actions && theme === 'footer'}
           <div class={`${classPrefix}-card__actions`}>
             <slot name="actions"></slot>

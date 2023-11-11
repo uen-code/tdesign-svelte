@@ -63,14 +63,20 @@
 
 <div class='{getClassString(menuClass)}' style="{style}">
   <div class={`${COMPONENT_NAME}-default-menu__inner`}>
+
+    <!-- logo -->
     {#if $$slots.logo}
       <div class={`${COMPONENT_NAME}-menu__logo`}>
         <slot name="logo"></slot>
       </div>
     {/if}
+
+    <!-- menu item -->
     <ul class="{getClassString(innerClass)}">
       <slot></slot>
     </ul>
+
+    <!-- operation 操作 -->
     {#if $$slots.operations}
       <div class={`${COMPONENT_NAME}-menu__operations`}>
         <slot name="operations"></slot>

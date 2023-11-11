@@ -38,14 +38,19 @@
 
 <div class="{getClassString(headerMenuClass)}">
   <div class={`${classPrefix}-head-menu__inner`}>
+    <!-- logo -->
     {#if $$slots.logo}
       <div class={`${classPrefix}-menu__logo`}>
         <slot name="logo"/>
       </div>
     {/if}
+
+    <!-- menu item -->
     <ul class={`${classPrefix}-menu`}>
       <slot/>
     </ul>
+
+    <!-- operation 操作 -->
     {#if $$slots.operation}
       <div class={`${classPrefix}-menu__operations`}>
         {#each operations as item}

@@ -52,7 +52,10 @@
   $: normalClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME}`
 </script>
 <div class={normalClasses} {style}>
+  <!-- icon -->
   <GradientIcon />
+
+  <!-- text 文本提示 -->
   {#if text}
     {text}
   {/if}

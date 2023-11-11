@@ -203,6 +203,8 @@
       </span>
     {/if}
   </div>
+
+  <!-- tips 提示 -->
   {#if tips}
     <div class={getClassString(inputTipsClass)}>
       {tips}

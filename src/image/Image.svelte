@@ -71,7 +71,7 @@
     <div class={`${classPrefix}-image__gallery-shadow`}></div>
   {/if}
 
-  <!-- image -->
+  <!-- image 图片区域 -->
   <img
     {src}
     {alt}

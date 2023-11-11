@@ -37,61 +37,65 @@
 
     <!--  content  -->
     <div class={`${COMPONENT_NAME}__content`}>
+      <!-- content slot 内容插槽 -->
       {#if $$slots.content}
         <slot name="content" />
       {:else}
-        <!--   author and datetime   -->
         <div class={`${COMPONENT_NAME}__author`}>
-        {#if author || $$slots.author}
-          <span class={`${COMPONENT_NAME}__name`}>
-            {#if author}
-              {author}
-            {:else}
-              <slot name="author"/>
-            {/if}
-          </span>
-        {/if}
-        {#if datetime || $$slots.datetime}
-          <span class={`${COMPONENT_NAME}__time`}>
-            {#if datetime}
-              {datetime}
-            {:else}
-              <slot name="datetime"/>
-            {/if}
-          </span>
-        {/if}
-      </div>
+          <!-- author 作者 -->
+          {#if author || $$slots.author}
+            <span class={`${COMPONENT_NAME}__name`}>
+              {#if author}
+                {author}
+              {:else}
+                <slot name="author"/>
+              {/if}
+            </span>
+          {/if}
 
-        <!--   content   -->
-        <div class={`${COMPONENT_NAME}__detail`}>
-        {content}
-      </div>
-
-        <!--   quote   -->
-        {#if quote || $$slots.quote}
-        <div class={`${COMPONENT_NAME}__quote`}>
-          {#if quote}
-            {quote}
-          {:else}
-            <slot name="quote"/>
+          <!-- datetime 时间 -->
+          {#if datetime || $$slots.datetime}
+            <span class={`${COMPONENT_NAME}__time`}>
+              {#if datetime}
+                {datetime}
+              {:else}
+                <slot name="datetime"/>
+              {/if}
+            </span>
           {/if}
         </div>
-      {/if}
 
-        <!-- actions -->
-        {#if actions && actions.length > 0}
-        <div class={`${COMPONENT_NAME}__actions`}>
-          {#each actions as action,i}
-            <TButton size="small" variant="text">
-              <slot name="action" {action}></slot>
-            </TButton>
-          {/each}
+        <!-- content -->
+        <div class={`${COMPONENT_NAME}__detail`}>
+          {content}
         </div>
+
+        <!-- quote 引用 -->
+        {#if quote || $$slots.quote}
+          <div class={`${COMPONENT_NAME}__quote`}>
+            {#if quote}
+              {quote}
+            {:else}
+              <slot name="quote"/>
+            {/if}
+          </div>
+        {/if}
+
+        <!-- actions 操作 -->
+        {#if actions && actions.length > 0}
+          <div class={`${COMPONENT_NAME}__actions`}>
+            {#each actions as action,i}
+              <TButton size="small" variant="text">
+                <slot name="action" {action}></slot>
+              </TButton>
+            {/each}
+          </div>
+        {/if}
       {/if}
-    {/if}
     </div>
   </div>
-  <!--  reply  -->
+
+  <!--  reply 回复  -->
   {#if reply || $$slots.reply}
     <div class={`${COMPONENT_NAME}__reply`}>
       {#if reply}

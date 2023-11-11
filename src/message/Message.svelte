@@ -40,8 +40,13 @@
 </script>
 
 <div class={getClassString(messageClasses)} {style}>
+  <!-- icon 左侧图标 -->
   <Icon/>
+
+  <!-- content 主内容 -->
   <slot/>
+
+  <!-- close button 右侧关闭按钮 -->
   {#if closeBtn}
     <span class={`${COMPONENT_NAME}__close`}>
       <CloseIcon/>

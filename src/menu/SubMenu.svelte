@@ -68,10 +68,15 @@
 </script>
 
 <div class={getClassString(submenuClass)} on:click={handleClick} bind:this={subNode}>
+  <!-- icon -->
   <slot name="icon"></slot>
+
+  <!-- menu content 菜单内容 -->
   {#if title}
     <span class={`${classPrefix}-menu__content`}>{title}</span>
   {/if}
+
+  <!-- fake arrow 菜单右侧图标 -->
   {#if $$slots.default}
     <FakeArrow
       overlayClassName={getClassString(arrowClass)}
@@ -80,6 +85,7 @@
   {/if}
 </div>
 
+<!-- child menu item 子菜单 -->
 <div bind:this={node}>
   {#if isOpen}
     <ul in:slide="{{duration: 300}}" out:slide={{duration: 200}} id="{SUB_MENU_ID}"

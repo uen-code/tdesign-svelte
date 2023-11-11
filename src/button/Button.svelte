@@ -57,16 +57,24 @@
         class="{getClassString(buttonClass)}"
         type="button"
         style="{style}">
+  <!-- loading -->
   {#if loading}
     <TLoading/>
-  {:else}
+  {/if}
+
+  <!-- icon -->
+  {#if $$slots.icon}
     <slot name="icon"/>
   {/if}
+
+  <!-- content 文字描述 -->
   {#if $$slots.default}
     <span class={`${COMPONENT_NAME}__text`}>
       <slot/>
     </span>
   {/if}
+
+  <!-- suffix 按钮右侧内容 -->
   {#if $$slots.suffix}
     <span class={`${COMPONENT_NAME}__suffix`}>
       <slot name="suffix"/>
