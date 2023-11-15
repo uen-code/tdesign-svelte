@@ -109,4 +109,3 @@ import Shape from "../../example/Shape.svelte"
 </script>
 
 <Shape></Shape>
-

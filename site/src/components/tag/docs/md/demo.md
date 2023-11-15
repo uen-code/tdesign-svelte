@@ -2,7 +2,7 @@
 title: Tag 标签
 description: 定义：标签常用于标记、分类和选择。
 isComponent: true
-usage: { title: "", description: "" }
+usage: { title: '', description: '' }
 spline: data
 ---
 
@@ -30,6 +30,7 @@ import Base from '../../example/Base.svelte'
 <script>
 import Icon from '../../example/Icon.svelte'
 </script>
+
 <Icon></Icon>
 
 ### 可删除和添加标签
@@ -39,8 +40,8 @@ import Icon from '../../example/Icon.svelte'
 <script>
 import Delete from '../../example/Delete.svelte'
 </script>
-<Delete></Delete>
 
+<Delete></Delete>
 
 ### 可选择标签
 
@@ -49,6 +50,7 @@ import Delete from '../../example/Delete.svelte'
 <script>
 import Selectable from '../../example/Selectable.svelte'
 </script>
+
 <Selectable></Selectable>
 
 ### 超长省略文本标签
@@ -58,17 +60,18 @@ import Selectable from '../../example/Selectable.svelte'
 <script>
 import LongText from '../../example/LongText.svelte'
 </script>
-<LongText></LongText>
 
+<LongText></LongText>
 
 ### 不同尺寸的标签
 
 提供大、中（默认）、小三种尺寸。
+
 <script>
 import Size from '../../example/Size.svelte'
 </script>
-<Size></Size>
 
+<Size></Size>
 
 ### 不同形状的标签
 
@@ -77,6 +80,5 @@ import Size from '../../example/Size.svelte'
 <script>
 import Shape from '../../example/Shape.svelte'
 </script>
+
 <Shape></Shape>
-
-

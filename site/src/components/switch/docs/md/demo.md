@@ -14,7 +14,6 @@ import Usage from "../DocUsage.svelte"
 
 <Usage></Usage>
 
-
 ### 基础开关
 
 不带描述，最基础的开关。
@@ -24,7 +23,6 @@ import Base from "../../example/Base.svelte"
 </script>
 
 <Base></Base>
-
 
 ### 带描述的开关
 
@@ -55,4 +53,3 @@ import Size from "../../example/Size.svelte"
 </script>
 
 <Size></Size>
-

@@ -1,8 +1,8 @@
-import SetCache from './SetCache.js'
-import arrayIncludes from './arrayIncludes.js'
-import arrayIncludesWith from './arrayIncludesWith.js'
-import map from '../map.js'
-import cacheHas from './cacheHas.js'
+import SetCache from './SetCache.js';
+import arrayIncludes from './arrayIncludes.js';
+import arrayIncludesWith from './arrayIncludesWith.js';
+import map from '../map.js';
+import cacheHas from './cacheHas.js';
 
 /**
  * The base implementation of methods like `intersection` that accepts an
@@ -15,58 +15,50 @@ import cacheHas from './cacheHas.js'
  * @returns {Array} Returns the new array of shared values.
  */
 function baseIntersection(arrays, iteratee, comparator) {
-  const includes = comparator ? arrayIncludesWith : arrayIncludes
-  const length = arrays[0].length
-  const othLength = arrays.length
-  const caches = new Array(othLength)
-  const result = []
+  const includes = comparator ? arrayIncludesWith : arrayIncludes;
+  const length = arrays[0].length;
+  const othLength = arrays.length;
+  const caches = new Array(othLength);
+  const result = [];
 
-  let array
-  let maxLength = Infinity
-  let othIndex = othLength
+  let array;
+  let maxLength = Infinity;
+  let othIndex = othLength;
 
   while (othIndex--) {
-    array = arrays[othIndex]
+    array = arrays[othIndex];
     if (othIndex && iteratee) {
-      array = map(array, (value) => iteratee(value))
+      array = map(array, (value) => iteratee(value));
     }
-    maxLength = Math.min(array.length, maxLength)
-    caches[othIndex] = !comparator && (iteratee || (length >= 120 && array.length >= 120))
-      ? new SetCache(othIndex && array)
-      : undefined
+    maxLength = Math.min(array.length, maxLength);
+    caches[othIndex] =
+      !comparator && (iteratee || (length >= 120 && array.length >= 120)) ? new SetCache(othIndex && array) : undefined;
   }
-  array = arrays[0]
+  array = arrays[0];
 
-  let index = -1
-  const seen = caches[0]
+  let index = -1;
+  const seen = caches[0];
 
-  outer:
-    while (++index < length && result.length < maxLength) {
-      let value = array[index]
-      const computed = iteratee ? iteratee(value) : value
+  outer: while (++index < length && result.length < maxLength) {
+    let value = array[index];
+    const computed = iteratee ? iteratee(value) : value;
 
-      value = (comparator || value !== 0) ? value : 0
-      if (!(seen
-          ? cacheHas(seen, computed)
-          : includes(result, computed, comparator)
-      )) {
-        othIndex = othLength
-        while (--othIndex) {
-          const cache = caches[othIndex]
-          if (!(cache
-            ? cacheHas(cache, computed)
-            : includes(arrays[othIndex], computed, comparator))
-          ) {
-            continue outer
-          }
+    value = comparator || value !== 0 ? value : 0;
+    if (!(seen ? cacheHas(seen, computed) : includes(result, computed, comparator))) {
+      othIndex = othLength;
+      while (--othIndex) {
+        const cache = caches[othIndex];
+        if (!(cache ? cacheHas(cache, computed) : includes(arrays[othIndex], computed, comparator))) {
+          continue outer;
         }
-        if (seen) {
-          seen.push(computed)
-        }
-        result.push(value)
       }
+      if (seen) {
+        seen.push(computed);
+      }
+      result.push(value);
     }
-  return result
+  }
+  return result;
 }
 
-export default baseIntersection
+export default baseIntersection;

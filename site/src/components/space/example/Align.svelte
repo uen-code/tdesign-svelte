@@ -1,9 +1,12 @@
 <script>
-  import {TButton, TSpace} from 'tdesign-svelte'
+  import { TButton, TSpace } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.align;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--space-align tdesign-demo-item--space">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <TSpace breakLine>
         <TSpace align="start" style="padding: 12px;border: 1px dashed var(--td-component-stroke);">

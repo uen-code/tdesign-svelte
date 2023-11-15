@@ -1,14 +1,16 @@
 <script>
-  import {TTag} from 'tdesign-svelte'
+  import { TTag } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
 
-  function handleClick(e){
-    console.log("click",e)
+  const demoCode = codeTemplate.base;
+
+  function handleClick(e) {
+    console.log('click', e);
   }
-
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--tag-base tdesign-demo-item--tag">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction: column;gap:16px">
         <div class="fl">
@@ -50,7 +52,7 @@
 </div>
 
 <style>
-  .fl{
+  .fl {
     display: inline-flex;
     gap: 16px;
   }

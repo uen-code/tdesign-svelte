@@ -1,43 +1,44 @@
 <script>
-  import {getClassString, SIZE, usePrefixClass} from "../common.js";
-  import {SIZE_ENUM} from "../config.js";
-  import Loading from "../loading/Loading.svelte";
+  import { getClassString, SIZE, usePrefixClass } from '../common.js';
+  import { SIZE_ENUM } from '../config.js';
+  import Loading from '../loading/Loading.svelte';
 
-  import './style/css'
+  import './style/css';
 
-  const classPrefix = usePrefixClass()
-  const COMPONENT_NAME = usePrefixClass('card')
+  const classPrefix = usePrefixClass();
+  const COMPONENT_NAME = usePrefixClass('card');
 
   /** 标题 */
-  export let title = undefined
+  export let title = undefined;
   /** 二级标题 */
-  export let subtitle = undefined
+  export let subtitle = undefined;
   /** 卡片描述文案 */
-  export let description = undefined
+  export let description = undefined;
   /** 是否有边框 */
-  export let bordered = true
+  export let bordered = true;
   /** 头部是否带分割线，仅在有header时有效 */
-  export let headerBordered = false
+  export let headerBordered = false;
   /** hover时是否有阴影 */
-  export let hoverShadow = false
+  export let hoverShadow = false;
   /** 加载状态 */
-  export let loading = false
+  export let loading = false;
   /** 是否显示卡片阴影，默认不显示 */
-  export let shadow = false
+  export let shadow = false;
   /** 尺寸 */
-  export let size = SIZE_ENUM.medium
+  export let size = SIZE_ENUM.medium;
   /** 操作区域位置 默认顶部 header(顶部) footer(底部)  */
-  export let theme = 'normal'
+  export let theme = 'normal';
   /** 卡片封面图。值类型为字符串，会自动使用 `img` 标签输出封面图；也可以完全自定义封面图  */
-  export let cover = ''
+  export let cover = '';
 
-  export let className = ''
-  export let style = ''
+  export let className = '';
+  export let style = '';
 
   // 是否显示顶部
-  $: isHeader = $$slots.header || title || subtitle || description || $$slots.avatar || ($$slots.actions && theme !== 'footer')
+  $: isHeader =
+    $$slots.header || title || subtitle || description || $$slots.avatar || ($$slots.actions && theme !== 'footer');
   // 是否显示底部
-  $: isFooter = $$slots.footer || ($$slots.actions && theme === 'footer')
+  $: isFooter = $$slots.footer || ($$slots.actions && theme === 'footer');
 
   // class
   $: cardClass = {
@@ -52,68 +53,65 @@
   $: headerClass = {
     [`${COMPONENT_NAME}__header`]: true,
     [`${COMPONENT_NAME}__title--bordered`]: headerBordered,
-  }
-
+  };
 </script>
+
 {#if loading}
-  <Loading/>
-{:else }
+  <Loading />
+{:else}
   <div class={getClassString(cardClass)} {style}>
     <!--  header  -->
-    {#if !isHeader}
+    {#if !isHeader}{:else if $$slots.header}
+      <div class={getClassString(headerClass)}>
+        <slot name="header" />
+      </div>
     {:else}
-      {#if $$slots.header}
-        <div class={getClassString(headerClass)}>
-          <slot name="header"></slot>
-        </div>
-      {:else}
-        <div class={getClassString(headerClass)}>
-          <div class={`${classPrefix}-card__header-wrapper`}>
-            <!-- header avatar 卡片顶部头像 -->
-            {#if $$slots.avatar}
-              <div class={`${classPrefix}-card__avatar`}>
-                <slot name="avatar"></slot>
-              </div>
-            {/if}
-            <div>
-              <!-- header title 卡片顶部标题 -->
-              {#if title}
-                <div class={`${classPrefix}-card__title`}>{title}</div>
-              {/if}
-
-              <!-- header subtitle 卡片顶部副标题 -->
-              {#if subtitle}
-                <div class={`${classPrefix}-card__subtitle`}>{subtitle}</div>
-              {/if}
-
-              <!-- header desc 卡片顶部描述 -->
-              {#if description}
-                <div class={`${classPrefix}-card__description`}>{description}</div>
-              {/if}
-            </div>
-          </div>
-
-          <!-- header actions 卡片顶部操作区域 -->
-          {#if $$slots.actions && theme !== 'footer'}
-            <div class={`${classPrefix}-card__actions`}>
-              <slot name="actions"></slot>
+      <div class={getClassString(headerClass)}>
+        <div class={`${classPrefix}-card__header-wrapper`}>
+          <!-- header avatar 卡片顶部头像 -->
+          {#if $$slots.avatar}
+            <div class={`${classPrefix}-card__avatar`}>
+              <slot name="avatar" />
             </div>
           {/if}
+          <div>
+            <!-- header title 卡片顶部标题 -->
+            {#if title}
+              <div class={`${classPrefix}-card__title`}>{title}</div>
+            {/if}
+
+            <!-- header subtitle 卡片顶部副标题 -->
+            {#if subtitle}
+              <div class={`${classPrefix}-card__subtitle`}>{subtitle}</div>
+            {/if}
+
+            <!-- header desc 卡片顶部描述 -->
+            {#if description}
+              <div class={`${classPrefix}-card__description`}>{description}</div>
+            {/if}
+          </div>
         </div>
-      {/if}
+
+        <!-- header actions 卡片顶部操作区域 -->
+        {#if $$slots.actions && theme !== 'footer'}
+          <div class={`${classPrefix}-card__actions`}>
+            <slot name="actions" />
+          </div>
+        {/if}
+      </div>
     {/if}
 
     <!--  cover  -->
     {#if cover}
       <div class={`${classPrefix}-card__cover`}>
-        <img src={cover} alt=""/>
+        <img src={cover} alt="" />
       </div>
     {/if}
 
     <!--  docs  -->
     {#if $$slots.default}
       <div class={`${classPrefix}-card__body`}>
-        <slot/>
+        <slot />
       </div>
     {/if}
 
@@ -121,12 +119,12 @@
     {#if $$slots.footer}
       <div class={`${classPrefix}-card__footer`}>
         <div class={`${classPrefix}-card__footer-wrapper`}>
-          <slot name="footer"/>
+          <slot name="footer" />
         </div>
         <!-- footer actions 卡片底部操作区域 -->
         {#if $$slots.actions && theme === 'footer'}
           <div class={`${classPrefix}-card__actions`}>
-            <slot name="actions"></slot>
+            <slot name="actions" />
           </div>
         {/if}
       </div>

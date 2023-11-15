@@ -1,9 +1,9 @@
 <script>
-  import {usePrefixClass} from "../common.js";
-  import {isString} from "../utils/lodash/index.js";
-  import TButton from "../button/Button.svelte";
+  import { usePrefixClass } from '../common.js';
+  import { isString } from '../utils/lodash/index.js';
+  import TButton from '../button/Button.svelte';
 
-  import './style/css'
+  import './style/css';
 
   const COMPONENT_NAME = usePrefixClass('comment');
 
@@ -26,12 +26,12 @@
   export let style = '';
 </script>
 
-<div class="{COMPONENT_NAME} {className}" style="{style}">
+<div class="{COMPONENT_NAME} {className}" {style}>
   <div class={`${COMPONENT_NAME}__inner`}>
     <!--  avatar  -->
     {#if isString(avatar)}
       <div class={`${COMPONENT_NAME}__avatar`}>
-        <img src={avatar} alt="" class={`${COMPONENT_NAME}__avatar-image`}/>
+        <img src={avatar} alt="" class={`${COMPONENT_NAME}__avatar-image`} />
       </div>
     {/if}
 
@@ -48,7 +48,7 @@
               {#if author}
                 {author}
               {:else}
-                <slot name="author"/>
+                <slot name="author" />
               {/if}
             </span>
           {/if}
@@ -59,7 +59,7 @@
               {#if datetime}
                 {datetime}
               {:else}
-                <slot name="datetime"/>
+                <slot name="datetime" />
               {/if}
             </span>
           {/if}
@@ -76,7 +76,7 @@
             {#if quote}
               {quote}
             {:else}
-              <slot name="quote"/>
+              <slot name="quote" />
             {/if}
           </div>
         {/if}
@@ -84,9 +84,9 @@
         <!-- actions 操作 -->
         {#if actions && actions.length > 0}
           <div class={`${COMPONENT_NAME}__actions`}>
-            {#each actions as action,i}
+            {#each actions as action, i}
               <TButton size="small" variant="text">
-                <slot name="action" {action}></slot>
+                <slot name="action" {action} />
               </TButton>
             {/each}
           </div>
@@ -101,7 +101,7 @@
       {#if reply}
         {reply}
       {:else}
-        <slot name="reply"/>
+        <slot name="reply" />
       {/if}
     </div>
   {/if}

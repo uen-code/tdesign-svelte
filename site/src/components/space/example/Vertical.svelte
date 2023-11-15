@@ -1,9 +1,12 @@
 <script>
-  import {TCard, TSpace} from 'tdesign-svelte'
+  import { TCard, TSpace } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.vertical;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--space-vertical tdesign-demo-item--space">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <TSpace direction="vertical">
         <TCard title="标题" header bordered hoverShadow>

@@ -1,39 +1,39 @@
 <script>
-  import configJson from '../config/config.json'
-  import {onMount} from "svelte";
-  import {TMenu, TSubMenu, TMenuItem, THeadMenu} from "tdesign-svelte";
-  import {codeReplace} from "../../../common.js";
-  import propJson from "../config/props.json";
+  import configJson from '../config/config.json';
+  import { onMount } from 'svelte';
+  import { TMenu, TSubMenu, TMenuItem, THeadMenu } from 'tdesign-svelte';
+  import { codeReplace } from '../../../common.js';
+  import propJson from '../config/props.json';
 
-  let panel = 'menu'
+  let panel = 'menu';
 
-  let baseCode = configJson.base.code[panel]
+  let baseCode = configJson.base.code[panel];
 
   // 初始化dom
   let usageNode;
   onMount(() => {
-    usageNode.configList = propJson
+    usageNode.configList = propJson;
     usageNode.panelList = configJson.base.panelList;
     usageNode.addEventListener('ConfigChange', onConfigChange);
     usageNode.addEventListener('PanelChange', onPanelChange);
-  })
+  });
 
-  let changedProps = {}
+  let changedProps = {};
   let usageCode;
 
-  $:{
-    usageCode = codeReplace(baseCode, changedProps)
+  $: {
+    usageCode = codeReplace(baseCode, changedProps);
   }
 
   function onConfigChange(e) {
-    const {name, value} = e.detail;
-    changedProps[name] = value
-    usageCode = codeReplace(baseCode, changedProps)
+    const { name, value } = e.detail;
+    changedProps[name] = value;
+    usageCode = codeReplace(baseCode, changedProps);
   }
 
   function onPanelChange(e) {
-    panel = e.detail.value
-    baseCode = configJson.base.code[panel]
+    panel = e.detail.value;
+    baseCode = configJson.base.code[panel];
   }
 </script>
 
@@ -41,9 +41,7 @@
   <div slot="menu" style="width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;">
     <div style="padding: 24px; background: var(--bg-color-page); border-radius: 3px">
       <TMenu {...changedProps}>
-        <TMenuItem value="0">
-          仪表盘
-        </TMenuItem>
+        <TMenuItem value="0">仪表盘</TMenuItem>
 
         <TSubMenu value="1" title="资源列表">
           <TMenuItem value="1-1" disabled>
@@ -66,7 +64,7 @@
   <div slot="headMenu" style="width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;">
     <div style="padding: 24px; background: var(--bg-color-page); borderRadius: 3px ">
       <THeadMenu>
-        <img slot="logo" src="https://www.tencent.com/img/index/menu_logo_hover.png" width="136"/>
+        <img slot="logo" src="https://www.tencent.com/img/index/menu_logo_hover.png" width="136" />
         <TMenuItem value="0">
           <span>菜单1</span>
         </TMenuItem>

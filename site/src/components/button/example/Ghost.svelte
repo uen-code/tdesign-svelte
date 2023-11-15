@@ -1,5 +1,9 @@
 <script>
-  import { TButton} from 'tdesign-svelte'
+  import { TButton } from 'tdesign-svelte';
+
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.ghost;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--button-ghost tdesign-demo-item--button">
@@ -37,9 +41,9 @@
 </div>
 
 <style>
-  .fl{
+  .fl {
     margin-top: 16px;
     display: inline-flex;
-    gap: 16px
+    gap: 16px;
   }
 </style>

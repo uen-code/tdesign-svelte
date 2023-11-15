@@ -26,36 +26,25 @@ import TopSingle from "../../example/TopSingle.svelte"
 
 <TopSingle></TopSingle>
 
-[//]: # (#### 双层导航)
-
-[//]: # ()
-[//]: # (顶部导航可承载2级页面导航。常用于聚焦单个业务线下的二级页面导航。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import TopDouble from "../../example/TopDouble.svelte")
-
-[//]: # (</script>)
-
-[//]: # ()
-[//]: # (<TopDouble></TopDouble>)
-
-[//]: # ()
-[//]: # (#### 多层收纳导航)
-
-[//]: # ()
-[//]: # (顶部导航下拉菜单收纳2-3级页面导航，可拓展分组展示，常用于多种业务下的快速切换导航。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import TopMultiple from "../../example/TopMultiple.svelte")
-
-[//]: # (</script>)
-
-[//]: # ()
-[//]: # (<TopMultiple></TopMultiple>)
+[//]: # '#### 双层导航'
+[//]: #
+[//]: # '顶部导航可承载2级页面导航。常用于聚焦单个业务线下的二级页面导航。'
+[//]: #
+[//]: # '<script>'
+[//]: # 'import TopDouble from "../../example/TopDouble.svelte"'
+[//]: # '</script>'
+[//]: #
+[//]: # '<TopDouble></TopDouble>'
+[//]: #
+[//]: # '#### 多层收纳导航'
+[//]: #
+[//]: # '顶部导航下拉菜单收纳2-3级页面导航，可拓展分组展示，常用于多种业务下的快速切换导航。'
+[//]: #
+[//]: # '<script>'
+[//]: # 'import TopMultiple from "../../example/TopMultiple.svelte"'
+[//]: # '</script>'
+[//]: #
+[//]: # '<TopMultiple></TopMultiple>'
 
 #### 可自定义顶部导航
 
@@ -79,52 +68,35 @@ import SideSingle from "../../example/SideSingle.svelte"
 
 <SideSingle></SideSingle>
 
-[//]: # (#### 平铺式侧边导航)
-
-[//]: # ()
-[//]: # (侧边导航可承载1-3级页面导航，并平铺展示。适用于层级较深的网站。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import SideMulti from "../../example/SideMulti.svelte")
-
-[//]: # (</script>)
-
-[//]: # ()
-[//]: # (<SideMulti></SideMulti>)
-
-[//]: # ()
-[//]: # (#### 可分组的侧边导航)
-
-[//]: # ()
-[//]: # (针对大量页面进行分组展示，以方便用户理解及查找。一般在大量业务或者页面需要展示的网站使用。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import SideGroup from "../../example/SideGroup.svelte")
-
-[//]: # (</script>)
-
-[//]: # ()
-[//]: # (<SideGroup></SideGroup>)
-
-[//]: # ()
-[//]: # (#### 可收起的侧边导航)
-
-[//]: # ()
-[//]: # (在侧边导航上提供收起按钮，点击后可以将侧边栏最小化，常见于带有图标的侧边导航。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import SideClosable from "../../example/SideClosable.svelte")
-
-[//]: # (</script>)
-
-[//]: # ()
-[//]: # (<SideClosable></SideClosable>)
+[//]: # '#### 平铺式侧边导航'
+[//]: #
+[//]: # '侧边导航可承载1-3级页面导航，并平铺展示。适用于层级较深的网站。'
+[//]: #
+[//]: # '<script>'
+[//]: # 'import SideMulti from "../../example/SideMulti.svelte"'
+[//]: # '</script>'
+[//]: #
+[//]: # '<SideMulti></SideMulti>'
+[//]: #
+[//]: # '#### 可分组的侧边导航'
+[//]: #
+[//]: # '针对大量页面进行分组展示，以方便用户理解及查找。一般在大量业务或者页面需要展示的网站使用。'
+[//]: #
+[//]: # '<script>'
+[//]: # 'import SideGroup from "../../example/SideGroup.svelte"'
+[//]: # '</script>'
+[//]: #
+[//]: # '<SideGroup></SideGroup>'
+[//]: #
+[//]: # '#### 可收起的侧边导航'
+[//]: #
+[//]: # '在侧边导航上提供收起按钮，点击后可以将侧边栏最小化，常见于带有图标的侧边导航。'
+[//]: #
+[//]: # '<script>'
+[//]: # 'import SideClosable from "../../example/SideClosable.svelte"'
+[//]: # '</script>'
+[//]: #
+[//]: # '<SideClosable></SideClosable>'
 
 ### 可设置宽度的侧边导航
 
@@ -135,4 +107,3 @@ import SideWidth from "../../example/SideWidth.svelte"
 </script>
 
 <SideWidth></SideWidth>
-

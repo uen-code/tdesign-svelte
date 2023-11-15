@@ -20,6 +20,7 @@ import Base from '../../example/Base.svelte'
 <script>
 import Gutter from '../../example/Gutter.svelte'
 </script>
+
 <Gutter></Gutter>
 
 ### 左右偏移
@@ -27,6 +28,7 @@ import Gutter from '../../example/Gutter.svelte'
 <script>
 import Offset from '../../example/Offset.svelte'
 </script>
+
 <Offset></Offset>
 
 ### 排序
@@ -34,6 +36,7 @@ import Offset from '../../example/Offset.svelte'
 <script>
 import Sort from '../../example/Sort.svelte'
 </script>
+
 <Sort></Sort>
 
 ### 次序
@@ -41,6 +44,7 @@ import Sort from '../../example/Sort.svelte'
 <script>
 import Order from '../../example/Order.svelte'
 </script>
+
 <Order></Order>
 
 ### 排版
@@ -48,6 +52,7 @@ import Order from '../../example/Order.svelte'
 <script>
 import Justify from '../../example/Justify.svelte'
 </script>
+
 <Justify></Justify>
 
 ### 对齐
@@ -55,6 +60,7 @@ import Justify from '../../example/Justify.svelte'
 <script>
 import Align from '../../example/Align.svelte'
 </script>
+
 <Align></Align>
 
 ### flex
@@ -62,6 +68,7 @@ import Align from '../../example/Align.svelte'
 <script>
 import Flex from '../../example/Flex.svelte'
 </script>
+
 <Flex></Flex>
 
 ### 响应式布局
@@ -69,5 +76,5 @@ import Flex from '../../example/Flex.svelte'
 <script>
 import Responsive from '../../example/Responsive.svelte'
 </script>
-<Responsive></Responsive>
 
+<Responsive></Responsive>

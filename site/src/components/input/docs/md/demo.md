@@ -14,7 +14,6 @@ import Usage from "../DocUsage.svelte"
 
 <Usage></Usage>
 
-
 ### 基础输入框
 
 最基础的单行输入框，按状态可分为正常、禁用、错误、带额外提示。通常在需要输入少量内容（20个字以内）的场景下使用。
@@ -54,7 +53,6 @@ import Clearable from "../../example/Clearable.svelte"
 </script>
 
 <Clearable></Clearable>
-
 
 ### 密码输入框
 
@@ -98,9 +96,7 @@ import Align from "../../example/Align.svelte"
 
 ### 自适应宽度的输入框
 
-
 输入框支持宽度随输入内容变化而变化，设置属性 `autoWidth` 即可。
-
 
 <script>
 
@@ -108,43 +104,28 @@ import AutoWidth from "../../example/AutoWidth.svelte"
 
 </script>
 
-
 <AutoWidth></AutoWidth>
 
-[//]: # ()
-[//]: # (### 带长度限制的输入框)
-
-[//]: # ()
-[//]: # (- 使用 `maxlength` 设置输入框的长度限度，一个中文等于一个计数长度。)
-
-[//]: # (- 使用 `maxcharacter` 设置输入框的长度限度，一个中文汉字表示两个字符长度。)
-
-[//]: # (- 使用 `allowInputOverMax` 设置是否允许在输入内容已经超出限制时继续输入。)
-
-[//]: # (- 使用 `showLimitNumber` 设置是否显示输入框右侧的字数统计。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import MaxLengthCount from "../../example/MaxLengthCount.svelte")
-
-[//]: # (</script>)
-
-[//]: # ()
-[//]: # (<MaxLengthCount></MaxLengthCount>)
-
-[//]: # ()
-[//]: # (### 可格式化数据的输入框)
-
-[//]: # ()
-[//]: # (可以使用 `format` 设置输入框在失焦和聚焦时的不同内容呈现。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import Format from "../../example/Format.svelte")
-
-[//]: # (</script>)
-
-[//]: # ()
-[//]: # (<Format></Format>)
+[//]: #
+[//]: # '### 带长度限制的输入框'
+[//]: #
+[//]: # '- 使用 `maxlength` 设置输入框的长度限度，一个中文等于一个计数长度。'
+[//]: # '- 使用 `maxcharacter` 设置输入框的长度限度，一个中文汉字表示两个字符长度。'
+[//]: # '- 使用 `allowInputOverMax` 设置是否允许在输入内容已经超出限制时继续输入。'
+[//]: # '- 使用 `showLimitNumber` 设置是否显示输入框右侧的字数统计。'
+[//]: #
+[//]: # '<script>'
+[//]: # 'import MaxLengthCount from "../../example/MaxLengthCount.svelte"'
+[//]: # '</script>'
+[//]: #
+[//]: # '<MaxLengthCount></MaxLengthCount>'
+[//]: #
+[//]: # '### 可格式化数据的输入框'
+[//]: #
+[//]: # '可以使用 `format` 设置输入框在失焦和聚焦时的不同内容呈现。'
+[//]: #
+[//]: # '<script>'
+[//]: # 'import Format from "../../example/Format.svelte"'
+[//]: # '</script>'
+[//]: #
+[//]: # '<Format></Format>'

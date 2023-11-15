@@ -67,9 +67,9 @@ export default function calcTextareaHeight(targetElement, minRows, maxRows) {
     document.body.appendChild(hiddenTextarea);
   }
 
-  minRows = minRows ? minRows : 1
+  minRows = minRows ? minRows : 1;
 
-  const {paddingSize, borderSize, boxSizing, sizingStyle} = calculateNodeStyling(targetElement);
+  const { paddingSize, borderSize, boxSizing, sizingStyle } = calculateNodeStyling(targetElement);
 
   hiddenTextarea.setAttribute('style', `${sizingStyle};${HIDDEN_TEXTAREA_STYLE}`);
   hiddenTextarea.value = targetElement.value || targetElement.placeholder || '';

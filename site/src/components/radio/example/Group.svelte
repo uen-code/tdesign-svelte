@@ -1,5 +1,9 @@
 <script>
-  import {TRadioGroup, TRadio} from 'tdesign-svelte'
+  import { TRadioGroup, TRadio } from 'tdesign-svelte';
+
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.group;
 
   const options = [
     {
@@ -19,17 +23,17 @@
       value: '4',
       label: '选项四',
     },
-  ]
+  ];
   let value = '2';
   const itemOptions = ['选项一', '选项二', '选项三', '选项四'];
 
   function onChange(e) {
-    console.log("change", value)
+    console.log('change', value);
   }
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--radio-size tdesign-demo-item--radio">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: inline-flex;flex-direction:column;gap: 16px" class="fl">
         <div>
@@ -61,7 +65,7 @@
 </div>
 
 <style>
-  .fl>div{
+  .fl > div {
     margin-bottom: 16px;
   }
 </style>

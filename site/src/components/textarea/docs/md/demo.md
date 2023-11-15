@@ -30,24 +30,17 @@ import Base from '../../example/Base.svelte'
 <script>
 import Maxlength from '../../example/Maxlength.svelte'
 </script>
+
 <Maxlength></Maxlength>
 
-
-[//]: # (### 绑定 DOM 事件)
-
-[//]: # ()
-[//]: # (可绑定 `onKeypress` `onKeydown` `onKeyup` `onFocus` `onBlur` 等 DOM 原生事件。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import Event from '../../example/Event.svelte')
-
-[//]: # (</script>)
-
-[//]: # (<Event></Event>)
-
-
+[//]: # '### 绑定 DOM 事件'
+[//]: #
+[//]: # '可绑定 `onKeypress` `onKeydown` `onKeyup` `onFocus` `onBlur` 等 DOM 原生事件。'
+[//]: #
+[//]: # '<script>'
+[//]: # "import Event from '../../example/Event.svelte'"
+[//]: # '</script>'
+[//]: # '<Event></Event>'
 
 ### 不同状态的多行文本框
 
@@ -56,5 +49,5 @@ import Maxlength from '../../example/Maxlength.svelte'
 <script>
 import Type from '../../example/Type.svelte'
 </script>
-<Type></Type>
 
+<Type></Type>

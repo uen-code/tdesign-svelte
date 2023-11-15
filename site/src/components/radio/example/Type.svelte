@@ -1,9 +1,12 @@
 <script>
-  import {TRadioGroup,TRadioButton} from 'tdesign-svelte'
+  import { TRadioGroup, TRadioButton } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.type;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--radio-type tdesign-demo-item--radio">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: inline-flex;flex-direction:column;gap: 16px">
         <h5>边框型单选按钮</h5>
@@ -19,7 +22,7 @@
           <TRadioButton value="2">选项二</TRadioButton>
           <TRadioButton value="3">选项三</TRadioButton>
           <TRadioButton value="4">选中禁用态</TRadioButton>
-          <TRadioButton >未选中禁用态</TRadioButton>
+          <TRadioButton>未选中禁用态</TRadioButton>
         </TRadioGroup>
         <h5>填充型单选按钮</h5>
         <TRadioGroup variant="default-filled" defaultValue="1">

@@ -1,10 +1,12 @@
 <script>
-  import {TImage} from 'tdesign-svelte'
+  import { TImage } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
 
+  const demoCode = codeTemplate.fillPosition;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--image-fill-position tdesign-demo-item--image">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction:column;gap: 16px">
         <div style="display: flex;gap: 16px">
@@ -60,13 +62,13 @@
 
         <div style="margin-top: 20px;display: flex;gap: 16px">
           <div style="display: flex;flex-direction:column;gap: 16px">
-              <TImage
-                src="https://tdesign.gtimg.com/demo/demo-image-1.png"
-                fit="contain"
-                style="width: 120px; height: 200px"
-                position="top"
-              />
-              <span>contain top</span>
+            <TImage
+              src="https://tdesign.gtimg.com/demo/demo-image-1.png"
+              fit="contain"
+              style="width: 120px; height: 200px"
+              position="top"
+            />
+            <span>contain top</span>
           </div>
           <div style="display: flex;flex-direction:column;gap: 16px">
             <TImage

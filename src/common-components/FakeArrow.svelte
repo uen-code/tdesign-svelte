@@ -1,18 +1,18 @@
 <script>
   /** 统一使用的翻转箭头组件 */
-  import {getClassString, usePrefixClass} from "../common.js";
+  import { getClassString, usePrefixClass } from '../common.js';
 
-  const COMPONENT_NAME = usePrefixClass('fake-arrow')
+  const COMPONENT_NAME = usePrefixClass('fake-arrow');
 
-  export let isActive = undefined
-  export let overlayClassName = undefined
-  export let overlayStyle = undefined
+  export let isActive = undefined;
+  export let overlayClassName = undefined;
+  export let overlayStyle = undefined;
 
   $: arrowClass = {
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--active`]: isActive,
-    [overlayClassName]: overlayClassName
-  }
+    [overlayClassName]: overlayClassName,
+  };
 </script>
 
 <svg

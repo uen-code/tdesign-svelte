@@ -87,7 +87,7 @@
   {
     "name": "trigger",
     "type": "enum",
-    "defaultValue": "click",
+    "defaultValue": "hover",
     "options": [
       {
         "label": "hover",

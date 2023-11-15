@@ -1,20 +1,23 @@
 <script>
-  import {TInput} from 'tdesign-svelte'
-  import {SearchIcon} from "tdesign-svelte-icon";
+  import { TInput } from 'tdesign-svelte';
+  import { SearchIcon } from 'tdesign-icons-svelte';
+  import codeTemplate from '../config/code.json';
 
-  const value = '有默认值'
+  const demoCode = codeTemplate.base;
+
+  const value = '有默认值';
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--input-base tdesign-demo-item--input">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction: column;gap: 16px">
-        <TInput/>
-        <TInput {value} placeholder="请输入内容（有默认值）"/>
+        <TInput />
+        <TInput {value} placeholder="请输入内容（有默认值）" />
         <!-- label/suffix/suffixIcon 支持同名插槽 -->
-        <TInput label="价格：" suffix="元"/>
+        <TInput label="价格：" suffix="元" />
         <TInput label="姓名：" placeholder="按后置图标进行搜索">
-          <SearchIcon slot="suffixIcon" style="cursor: pointer"/>
+          <SearchIcon slot="suffixIcon" style="cursor: pointer" />
         </TInput>
       </div>
     </div>

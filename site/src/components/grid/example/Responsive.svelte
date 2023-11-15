@@ -1,15 +1,18 @@
 <script>
-  import {TRow, TCol} from 'tdesign-svelte'
+  import { TRow, TCol } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
 
-  const xs={ offset: 0, span: 3 }
-  const sm={offset: 2, span: 3 }
-  const md={ offset: 4, span: 3 }
-  const lg={ offset: 6, span: 3 }
-  const xl={ offset: 8, span: 3 }
+  const demoCode = codeTemplate.responsive;
+
+  const xs = { offset: 0, span: 3 };
+  const sm = { offset: 2, span: 3 };
+  const md = { offset: 4, span: 3 };
+  const lg = { offset: 6, span: 3 };
+  const xl = { offset: 8, span: 3 };
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--grid-responsive tdesign-demo-item--grid">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction: column;gap: 16px">
         <span>宽度响应式</span>

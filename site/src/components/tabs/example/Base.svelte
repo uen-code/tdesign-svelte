@@ -1,18 +1,20 @@
 <script>
-  import {TTabs, TTabPanel} from 'tdesign-svelte'
+  import { TTabs, TTabPanel } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.base;
 
   const tabList = [
-    {label: '选项卡一', value: "1", panel: '<p style="padding: 25px">这是选项卡一的内容，使用 t-tabs 渲染</p>'},
-    {label: '选项卡二', value: "2", panel: '<p style="padding: 25px">这是选项卡二的内容，使用 t-tabs 渲染</p>'},
-    {label: '选项卡三', value: "3", panel: '<p style="padding: 25px">这是选项卡三的内容，使用 t-tabs 渲染</p>'},
+    { label: '选项卡一', value: '1', panel: '<p style="padding: 25px">这是选项卡一的内容，使用 t-tabs 渲染</p>' },
+    { label: '选项卡二', value: '2', panel: '<p style="padding: 25px">这是选项卡二的内容，使用 t-tabs 渲染</p>' },
+    { label: '选项卡三', value: '3', panel: '<p style="padding: 25px">这是选项卡三的内容，使用 t-tabs 渲染</p>' },
   ];
 
-  const panel = '<p style="padding: 25px">这是选项卡三的内容，使用 t-tabs 渲染</p>'
-
+  const panel = '<p style="padding: 25px">这是选项卡三的内容，使用 t-tabs 渲染</p>';
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--tabs-base tdesign-demo-item--tabs">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction: column;gap:16px">
         <TTabs defaultValue="1" value="1">
@@ -27,7 +29,7 @@
           </TTabPanel>
         </TTabs>
 
-        <TTabs value="1" list={tabList}/>
+        <TTabs value="1" list={tabList} />
       </div>
     </div>
   </td-doc-demo>

@@ -1,9 +1,9 @@
 <script>
-  import {usePrefixClass} from "../common.js";
+  import { usePrefixClass } from '../common.js';
 
-  const COMPONENT_NAME = usePrefixClass('layout__content')
+  const COMPONENT_NAME = usePrefixClass('layout__content');
 </script>
 
 <main class={COMPONENT_NAME}>
-  <slot></slot>
+  <slot />
 </main>

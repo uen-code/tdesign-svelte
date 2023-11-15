@@ -1,44 +1,43 @@
 <script>
+  import { getClassString, usePrefixClass } from '../common.js';
 
-  import {getClassString, usePrefixClass} from "../common.js";
+  const COMPONENT_NAME = usePrefixClass('image');
+  const classPrefix = usePrefixClass();
 
-  const COMPONENT_NAME = usePrefixClass('image')
-  const classPrefix = usePrefixClass()
-
-  import './style/css'
+  import './style/css';
 
   /** 是否展示为图集样式 */
-  export let gallery = false
+  export let gallery = false;
   /** 浮层 `overlayContent` 出现的时机 */
-  export let overlayTrigger = 'always'
+  export let overlayTrigger = 'always';
   /** 图片圆角类型 */
-  export let shape = 'square'
+  export let shape = 'square';
   /** 图片填充模式 */
-  export let fit = 'fill'
+  export let fit = 'fill';
   /** 等同于原生的 object-position 属性，可选值为 top right bottom left 或 string，可以自定义任何单位，px 或者 百分比  */
-  export let position = 'center'
+  export let position = 'center';
   /** 用于显示图片的链接或原始图片文件对象 */
-  export let src = ''
+  export let src = '';
   /** 图片描述 */
-  export let alt = ''
+  export let alt = '';
   /** `<img>` 标签的原生属性，[MDN 定义](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) */
-  export let referrerpolicy = 'strict-origin-when-cross-origin'
+  export let referrerpolicy = 'strict-origin-when-cross-origin';
 
   /** 样式定义 */
-  export let className = ''
-  export let style = ''
+  export let className = '';
+  export let style = '';
 
-  let showOverlay = !hasMouseEvent
+  let showOverlay = !hasMouseEvent;
 
   // handle
   function handleToggleOverlay() {
     if (hasMouseEvent) {
-      showOverlay = !showOverlay
+      showOverlay = !showOverlay;
     }
   }
 
   // compute
-  $: hasMouseEvent = overlayTrigger === 'hover'
+  $: hasMouseEvent = overlayTrigger === 'hover';
 
   // class
   $: wrapperClass = {
@@ -51,7 +50,7 @@
   $: imageClass = {
     [`${classPrefix}-image`]: true,
     [`${classPrefix}-image--fit-${fit}`]: true,
-    [`${classPrefix}-image--position-${position}`]: true
+    [`${classPrefix}-image--position-${position}`]: true,
   };
   $: overlayClass = {
     [`${classPrefix}-image__overlay-content`]: true,
@@ -72,17 +71,12 @@
   {/if}
 
   <!-- image 图片区域 -->
-  <img
-    {src}
-    {alt}
-    {referrerpolicy}
-    class={getClassString(imageClass)}
-  />
+  <img {src} {alt} {referrerpolicy} class={getClassString(imageClass)} />
 
   <!-- overlay 浮层 -->
   {#if $$slots.overlay}
     <div class={getClassString(overlayClass)}>
-      <slot name="overlay"/>
+      <slot name="overlay" />
     </div>
   {/if}
 </div>

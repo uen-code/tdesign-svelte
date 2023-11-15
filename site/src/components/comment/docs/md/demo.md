@@ -8,8 +8,6 @@ spline: data
 
 [[toc]]
 
-
-
 ### 基础评论
 
 评论最基本的组件，包括头像、作者、时间、评论内容，适用于各种需要进行评论展示的场景。
@@ -26,21 +24,17 @@ import Base from '../../example/Base.svelte'
 <script>
 import Operation from '../../example/Operation.svelte'
 </script>
+
 <Operation></Operation>
 
-[//]: # (### 列表评论)
-
-[//]: # ()
-[//]: # (以列表形式展示的评论。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import List from '../../example/List.svelte')
-
-[//]: # (</script>)
-
-[//]: # (<List></List>)
+[//]: # '### 列表评论'
+[//]: #
+[//]: # '以列表形式展示的评论。'
+[//]: #
+[//]: # '<script>'
+[//]: # "import List from '../../example/List.svelte'"
+[//]: # '</script>'
+[//]: # '<List></List>'
 
 ### 带回复评论
 
@@ -49,6 +43,7 @@ import Operation from '../../example/Operation.svelte'
 <script>
 import Reply from '../../example/Reply.svelte'
 </script>
+
 <Reply></Reply>
 
 ### 带引用评论
@@ -58,8 +53,8 @@ import Reply from '../../example/Reply.svelte'
 <script>
 import Quote from '../../example/Quote.svelte'
 </script>
-<Quote></Quote>
 
+<Quote></Quote>
 
 ### 带回复框评论
 
@@ -68,5 +63,5 @@ import Quote from '../../example/Quote.svelte'
 <script>
 import ReplyForm from '../../example/ReplyForm.svelte'
 </script>
-<ReplyForm></ReplyForm>
 
+<ReplyForm></ReplyForm>

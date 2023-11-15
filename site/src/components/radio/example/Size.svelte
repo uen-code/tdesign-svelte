@@ -1,9 +1,12 @@
 <script>
-  import {TRadioGroup,TRadioButton} from 'tdesign-svelte'
+  import { TRadioGroup, TRadioButton } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.size;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--radio-size tdesign-demo-item--radio">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: inline-flex;flex-direction:column;gap: 16px">
         <TRadioGroup defaultValue="1" size="small">

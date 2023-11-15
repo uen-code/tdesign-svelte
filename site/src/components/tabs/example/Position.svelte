@@ -1,11 +1,12 @@
 <script>
-  import {TTabs, TTabPanel} from 'tdesign-svelte'
+  import { TTabs, TTabPanel } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
 
-
+  const demoCode = codeTemplate.position;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--tabs-position tdesign-demo-item--tabs">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: inline-flex;gap: 16px;flex-direction: column">
         <TTabs placement="top" value="1">
@@ -52,7 +53,6 @@
             <p style="margin: 20px">选项卡3</p>
           </TTabPanel>
         </TTabs>
-
       </div>
     </div>
   </td-doc-demo>

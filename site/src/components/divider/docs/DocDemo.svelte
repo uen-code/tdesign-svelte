@@ -1,9 +1,8 @@
 <script>
-  import DEMO from './md/demo.md'
-
+  import DEMO from './md/demo.md';
 </script>
 
 <div name="DEMO">
   <!-- component demo -->
-  <DEMO/>
+  <DEMO />
 </div>

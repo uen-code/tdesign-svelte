@@ -53,4 +53,3 @@ import Group from '../../example/Group.svelte'
 </script>
 
 <Group></Group>
-

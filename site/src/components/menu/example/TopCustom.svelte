@@ -1,33 +1,36 @@
 <script>
-  import {THeadMenu, TMenuItem, TIcon, TButton} from 'tdesign-svelte'
+  import { THeadMenu, TMenuItem, TIcon, TButton } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.topCustom;
 
   const operations = [
     {
-      name: "search"
+      name: 'search',
     },
     {
-      name: "mail"
+      name: 'mail',
     },
     {
-      name: "user"
+      name: 'user',
     },
     {
-      name: "ellipsis"
-    }
-  ]
+      name: 'ellipsis',
+    },
+  ];
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--menu-custom-header tdesign-demo-item--menu">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div>
         <THeadMenu className="t-demo-menu--dark" value="item2" {operations} theme="dark">
-          <TMenuItem value="item1"> 菜单内容一</TMenuItem>
-          <TMenuItem value="item2"> 已选内容</TMenuItem>
-          <TMenuItem value="item3"> 菜单内容二</TMenuItem>
-          <TMenuItem value="item4" disabled> 菜单内容三</TMenuItem>
-          <TButton  slot="operation" let:item variant="text" shape="square">
-            <TIcon slot="icon" name={item.name}/>
+          <TMenuItem value="item1">菜单内容一</TMenuItem>
+          <TMenuItem value="item2">已选内容</TMenuItem>
+          <TMenuItem value="item3">菜单内容二</TMenuItem>
+          <TMenuItem value="item4" disabled>菜单内容三</TMenuItem>
+          <TButton slot="operation" let:item variant="text" shape="square">
+            <TIcon slot="icon" name={item.name} />
           </TButton>
         </THeadMenu>
       </div>

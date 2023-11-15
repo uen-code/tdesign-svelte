@@ -34,7 +34,6 @@ import Link from "../../example/Link.svelte"
 
 <Link></Link>
 
-
 ### 成组的多选框组
 
 将多选框按一定属性组合使用的多选框组。
@@ -45,7 +44,6 @@ import Group from "../../example/Group.svelte"
 
 <Group></Group>
 
-
 ### 受控类多选框
 
 多选框支持 v-model、受控和非受控三种使用方式，受控方式使用readonly属性。
@@ -55,4 +53,3 @@ import Controlled from "../../example/Controlled.svelte"
 </script>
 
 <Controlled></Controlled>
-

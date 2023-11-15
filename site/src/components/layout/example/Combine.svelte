@@ -1,34 +1,41 @@
 <script>
-  import {TIcon, TLayout, THeader, TContent, TFooter, TAside, TMenu, THeadMenu, TMenuItem} from 'tdesign-svelte'
+  import { TIcon, TLayout, THeader, TContent, TFooter, TAside, TMenu, THeadMenu, TMenuItem } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.combine;
 
   const operations = [
     {
-      name: "search"
+      name: 'search',
     },
     {
-      name: "notificationFilled",
+      name: 'notificationFilled',
     },
     {
-      name: "home",
-    }
-  ]
+      name: 'home',
+    },
+  ];
 </script>
 
-
 <div class="tdesign-demo-wrapper tdesign-demo-item--layout-combine tdesign-demo-item--layout">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <TLayout>
         <THeader>
           <THeadMenu theme="light" value="item1" height="120px" {operations}>
-            <img slot="logo" width="136" class="logo" src="https://www.tencent.com/img/index/menu_logo_hover.png"
-                 alt="logo"/>
-            <TMenuItem value="item1"> 已选内容</TMenuItem>
-            <TMenuItem value="item2"> 菜单内容一</TMenuItem>
-            <TMenuItem value="item3"> 菜单内容二</TMenuItem>
-            <TMenuItem value="item4" disabled> 菜单内容三</TMenuItem>
+            <img
+              slot="logo"
+              width="136"
+              class="logo"
+              src="https://www.tencent.com/img/index/menu_logo_hover.png"
+              alt="logo"
+            />
+            <TMenuItem value="item1">已选内容</TMenuItem>
+            <TMenuItem value="item2">菜单内容一</TMenuItem>
+            <TMenuItem value="item3">菜单内容二</TMenuItem>
+            <TMenuItem value="item4" disabled>菜单内容三</TMenuItem>
             <a href="javascript:;" let:item slot="operation">
-              <TIcon className="t-menu__operations-icon" slot="icon" name={item.name}/>
+              <TIcon className="t-menu__operations-icon" slot="icon" name={item.name} />
             </a>
           </THeadMenu>
         </THeader>
@@ -36,39 +43,39 @@
           <TAside style="border-top: 1px solid var(--component-border)">
             <TMenu theme="light" value="dashboard" style="margin-right: 50px" height="550px">
               <TMenuItem value="dashboard">
-                <TIcon name="dashboard"/>
+                <TIcon name="dashboard" />
                 仪表盘
               </TMenuItem>
               <TMenuItem value="resource">
-                <TIcon name="server"/>
+                <TIcon name="server" />
                 资源列表
               </TMenuItem>
               <TMenuItem value="root">
-                <TIcon name="rootList"/>
+                <TIcon name="rootList" />
                 根目录
               </TMenuItem>
               <TMenuItem value="control-platform">
-                <TIcon name="controlPlatform"/>
+                <TIcon name="controlPlatform" />
                 调度平台
               </TMenuItem>
               <TMenuItem value="precise-monitor">
-                <TIcon name="preciseMonitor"/>
+                <TIcon name="preciseMonitor" />
                 调度平台
               </TMenuItem>
               <TMenuItem value="mail">
-                <TIcon name="mail"/>
+                <TIcon name="mail" />
                 消息区
               </TMenuItem>
               <TMenuItem value="user-circle">
-                <TIcon name="userCircle"/>
+                <TIcon name="userCircle" />
                 个人中心
               </TMenuItem>
               <TMenuItem value="play-circle">
-                <TIcon name="playCircle"/>
+                <TIcon name="playCircle" />
                 视频区
               </TMenuItem>
               <TMenuItem value="edit1">
-                <TIcon name="edit1"/>
+                <TIcon name="edit1" />
                 资源编辑
               </TMenuItem>
             </TMenu>

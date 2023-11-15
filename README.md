@@ -16,13 +16,14 @@
   </a>
 </p>
 
-English | [简体中文](./README-zh_CN.md) 
+English | [简体中文](./README-zh_CN.md)
 
 TDesign svelte is a UI component library for svelte and desktop application.
 
 # Preface
 
 After coming into contact with TDesign, I had the idea of learning a component library. I wanted to complete a simple component library in an intuitive way, and I would try my best to complete all the functions of TDesign components.
+
 - Referring to TDesign’s design system: [figma](https://www.figma.com/community/file/1053279236128724321/tdesign-for-web)
 - Used TDesign's public library: [tdesign-common](https://github.com/Tencent/tdesign-common)
 - Adopted the logic of TDesign-vue-next: [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
@@ -43,16 +44,17 @@ npm i tdesign-svelte
 # 🔨 Usage
 
 ```js
-import { TButton } from "tdesign-svelte";
+import { TButton } from 'tdesign-svelte';
 ```
 
 # Browser Support
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br> IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Edge >=84                                                                                                                                                                                                        | Firefox >=83                                                                                                                                                                                                      | Chrome >=84                                                                                                                                                                                                   | Safari >=14.1                                                                                                                                                                                                   |
+| Edge >=84                                                                                                                                                                                                        | Firefox >=83                                                                                                                                                                                                      | Chrome >=84                                                                                                                                                                                                   | Safari >=14.1                                                                                                                                                                                                 |
 
 Read our [browser compatibility](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility) for more details.
+
 # TDesign component libraries
 
 TDesign also provides component libraries for other platforms and frameworks.

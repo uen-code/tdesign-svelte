@@ -8,7 +8,6 @@ spline: form
 
 [[toc]]
 
-
 ### 文本装饰
 
 在输入框前后加入一些特定的纯展示标签，通常在需要提高辨识效率时使用。
@@ -28,4 +27,3 @@ import Select from '../../example/Select.svelte'
 </script>
 
 <Select></Select>
-

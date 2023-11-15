@@ -1,11 +1,12 @@
 <script>
-  import {TTabs, TTabPanel} from 'tdesign-svelte'
+  import { TTabs, TTabPanel } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
 
-
+  const demoCode = codeTemplate.disabled;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--tabs-disabled tdesign-demo-item--tabs">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;gap:16px">
         <div style="display: inline-flex;flex-direction: column;gap: 16px">

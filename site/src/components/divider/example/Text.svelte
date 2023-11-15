@@ -1,9 +1,12 @@
 <script>
-  import {TDivider} from 'tdesign-svelte'
+  import { TDivider } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.text;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--divider-text tdesign-demo-item--divider">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div>
         <p>
@@ -24,6 +27,4 @@
       </div>
     </div>
   </td-doc-demo>
-
 </div>
-

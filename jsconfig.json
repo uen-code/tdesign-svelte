@@ -12,9 +12,5 @@
     "checkJs": true
   },
   "include": ["./**/*.js", "./**/*.svelte"],
-  "exclude": [
-    "node_modules",
-    "src/_common",
-    "components"
-  ]
+  "exclude": ["node_modules", "src/_common", "components"]
 }

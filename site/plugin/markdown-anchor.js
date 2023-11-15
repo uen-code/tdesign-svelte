@@ -1,2 +1,1 @@
-import MarkdownItAnchor from "markdown-it-anchor";
-
+import MarkdownItAnchor from 'markdown-it-anchor';

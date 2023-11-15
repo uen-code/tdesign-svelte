@@ -1,8 +1,5 @@
 [[toc]]
 
-
-
-
 ### 何时使用
 
 需要将不同类型的数据，组成集合在同一区域展示时；
@@ -28,9 +25,7 @@
 
 <hr />
 
-
 ### 组件搭配使用
-
 
 ##### 卡片与搜索框搭配使用，当卡片数量较多时，用户可精确检索快速找到对应卡片。
 
@@ -54,7 +49,6 @@
 
 </div>
 
-
 <hr />
 
 ##### 卡片与分步加载搭配使用，当卡片数量较多且需要实时更新时，或需要瀑布流展示时，减少用户操作、提供沉浸式体验。
@@ -66,7 +60,6 @@
   </div>
 
 </div>
-
 
 <hr />
 
@@ -92,9 +85,5 @@
 <img src="https://oteam-tdesign-1258344706.cos.ap-guangzhou.myqcloud.com/site/design/guide/Card8.png" />
 <img class="tag" src="https://oteam-tdesign-1258344706.cos.ap-guangzhou.myqcloud.com/site/doc/good.png" />
 
-
 <img src="https://oteam-tdesign-1258344706.cos.ap-guangzhou.myqcloud.com/site/design/guide/Card9.png" />
 <img class="tag" src="https://oteam-tdesign-1258344706.cos.ap-guangzhou.myqcloud.com/site/doc/bad.png" />
-
-
-

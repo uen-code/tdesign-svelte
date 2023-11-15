@@ -14,7 +14,6 @@ import Usage from "../DocUsage.svelte"
 
 <Usage></Usage>
 
-
 ### 头像类型
 
 头像提供了 3 种不同类型的头像：图标头像、图片头像、字符头像
@@ -78,6 +77,7 @@ import GroupCascading from '../../example/GroupCascading.svelte'
 ### 组合头像个数
 
 组合头像可设置最大展示个数，超过则隐藏显示
+
 <script>
 import GroupMax from '../../example/GroupMax.svelte'
 </script>

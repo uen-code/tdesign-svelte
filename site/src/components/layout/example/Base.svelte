@@ -1,9 +1,12 @@
 <script>
-  import {TLayout, THeader, TContent, TFooter, TAside} from 'tdesign-svelte'
+  import { TLayout, THeader, TContent, TFooter, TAside } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.base;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--layout-base tdesign-demo-item--layout">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction: column;gap:16px">
         <div>

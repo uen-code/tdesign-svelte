@@ -1,10 +1,10 @@
-import {usePrefixClass} from "../common.js";
+import { usePrefixClass } from '../common.js';
 
-const period = 200
+const period = 200;
 const noneRippleBg = 'rgba(0, 0, 0, 0)';
 const defaultRippleColor = 'rgba(0, 0, 0, 0.35)';
 
-const classPrefix = usePrefixClass()
+const classPrefix = usePrefixClass();
 
 /**
  * 纹波动画hooks
@@ -30,7 +30,7 @@ export default function useRipple(el, fixedRippleColor) {
 
     const elBorder = parseInt(elStyle.borderWidth, 10);
     const border = elBorder > 0 ? elBorder : 0;
-    const width = el.offsetWidth
+    const width = el.offsetWidth;
     const height = el.offsetHeight;
 
     // 添加ripple的父节点
@@ -50,7 +50,7 @@ export default function useRipple(el, fixedRippleColor) {
     }
 
     // 新增一个ripple
-    const ripple = document.createElement('div')
+    const ripple = document.createElement('div');
     setStyle(ripple, {
       marginTop: '0',
       marginLeft: '0',
@@ -64,7 +64,7 @@ export default function useRipple(el, fixedRippleColor) {
       zIndex: 0,
       backgroundColor: rippleColor,
       opacity: '0.9',
-    })
+    });
 
     // el所有子节点将不会被遮盖
     const elMap = new WeakMap();
@@ -96,14 +96,17 @@ export default function useRipple(el, fixedRippleColor) {
       el.removeEventListener('pointerup', handleClearRipple, false);
       el.removeEventListener('pointerleave', handleClearRipple, false);
 
-      setTimeout(() => {
-        ripple.remove();
-        if (rippleContainer.children.length === 0) rippleContainer.remove();
-      }, period * 2 + 100);
+      setTimeout(
+        () => {
+          ripple.remove();
+          if (rippleContainer.children.length === 0) rippleContainer.remove();
+        },
+        period * 2 + 100,
+      );
     };
     el.addEventListener('pointerup', handleClearRipple, false);
     el.addEventListener('pointerleave', handleClearRipple, false);
-  }
+  };
   el.addEventListener('pointerdown', handleAddRipple, false);
 }
 
@@ -118,7 +121,7 @@ function getRippleColor(el, fixedRippleColor) {
     return fixedRippleColor;
   }
 
-  const rippleColor = getComputedStyle(el).getPropertyValue('--ripple-color')
+  const rippleColor = getComputedStyle(el).getPropertyValue('--ripple-color');
   if (rippleColor) {
     return rippleColor;
   }

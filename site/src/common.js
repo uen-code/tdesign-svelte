@@ -3,9 +3,7 @@ export function codeReplace(baseCode, changeProps) {
   const propsStr = Object.keys(changeProps)
     .map((name) => `${stringifyProp(name, changeProps[name])}`)
     .filter(Boolean);
-  return baseCode.replace(/\s*codeReplace/g, () =>
-    propsStr.length ? `\n  ${propsStr.join('\n  ')}` : '',
-  );
+  return baseCode.replace(/\s*codeReplace/g, () => (propsStr.length ? `\n  ${propsStr.join('\n  ')}` : ''));
 }
 
 export const stringifyProp = (name, value) => {
@@ -14,4 +12,4 @@ export const stringifyProp = (name, value) => {
   if (value === name) return `{${name}}`;
   if (typeof value === 'string') return `${name}="${value}"`;
   return `${name}="${value}"`;
-}
+};

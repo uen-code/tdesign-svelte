@@ -38,7 +38,6 @@ import Usage from "../DocUsage.svelte"
 - `overlayStyle` 用于定义浮层样式，比如浮层宽度。浮层宽度默认根据内容宽度呈现，可自由设置宽度和最大宽度。
 - `overlayInnerStyle` 用于定义浮层内容部分样式，比如内容最大高度以及是否出滚动条。值为类型为函数时，可以实现浮层内容宽度和触发元素同宽。
 
-
 ### 可控制显示的弹出层
 
 可以通过 `visible` 自由控制弹出层的显示或隐藏。
@@ -50,4 +49,3 @@ import Usage from "../DocUsage.svelte"
 ### 禁用状态的弹出层
 
 组件禁用后，不再显示弹出层。
-

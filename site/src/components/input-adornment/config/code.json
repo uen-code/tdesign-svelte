@@ -1,0 +1,3 @@
+{
+  "text": "<script>\n  import { TInput, TInputAdornment } from 'tdesign-svelte';\n</script>\n\n<div style=\"display: flex;flex-direction: column;gap: 16px\">\n  <TInputAdornment prepend=\"http://\">\n    <TInput placeholder=\"请输入内容\" />\n  </TInputAdornment>\n\n  <TInputAdornment append=\".com\">\n    <TInput placeholder=\"请输入内容\" />\n  </TInputAdornment>\n\n  <TInputAdornment prepend=\"http://\" append=\".com\">\n    <TInput placeholder=\"请输入内容\" />\n  </TInputAdornment>\n</div>"
+}

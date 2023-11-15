@@ -8,7 +8,7 @@ export default {
   calcScrollLeft(elements, scrollLeft) {
     const container = elements.navsContainer;
     const wrap = elements.navsWrap;
-    const {rightOperations} = elements;
+    const { rightOperations } = elements;
     const rightOperationsZoneWidth = getDomWidth(rightOperations);
 
     if (!wrap || !container) return scrollLeft;
@@ -39,7 +39,7 @@ export default {
     if (['left', 'right'].includes(placement.toLowerCase())) {
       return false;
     }
-    const {navsContainer: container, navsWrap: wrap, leftOperations, toLeftBtn} = depElement;
+    const { navsContainer: container, navsWrap: wrap, leftOperations, toLeftBtn } = depElement;
     if (!wrap || !container) {
       return false;
     }
@@ -60,16 +60,13 @@ export default {
     if (['left', 'right'].includes(placement.toLowerCase())) {
       return false;
     }
-    const {navsContainer: container, navsWrap: wrap, rightOperations, toRightBtn} = depElement;
+    const { navsContainer: container, navsWrap: wrap, rightOperations, toRightBtn } = depElement;
     if (!wrap || !container) {
       return false;
     }
     const rightOperationsZoneWidth = getDomWidth(rightOperations);
     const rightIconWidth = getDomWidth(toRightBtn);
-    return (
-      scrollLeft + getDomWidth(container) - (rightOperationsZoneWidth - rightIconWidth)
-      - getDomWidth(wrap) < -1
-    ); // 小数像素不精确，所以这里判断小于-1
+    return scrollLeft + getDomWidth(container) - (rightOperationsZoneWidth - rightIconWidth) - getDomWidth(wrap) < -1; // 小数像素不精确，所以这里判断小于-1
   },
 
   /**
@@ -127,8 +124,8 @@ export default {
     };
     const rightCoverWidth = _getRightCoverWidth();
     // 判断当前tab是不是在右边被隐藏
-    const isHiddenInRightZone = scrollLeft + containerWidth - rightCoverWidth
-      < totalWidthBeforeActiveTab + activeTabWidth;
+    const isHiddenInRightZone =
+      scrollLeft + containerWidth - rightCoverWidth < totalWidthBeforeActiveTab + activeTabWidth;
     if (isHiddenInRightZone) {
       return totalWidthBeforeActiveTab + activeTabWidth - containerWidth + rightCoverWidth;
     }
@@ -142,7 +139,7 @@ export default {
    * @returns number
    */
   scrollToLeft(depElement, scrollLeft) {
-    const {navsContainer: container, leftOperations, toLeftBtn} = depElement;
+    const { navsContainer: container, leftOperations, toLeftBtn } = depElement;
     if (!container) return 0;
     const leftOperationsZoneWidth = getDomWidth(leftOperations);
     const leftIconWidth = getDomWidth(toLeftBtn);
@@ -158,7 +155,7 @@ export default {
    * @returns number
    */
   scrollToRight(depElement, scrollLeft) {
-    const {navsContainer: container, navsWrap: wrap, rightOperations, toRightBtn} = depElement;
+    const { navsContainer: container, navsWrap: wrap, rightOperations, toRightBtn } = depElement;
     const rightOperationsZoneWidth = getDomWidth(rightOperations);
     const rightIconWidth = getDomWidth(toRightBtn);
     const containerWidth = getDomWidth(container);

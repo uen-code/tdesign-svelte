@@ -1,10 +1,9 @@
 <script>
+  import { SIZE, getClassString, usePrefixClass } from '../common.js';
+  import GradientIcon from './icon/GradientIcon.svelte';
 
-  import {SIZE, getClassString, usePrefixClass} from "../common.js";
-  import GradientIcon from "./icon/GradientIcon.svelte";
-
-  import './style/css'
-  import {SIZE_ENUM} from "../config.js";
+  import './style/css';
+  import { SIZE_ENUM } from '../config.js';
 
   // 获取样式并解构
   const classPrefix = usePrefixClass();
@@ -28,14 +27,13 @@
     overlayClass,
     relativeClass,
     fullClass,
-    inheritColorClass
-  } =
-    useComponentClassName();
+    inheritColorClass,
+  } = useComponentClassName();
 
   /** 尺寸 */
-  export let size = SIZE_ENUM.medium
+  export let size = SIZE_ENUM.medium;
   /** 加载提示文案 */
-  export let text = undefined
+  export let text = undefined;
 
   export let className = '';
   export let style = '';
@@ -45,12 +43,13 @@
     [className]: className,
     [centerClass]: true,
     [SIZE[size]]: true,
-  }
-  $: fullScreenClasses = `${COMPONENT_NAME} ${fullscreenClass} ${centerClass} ${overlayClass}`
-  $: attachClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME} ${fullClass}`
-  $: withContentClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME} ${fullClass}`
-  $: normalClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME}`
+  };
+  $: fullScreenClasses = `${COMPONENT_NAME} ${fullscreenClass} ${centerClass} ${overlayClass}`;
+  $: attachClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME} ${fullClass}`;
+  $: withContentClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME} ${fullClass}`;
+  $: normalClasses = `${getClassString(baseClasses)} ${COMPONENT_NAME}`;
 </script>
+
 <div class={normalClasses} {style}>
   <!-- icon -->
   <GradientIcon />

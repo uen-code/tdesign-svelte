@@ -1,7 +1,7 @@
 <script>
-  import DEMO from './md/demo.md'
+  import DEMO from './md/demo.md';
 </script>
 
 <div name="DEMO">
-  <DEMO/>
+  <DEMO />
 </div>

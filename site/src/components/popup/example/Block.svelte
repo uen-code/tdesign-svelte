@@ -1,9 +1,9 @@
 <script>
-  import {TButton} from 'tdesign-svelte'
+  import { TButton } from 'tdesign-svelte';
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--button-block tdesign-demo-item--button">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div class="df">
         <TButton style="min-width: 320px;max-width:640px" block theme="primary" variant="base">填充按钮</TButton>
@@ -16,7 +16,7 @@
 </div>
 
 <style>
-  .df{
+  .df {
     display: flex;
     flex-direction: column;
     align-items: center;

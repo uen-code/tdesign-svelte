@@ -1,9 +1,12 @@
 <script>
-  import {TRow, TCol} from 'tdesign-svelte'
+  import { TRow, TCol } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.offset;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--grid-offset tdesign-demo-item--grid">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction: column;gap: 16px">
         <TRow>

@@ -1,4 +1,4 @@
-import {isObject, isUndefined, isArray, isNumber, isString} from '../utils/lodash'
+import { isObject, isUndefined, isArray, isNumber, isString } from '../utils/lodash';
 
 /**
  *
@@ -51,7 +51,7 @@ export function calcRowStyle(gutter, currentSize) {
           getMarginStyle(gutter[currentSize]);
         }
       }
-    }
+    },
   };
 
   Object.keys(strategyMap).forEach((item) => {
@@ -70,7 +70,7 @@ export function parseFlex(flex) {
   if (isNumber(flex)) {
     return `${flex} ${flex} 0`;
   }
-  if (isString(flex) && !Number.isNaN(flex * 1)){
+  if (isString(flex) && !Number.isNaN(flex * 1)) {
     return `${flex * 1} ${flex * 1} 0`;
   }
   // 判断是否是flex
@@ -114,7 +114,7 @@ export function calcColPadding(gutter, currentSize) {
       if (isObject(gutter) && gutter[currentSize]) {
         getPaddingStyle(gutter[currentSize]);
       }
-    }
+    },
   };
 
   Object.keys(strategyMap).forEach((item) => {

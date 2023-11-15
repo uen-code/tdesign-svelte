@@ -1,7 +1,7 @@
 <script>
-  import {getClassString, usePrefixClass} from "../common.js";
+  import { getClassString, usePrefixClass } from '../common.js';
 
-  import './style/css'
+  import './style/css';
 
   const COMPONENT_NAME = usePrefixClass('input-adornment');
 
@@ -19,7 +19,7 @@
     [COMPONENT_NAME]: true,
     [`${COMPONENT_NAME}--prepend`]: prepend,
     [`${COMPONENT_NAME}--append`]: append,
-  }
+  };
 </script>
 
 <div class={getClassString(inputAdrnmentClass)}>
@@ -31,13 +31,13 @@
           {prepend}
         </span>
       {:else}
-        <slot name="prepend"/>
+        <slot name="prepend" />
       {/if}
     </span>
   {/if}
 
   <!-- content -->
-  <slot/>
+  <slot />
 
   <!-- append -->
   {#if append || $$slots.append}
@@ -47,7 +47,7 @@
           {append}
         </span>
       {:else}
-        <slot name="append"/>
+        <slot name="append" />
       {/if}
     </span>
   {/if}

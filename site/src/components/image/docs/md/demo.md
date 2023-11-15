@@ -14,8 +14,6 @@ import Usage from "../DocUsage.svelte"
 
 <Usage></Usage>
 
-
-
 ### 基础图片
 
 不同填充模式的图片
@@ -25,8 +23,8 @@ import Usage from "../DocUsage.svelte"
 <script>
 import FillMode from '../../example/FillMode.svelte'
 </script>
-<FillMode></FillMode>
 
+<FillMode></FillMode>
 
 不同填充位置的图片
 
@@ -35,8 +33,8 @@ import FillMode from '../../example/FillMode.svelte'
 <script>
 import FillPosition from '../../example/FillPosition.svelte'
 </script>
-<FillPosition></FillPosition>
 
+<FillPosition></FillPosition>
 
 ### 不同形状的图片
 
@@ -47,8 +45,8 @@ import FillPosition from '../../example/FillPosition.svelte'
 <script>
 import Shape from '../../example/Shape.svelte'
 </script>
-<Shape></Shape>
 
+<Shape></Shape>
 
 ### 图集样式的图片
 
@@ -57,43 +55,31 @@ import Shape from '../../example/Shape.svelte'
 <script>
 import GalleryCover from '../../example/GalleryCover.svelte'
 </script>
+
 <GalleryCover></GalleryCover>
 
-
-[//]: # (### 加载状态的图片)
-
-[//]: # ()
-[//]: # (显示加载的不同状态，提供默认、自定义两种占位样式。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import Placeholder from '../../example/Placeholder.svelte')
-
-[//]: # (</script>)
-
-[//]: # (<Placeholder></Placeholder>)
-
+[//]: # '### 加载状态的图片'
+[//]: #
+[//]: # '显示加载的不同状态，提供默认、自定义两种占位样式。'
+[//]: #
+[//]: # '<script>'
+[//]: # "import Placeholder from '../../example/Placeholder.svelte'"
+[//]: # '</script>'
+[//]: # '<Placeholder></Placeholder>'
 
 ### 图片懒加载
 
 <script>
 import LazySingle from '../../example/LazySingle.svelte'
 </script>
+
 <LazySingle></LazySingle>
 
-
-[//]: # (### 图片扩展元素)
-
-[//]: # ()
-[//]: # (带有悬浮层的图片。)
-
-[//]: # ()
-[//]: # (<script>)
-
-[//]: # (import ExtraAlways from '../../example/ExtraAlways.svelte')
-
-[//]: # (</script>)
-
-[//]: # (<ExtraAlways></ExtraAlways>)
-
+[//]: # '### 图片扩展元素'
+[//]: #
+[//]: # '带有悬浮层的图片。'
+[//]: #
+[//]: # '<script>'
+[//]: # "import ExtraAlways from '../../example/ExtraAlways.svelte'"
+[//]: # '</script>'
+[//]: # '<ExtraAlways></ExtraAlways>'

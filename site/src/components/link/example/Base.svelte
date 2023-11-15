@@ -1,8 +1,11 @@
 <script>
-  import {TLink} from 'tdesign-svelte'
+  import { TLink } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.base;
 </script>
 
-<td-doc-demo mode="auto" language="markup">
+<td-doc-demo mode="auto" language="markup" code={demoCode}>
   <div class="tdesign-demo-item__body">
     <div class="fl">
       <TLink theme="primary">跳转链接</TLink>
@@ -14,6 +17,6 @@
   .fl {
     margin-top: 16px;
     display: inline-flex;
-    gap: 16px
+    gap: 16px;
   }
 </style>

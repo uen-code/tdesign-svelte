@@ -16,13 +16,14 @@
   </a>
 </p>
 
-简体中文 | [English](./README.md) 
+简体中文 | [English](./README.md)
 
 TDesign 适配桌面端的组件库，适合在 svelte 技术栈项目中使用。
 
 # 讲在前面
 
 接触到TDesign后有了学习组件库的想法，想以直观的写法去完成一个简单的组件库，会尽量去完成TDesign组件的全部功能.
+
 - 参照了TDesign的设计体系：[figma](https://www.figma.com/community/file/1053279236128724321/tdesign-for-web)
 - 使用了TDesign的公共库：[tdesign-common](https://github.com/Tencent/tdesign-common)
 - 采用了TDesign-vue-next的逻辑：[tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
@@ -47,14 +48,14 @@ npm i tdesign-svelte
 # 🔨 基础使用
 
 ```js
-import { TButton } from "tdesign-svelte";
+import { TButton } from 'tdesign-svelte';
 ```
 
 # 浏览器兼容性
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br> IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Edge >=84                                                                                                                                                                                                        | Firefox >=83                                                                                                                                                                                                      | Chrome >=84                                                                                                                                                                                                   | Safari >=14.1                                                                                                                                                                                                   |
+| Edge >=84                                                                                                                                                                                                        | Firefox >=83                                                                                                                                                                                                      | Chrome >=84                                                                                                                                                                                                   | Safari >=14.1                                                                                                                                                                                                 |
 
 详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility)
 
@@ -70,6 +71,7 @@ import { TButton } from "tdesign-svelte";
 有任何问题，建议通过 [Github issues](https://github.com/hzx000822/tdesign-svelte/issues) 反馈。
 
 # 开源协议
+
 遵循 [MIT 协议](https://github.com/hzx000822/tdesign-svelte/blob/master/LICENSE.md)。
 
 # 联系我

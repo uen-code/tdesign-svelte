@@ -1,12 +1,35 @@
 <script>
-  import {components} from "./index.js";
+  import { onMount } from 'svelte';
 
-  /** icon name */
+  let IconComponent;
+
   export let name = '';
-  /** icon class */
-  export let className = '';
-  /** icon style */
-  export let style = '';
+  export let size = '';
+
+  const assorted = {
+    common: 'common',
+    component: 'component',
+    facial: 'facial',
+    food: 'food',
+    numbers: 'numbers',
+    letters: 'letters',
+  };
+
+  const loadIconComponent = async (iconName) => {
+    const path = Object.keys(assorted).find((key) => iconName.includes(assorted[key]));
+    const formattedIconName = iconName.charAt(0).toUpperCase() + iconName.slice(1);
+    let iconModule;
+    if (path) {
+      iconModule = await import(`./components/${path}/${formattedIconName}Icon.svelte`);
+    } else {
+      iconModule = await import(`./components/design/${formattedIconName}Icon.svelte`);
+    }
+    IconComponent = iconModule.default;
+  };
+
+  onMount(() => {
+    loadIconComponent(name);
+  });
 </script>
 
-<svelte:component this={components[name]} className={className} {style}/>
+<svelte:component this={IconComponent} {size} {...$$restProps} />

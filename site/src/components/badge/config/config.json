@@ -1,0 +1,23 @@
+{
+  "docHeader": {
+    "spline": "data",
+    "title": "Badge 徽标",
+    "desc": "出现在图标或文字右上角的徽标标识。"
+  },
+  "base": {
+    "componentName": "badge",
+    "panelList": [
+      {
+        "label": "badge",
+        "value": "badge"
+      }
+    ],
+    "code": "<TBadge count=\"100\" codeReplace>\n      <TButton>按钮</TButton>\n    </TBadge>"
+  },
+  "badge": {
+    "statements": "98.72%",
+    "branches": "84.61%",
+    "functions": "85.71%",
+    "lines": "98.72%"
+  }
+}

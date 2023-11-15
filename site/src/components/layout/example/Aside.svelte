@@ -1,49 +1,57 @@
 <script>
-  import {TIcon, TLayout, TContent, TFooter, TAside, TMenu, TMenuItem} from 'tdesign-svelte'
+  import { TIcon, TLayout, TContent, TFooter, TAside, TMenu, TMenuItem } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.aside;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--layout-aside tdesign-demo-item--layout">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <TLayout>
         <TAside>
           <TMenu theme="light" value="dashboard" style="margin-right: 50px" height="550px">
-            <img width="136" class="logo" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo"
-                 slot="logo"/>
+            <img
+              width="136"
+              class="logo"
+              src="https://www.tencent.com/img/index/menu_logo_hover.png"
+              alt="logo"
+              slot="logo"
+            />
             <TMenuItem value="dashboard">
-              <TIcon name="dashboard"/>
+              <TIcon name="dashboard" />
               仪表盘
             </TMenuItem>
             <TMenuItem value="resource">
-              <TIcon name="server"/>
+              <TIcon name="server" />
               资源列表
             </TMenuItem>
             <TMenuItem value="root">
-              <TIcon name="rootList"/>
+              <TIcon name="rootList" />
               根目录
             </TMenuItem>
             <TMenuItem value="control-platform">
-              <TIcon name="controlPlatform"/>
+              <TIcon name="controlPlatform" />
               调度平台
             </TMenuItem>
             <TMenuItem value="precise-monitor">
-              <TIcon name="preciseMonitor"/>
+              <TIcon name="preciseMonitor" />
               调度平台
             </TMenuItem>
             <TMenuItem value="mail">
-              <TIcon name="mail"/>
+              <TIcon name="mail" />
               消息区
             </TMenuItem>
             <TMenuItem value="user-circle">
-              <TIcon name="userCircle"/>
+              <TIcon name="userCircle" />
               个人中心
             </TMenuItem>
             <TMenuItem value="play-circle">
-              <TIcon name="playCircle"/>
+              <TIcon name="playCircle" />
               视频区
             </TMenuItem>
             <TMenuItem value="edit1">
-              <TIcon name="edit1"/>
+              <TIcon name="edit1" />
               资源编辑
             </TMenuItem>
           </TMenu>

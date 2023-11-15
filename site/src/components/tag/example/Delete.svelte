@@ -1,21 +1,24 @@
 <script>
-  import {TTag,TIcon,TInput} from 'tdesign-svelte'
+  import { TTag, TIcon, TInput } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
 
-  let inputVisible = false
+  const demoCode = codeTemplate.delete;
+
+  let inputVisible = false;
   function handleClose(index) {
     console.log(index);
     tags.splice(index, 1);
-    tags = [...tags]
+    tags = [...tags];
   }
-  function handleAdd(e){
-    inputVisible = true
+  function handleAdd(e) {
+    inputVisible = true;
   }
-  function handleInputEnter(e){
-    const val = e.detail
+  function handleInputEnter(e) {
+    const val = e.detail;
     if (val && !tags.some((item) => item.name === val)) {
       tags.push({ name: val, type: 'default', showClose: true });
     }
-    tags = [...tags]
+    tags = [...tags];
     inputVisible = false;
   }
 
@@ -39,12 +42,11 @@
       showClose: true,
       disabled: true,
     },
-  ]
-
+  ];
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--tag-base tdesign-demo-item--tag">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;flex-direction: column;gap:16px">
         <div class="fl">
@@ -66,17 +68,17 @@
           <TTag variant="outline" theme="danger" closable>标签四</TTag>
         </div>
         <div class="fl">
-          {#each tags as tag,index}
+          {#each tags as tag, index}
             <TTag
-              theme="{tag.type}"
-              closable="{tag.showClose}"
-              disabled="{!!tag.disabled}"
-              maxWidth="{tag.maxWidth}"
-              on:close={() =>handleClose(index)}
+              theme={tag.type}
+              closable={tag.showClose}
+              disabled={!!tag.disabled}
+              maxWidth={tag.maxWidth}
+              on:close={() => handleClose(index)}
             >
               {tag.name}
               {#if tag.icon}
-                <TIcon slot="icon" name="{tag.icon}"></TIcon>
+                <TIcon slot="icon" name={tag.icon}></TIcon>
               {/if}
             </TTag>
           {/each}
@@ -84,11 +86,11 @@
         <div class="fl">
           {#if !inputVisible}
             <TTag on:click={handleAdd}>
-              <TIcon name="add"/>
+              <TIcon name="add" />
               添加标签
             </TTag>
           {:else}
-            <TInput  size="small" style="width: 94px" on:enter="{handleInputEnter}" />
+            <TInput size="small" style="width: 94px" on:enter={handleInputEnter} />
           {/if}
         </div>
       </div>

@@ -1,5 +1,8 @@
 <script>
-  import {TRow, TCol} from 'tdesign-svelte'
+  import { TRow, TCol } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
+
+  const demoCode = codeTemplate.base;
 
   const demoCols = [
     Array(12).fill(1),
@@ -12,12 +15,12 @@
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--grid-base tdesign-demo-item--grid">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
-      {#each demoCols as cols,i}
+      {#each demoCols as cols, i}
         <TRow>
           {#each cols as col}
-            <TCol span="{col}">
+            <TCol span={col}>
               <div>{col}</div>
             </TCol>
           {/each}

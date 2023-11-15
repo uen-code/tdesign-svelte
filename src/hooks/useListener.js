@@ -1,4 +1,4 @@
-import {onMount, onDestroy} from "svelte";
+import { onMount, onDestroy } from 'svelte';
 
 /**
  * 用于订阅Listener事件
@@ -28,4 +28,3 @@ export function useResize(listener, observer) {
     resizeObserver?.disconnect();
   });
 }
-

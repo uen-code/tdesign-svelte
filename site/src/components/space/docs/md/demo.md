@@ -5,11 +5,13 @@ isComponent: true
 usage: { title: '', description: '' }
 spline: layout
 ---
+
 [[toc]]
 
 <script>
 import DocUsage from '../DocUsage.svelte'
 </script>
+
 <DocUsage></DocUsage>
 
 ### 基本用法
@@ -62,7 +64,6 @@ import BreakLine from '../../example/BreakLine.svelte'
 </script>
 
 <BreakLine></BreakLine>
-
 
 ### 设置分隔符
 

@@ -1,10 +1,12 @@
 <script>
-  import {TImage} from 'tdesign-svelte'
+  import { TImage } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
 
+  const demoCode = codeTemplate.shape;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--image-fill-shape tdesign-demo-item--image">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: inline-flex;gap: 16px">
         <div style="display: flex;flex-direction: column;gap: 16px;align-items: center">

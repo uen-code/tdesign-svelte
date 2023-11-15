@@ -1,11 +1,12 @@
 <script>
-  import {TTabs, TTabPanel} from 'tdesign-svelte'
+  import { TTabs, TTabPanel } from 'tdesign-svelte';
+  import codeTemplate from '../config/code.json';
 
-
+  const demoCode = codeTemplate.icon;
 </script>
 
 <div class="tdesign-demo-wrapper tdesign-demo-item--tabs-icon tdesign-demo-item--tabs">
-  <td-doc-demo mode="auto" language="markup">
+  <td-doc-demo mode="auto" language="markup" code={demoCode}>
     <div class="tdesign-demo-item__body">
       <div style="display: flex;gap:16px">
         <div style="display: inline-flex;gap: 16px;flex-direction: column">
@@ -32,7 +33,6 @@
             </TTabPanel>
           </TTabs>
         </div>
-
       </div>
     </div>
   </td-doc-demo>
