@@ -1,7 +1,7 @@
 {
   "name": "tdesign-svelte",
   "title": "tdesign-svelte",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "TDesign Component for svelte",
   "type": "module",
   "main": "components/index.js",
@@ -22,6 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/hzx000822/tdesign-svelte.git"
   },
+  "homepage": "http://182.43.78.202:90/",
   "scripts": {
     "init": "git submodule init && git submodule update",
     "start": "npm run init && npm run dev",

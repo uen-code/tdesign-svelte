@@ -31,6 +31,8 @@ After coming into contact with TDesign, I had the idea of learning a component l
 All components are developed for personal reference TDesign vue-next and cannot meet the needs of enterprises for the time being.
 The next release will optimize some component DOM.
 
+[Doc](http://182.43.78.202:90/)
+
 # 🎉 Features
 
 - Desktop application interaction
